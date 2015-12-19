@@ -12,18 +12,18 @@ class InstitutionsRules extends FormsRecord
             ->setCaption('update', 'Modificare institutie (#:id:)')
             ->setCaption('delete', 'Ștergere institutie (#:id:)')
 
-            ->setFeedback('insert', 'success', 'Adăugarea intitutiei a fost realizată cu succes.')
-            ->setFeedback('insert', 'error', 'Adăugarea intitutiei <span class="badge">nu</span> a fost realizată.')
-            ->setFeedback('update', 'success', 'Modificarea intitutiei a fost realizată cu succes.')
-            ->setFeedback('update', 'error', 'Modificarea intitutiei <span class="badge">nu</span> a fost realizată.')
-            ->setFeedback('delete', 'success', 'Stergerea intitutiei a fost realizată cu succes.')
-            ->setFeedback('delete', 'error', 'Ștergerea intitutiei <span class="badge">nu</span> a fost realizată.')
+            ->setFeedback('insert', 'success', 'Adăugarea institutiei a fost realizată cu succes.')
+            ->setFeedback('insert', 'error', 'Adăugarea institutiei <span class="badge">nu</span> a fost realizată.')
+            ->setFeedback('update', 'success', 'Modificarea institutiei a fost realizată cu succes.')
+            ->setFeedback('update', 'error', 'Modificarea institutiei <span class="badge">nu</span> a fost realizată.')
+            ->setFeedback('delete', 'success', 'Stergerea institutiei a fost realizată cu succes.')
+            ->setFeedback('delete', 'error', 'Ștergerea institutiei <span class="badge">nu</span> a fost realizată.')
 
             ->addRule('insert', 'name', 'required')
             ->addRule('update', 'name', 'required')
 
-            ->addMessage('insert', 'name.required', 'Denumirea intitutiei trebuie completată.')
-            ->addMessage('update', 'name.required', 'Denumirea intitutiei trebuie completată.')
+            ->addMessage('insert', 'name.required', 'Denumirea institutiei trebuie completată.')
+            ->addMessage('update', 'name.required', 'Denumirea institutiei trebuie completată.')
         ;
     }
 

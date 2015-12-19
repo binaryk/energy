@@ -34,8 +34,7 @@ class InstitutionsController extends DatatableController
     public function rows($id, $type = NULL){
         $config = Grids::make($id)->toRowDatasetConfig($id);
         $filters = $config['source']->custom_filters();
-//        $type_client = $type ? ['tip_client' => 'persoane_fizice.tip_client = '.$type] : [];
-//        $config['source']->custom_filters( $filters + [ 'persoana_fizica' => 'persoane_fizice.id_organizatie = '.$this->current_org->id ] + $type_client);
+        $config['source']->custom_filters( $filters + [ 'test' => 'institutions.infrastructure_id = 1' ] );
         return $this->dataset( $config );
     }
 }

@@ -19,7 +19,7 @@ class Route {
 			->add('get', 'institutions_index', 'institutii/{type?}/{edit?}', 'InstitutionsController@index', 'Institutions')
 			->add('get', 'institutions_index_row_source', 'institutii_row_source/{id}/{type?}', 'InstitutionsController@rows', 'Institutions')
 
-			->add('get', 'home', '/', 'HomeController@showWelcome', '')
+			// ->add('get', 'home', '/', 'HomeController@showWelcome', '')
 		;
 	}
 

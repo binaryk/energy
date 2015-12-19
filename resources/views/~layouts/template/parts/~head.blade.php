@@ -18,3 +18,4 @@
   <!-- endbuild -->
 
   @yield('custom-styles')
+  @yield('scripts_grids')

@@ -32,16 +32,9 @@ class Datatable
 		$this->addStyleFile('packages/datatables/css/1.10.4/datatable.css');
 		$this->addStyleFile('packages/datatables/css/1.10.4/dataTables.bootstrap.css');
 		
-		$this->addStyleFile('customs/css/font-awesome.min.css');
-		$this->addStyleFile('customs/css/ionicons.min.css');
-		$this->addStyleFile('customs/css/admin-lte.css');
-		$this->addStyleFile('customs/css/skins.css');
-		$this->addStyleFile('customs/css/index.css');
-		$this->addStyleFile('customs/css/dt.css');
-		$this->addStyleFile('customs/css/toolbar.css');
-		$this->addStyleFile('customs/css/dtform.css');
-		$this->addStyleFile('customs/css/new-admin.css');
-		$this->addStyleFile('customs/css/global.css');
+		$this->addStyleFile('admin/css/dt/dt.css');
+		$this->addStyleFile('admin/css/dt/toolbar.css');
+		$this->addStyleFile('admin/css/dt/dtform.css');
 
 		$this->scripts = new Collection();
 		$this->addScriptFile('packages/datatables/js/1.10.4/datatable.js');

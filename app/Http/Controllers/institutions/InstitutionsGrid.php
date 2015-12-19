@@ -17,10 +17,10 @@ class InstitutionsGrid extends GridsRecord
         $this->default_order  = "1,'asc'";
         $this->form           = 'App\Http\Controllers\Institutions\InstitutionsForm';
         $this->css            = 'packages/datatables/css/1.10.4/datatable.css,
-                                      packages/datatables/css/1.10.4/dataTables.bootstrap.css,
-                                      admin/css/dt/dt.css,
-                                      admin/css/dt/toolbar.css,
-                                      admin/css/dt/dtform.css,
+                              packages/datatables/css/1.10.4/dataTables.bootstrap.css,
+                              admin/css/dt/dt.css,
+                              admin/css/dt/toolbar.css,
+                              admin/css/dt/dtform.css,
                                        ';
         $this->js             = 'admin/js/libraries/form/dtform.js';
         $this->row_source     = 'institutions_index_row_source';
@@ -45,24 +45,27 @@ class InstitutionsGrid extends GridsRecord
                 'orderable' => 'yes',
                 'class'     => 'td-align-left',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Nume institutie', 'style'   => 'width:22%',],
+                'header'    => ['caption' => 'Nume institutie', 'style'   => 'width:90%',],
                 'type'      => 'field',
                 'source'    => 'name',//numele coloanei din tabelul din BD
             ],
             '3' => [
                 'id'        => 'action',
                 'orderable' => 'no',
-                'class'     => 'td-align-left td-actions',
+                'class'     => 'td-align-center td-actions',
                 'visible'   => 'yes',
                 'header'    => ['caption' => 'Acțiuni', 'style'   => 'width:7%',],
                 'type'      => 'view',
                 'source'    => 'institutions.~actions',
             ],
         ];
-        $this->fields = [
+         $this->fields = [
             'fields'      => '',
             'searchables' => 'id, name',
-            'orderables'  => [],//[1 => "id"],
+            'orderables'  => [
+                1 => 'id',
+                2 => 'name'
+            ],//[1 => "id"],
         ];
         $this->filters = [
             'deleted' => 'deleted_at is null',
