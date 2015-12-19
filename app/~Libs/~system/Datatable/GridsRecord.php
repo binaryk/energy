@@ -15,7 +15,9 @@ class GridsRecord
 	public $display_length 				= 10;
 	public $default_order  				= "1,'asc'";
 	public $row_source     				= 'datatable-row-source';
-	/* original 
+	public $breadcrumbs					= [];
+	public $right_menu					= [];
+	/* original
 	public $dom            				= '<"dt-container"<"row row-dt-processing"<"col-xs-12 dt-processing"r>><"row row-dt-info"<"col-xs-12 dt-info"i>><"row row-dt-toolbar"<"col-xs-6 dt-tb-left"lf<"dt-toolbar">><"col-xs-6 dt-tb-right"p>><"row row-dt"<"col-xs-12 dt-table"t>>>';
 	*/
 	

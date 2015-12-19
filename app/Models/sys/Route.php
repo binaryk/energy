@@ -10,6 +10,15 @@ class Route {
 	public function __construct() {
 		$this
 			/* Database general operations */
+
+			->add('get', 'datatable-index', 'nomenclatoare/{id}', 'DatatableController@index', 'Administration')
+			->add('get', 'datatable-row-source', 'nomenclatoare/row-source/{id}', 'DatatableController@rows', 'Administration')
+			->add('post', 'datatable-load-form', 'nomenclatoare/load-dt-form/{id}', 'DatatableController@loadForm', 'Administration')
+			->add('post', 'datatable-do-action', 'nomenclatoare/dt-do-action/{id}', 'DatatableController@doAction', 'Administration')
+
+			->add('get', 'institutions_index', 'institutii/{type?}/{edit?}', 'InstitutionsController@index', 'Institutions')
+			->add('get', 'institutions_index_row_source', 'institutii_row_source/{id}/{type?}', 'InstitutionsController@rows', 'Institutions')
+
 			->add('get', 'home', '/', 'HomeController@showWelcome', '')
 		;
 	}

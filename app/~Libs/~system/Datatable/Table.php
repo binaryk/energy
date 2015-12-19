@@ -19,7 +19,7 @@ class Table
 		$dt->caption( $config['caption'] );
 		$dt->icon( $config['icon'] );
 		$dt->defaultOrder( $config['default-order'] );
-		$dt->header_filter( $config['header_filter']);
+//		$dt->header_filter( $config['header_filter']);
 		if( $config['custom_styles'] )
 		{
 			$dt->custom_styles( $config['custom_styles'] );

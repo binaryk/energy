@@ -22,5 +22,15 @@
 <script src="{!! asset('template/scripts/helpers/sameheight.js')!!}"></script>
 <script src="{!! asset('template/scripts/ui/dashboard.js')!!}"></script>
 <!-- end initialize page scripts -->
-
+<script>
+    var token = $('meta[name="csrf_token"]').attr('content');
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': token,
+            'X-XSRF-TOKEN': token
+        },
+        '_token' : token,
+        async    : false
+    });
+</script>
 @yield('custom-scripts')

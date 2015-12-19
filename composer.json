@@ -38,7 +38,10 @@
 	},
 	"autoload-dev": {
 		"classmap": [
-			"tests/TestCase.php"
+		  "database",
+		  "app/Models",
+		  "app/~Libs",
+		  "app/mailers"
 		]
 	},
 	"scripts": {

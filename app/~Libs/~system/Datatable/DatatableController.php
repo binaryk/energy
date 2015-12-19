@@ -1,6 +1,8 @@
 <?php namespace System;
 
-class DatatableController extends \Commons\IBlinkController
+use App\Http\Controllers\BaseController;
+
+class DatatableController extends BaseController
 {
 
 	public function show($config)
@@ -14,7 +16,10 @@ class DatatableController extends \Commons\IBlinkController
 			throw new \Exception(__METHOD__ . '. Javascript datatable variable name not defined.');			
 		}
 		$other_info = array_key_exists('other-info', $config) ? $config['other-info'] : [];
-		// $this->layout->title = strip_tags($config['caption']);
+//		$this->layout->title = strip_tags($config['caption']);
+//		$this->layout->caption = $config['caption'];
+//		$this->layout->breadcrumbs = $config['breadcrumbs'];
+//		$this->layout->right_menu = $config['right_menu'];
 		if( ! $config['form']  )
 		{
 			$form = NULL;
@@ -25,8 +30,9 @@ class DatatableController extends \Commons\IBlinkController
 		}
 		return view($config['view'], [
 			'dt'   		=> Table::create($config),
-			'toolbar' 	=> \View::make($config['toolbar'])->with($other_info)->render(),
+			'toolbar' 	=> view($config['toolbar'])->with($other_info)->render(),
 			'form'      => $form,
+			'breadcrumbs' => $config['breadcrumbs']
 		] + $other_info);
 	}
 

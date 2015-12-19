@@ -29,23 +29,23 @@ class Datatable
 	public function __construct()
 	{
 		$this->styles = new Collection();
-		$this->addStyleFile('~libs/packages/datatables/css/1.10.4/datatable.css');
-		$this->addStyleFile('~libs/packages/datatables/css/1.10.4/dataTables.bootstrap.css');
+		$this->addStyleFile('packages/datatables/css/1.10.4/datatable.css');
+		$this->addStyleFile('packages/datatables/css/1.10.4/dataTables.bootstrap.css');
 		
-		$this->addStyleFile('~libs/customs/css/font-awesome.min.css');
-		$this->addStyleFile('~libs/customs/css/ionicons.min.css');
-		$this->addStyleFile('~libs/customs/css/admin-lte.css');
-		$this->addStyleFile('~libs/customs/css/skins.css');
-		$this->addStyleFile('~libs/customs/css/index.css');
-		$this->addStyleFile('~libs/customs/css/dt.css');
-		$this->addStyleFile('~libs/customs/css/toolbar.css');
-		$this->addStyleFile('~libs/customs/css/dtform.css');
-		$this->addStyleFile('~libs/customs/css/new-admin.css');
-		$this->addStyleFile('~libs/customs/css/global.css');
+		$this->addStyleFile('customs/css/font-awesome.min.css');
+		$this->addStyleFile('customs/css/ionicons.min.css');
+		$this->addStyleFile('customs/css/admin-lte.css');
+		$this->addStyleFile('customs/css/skins.css');
+		$this->addStyleFile('customs/css/index.css');
+		$this->addStyleFile('customs/css/dt.css');
+		$this->addStyleFile('customs/css/toolbar.css');
+		$this->addStyleFile('customs/css/dtform.css');
+		$this->addStyleFile('customs/css/new-admin.css');
+		$this->addStyleFile('customs/css/global.css');
 
 		$this->scripts = new Collection();
-		$this->addScriptFile('~libs/packages/datatables/js/1.10.4/datatable.js');
-		$this->addScriptFile('~libs/packages/datatables/js/1.10.4/dataTables.bootstrap.js');
+		$this->addScriptFile('packages/datatables/js/1.10.4/datatable.js');
+		$this->addScriptFile('packages/datatables/js/1.10.4/dataTables.bootstrap.js');
 		// $this->addScriptFile('___new-admin/packages/datatables/js/1.10.4/dataTables.bootstrap.js');
 	}
 

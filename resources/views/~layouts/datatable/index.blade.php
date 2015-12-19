@@ -1,11 +1,12 @@
-@extends ('layouts.master')
+@extends ('~layouts.template.layout')
 
 @section('content')
+	<a class="action-insert-record"> Adaugă persoana</a>
 
 @yield('before-table-row')
 <div class="row">
 	<div class="col-xs-12">
-		<div class="box box-solid box-default box-dt" id="box-{{$dt->id()}}">
+		<div class="box box-solid box-default box-dt" id="box-{!! $dt->id() !!}" >
 			@if( $dt->caption() )
 				<div class="box-header">
 					<div class="row">
@@ -19,7 +20,7 @@
 					@if( ! empty($toolbar) )
 					<div class="row">
 						<div class="col-xs-12">
-							<div style="border-top:1px solid #d2d6de; padding-top:1px" class="dt-toolbar-container">{{$toolbar}}</div>
+							<div style="border-top:1px solid #d2d6de; padding-top:1px" class="dt-toolbar-container">{!! $toolbar!!}</div>
 						</div>
 					</div>
 					@endif <!-- /toolbar -->
@@ -31,7 +32,7 @@
 				<!-- Filter --><div class="dt-filter-row row"><div class="col-xs-12">@yield('filter-form')</div></div><!-- /Filter -->
 				<!-- Insert/Update/Delete Form -->
 				@if($form)
-				<div class="dt-form-container" id="form-{{$dt->id()}}">
+				<div class="dt-form-container" id="form-{!! $dt->id()!!}" style="display: none;">
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="box box-solid box-default">
@@ -68,19 +69,18 @@
 
 @section('custom-scripts')
 	{!! $dt->scripts() !!}
-	{!! HTML::script('~libs/customs/js/~commons.js') !!}
 	<script>
 	$(document).ready(function(){
 		{!! $dt->init() !!}
 
 		@if($form)
 			var form = new DTFORM(
-				"#form-{{$dt->id()}}", 
-				"{{URL::route('datatable-load-form', ['id' => $dt->id()])}}", 
-				'{{$form->model()}}', 
-				"{{URL::route('datatable-do-action', ['id' => $dt->id()])}}", 
-				eval('{{$dt->name()}}'),
-				"{{csrf_token()}}"
+				"#form-{!! $dt->id()!!}",
+				"{!! URL::route('datatable-load-form', ['id' => $dt->id()])!!}",
+				'{!! $form->model()!!}',
+				"{!! URL::route('datatable-do-action', ['id' => $dt->id()])!!}",
+				eval('{!! $dt->name()!!}'),
+				"{!! csrf_token()!!}"
 			);
 		@endif
 		/**
@@ -92,14 +92,6 @@
 			t.draw(false);
 		});
 
-		var iBlinkApp = new iBlinkCommons({
-			datatable : dt,
-			token     : '{{csrf_token()}}',
-			endpoints : 
-				{
-					'get-year-semestres' : "{{URL::route('get-year-semestres')}}"
-				}
-		});
 		@yield('datatable-specific-page-jquery-initializations')
 	});
 	</script>

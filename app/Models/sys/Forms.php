@@ -9,6 +9,7 @@ class Forms
 	protected $forms =[];
 
 	protected $maps = [
+		'institutions' => 'App\Http\Controllers\Institutions\InstitutionsRules',
 	];
 
 	public function __construct($id)

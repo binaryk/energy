@@ -12,6 +12,7 @@ class Grids {
 	protected $grids = [];
 
 	protected $maps = [
+		'institutions' 		=> '\App\Http\Controllers\Institutions\InstitutionsGrid',
 	];
 
 	public function __construct($id) {

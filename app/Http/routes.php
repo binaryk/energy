@@ -36,3 +36,4 @@ $router->group(['namespace' => 'Backend'], function () use ($router) {
 });
 
 Route::resource('institutions', 'InstitutionsController');
+System\Route::make()->define();

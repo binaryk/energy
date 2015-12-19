@@ -1,0 +1,26 @@
+#frm-beneficiari-nirc .form-group {
+  float: left;
+}
+#frm-beneficiari-nirc .form-group:nth-child(1) {
+  width: 22%;
+}
+#frm-beneficiari-nirc .form-group:nth-child(2) {
+  width: 24%;
+}
+#frm-beneficiari-nirc .form-group:nth-child(3) {
+  width: 24%;
+}
+#frm-beneficiari-nirc .form-group:nth-child(4) {
+  width: 30%;
+}
+
+#form-beneficiari .box-date-generale .box-header, #form-beneficiari .box-date-tip .box-header {
+  padding: 0px 0px 0px 0px;
+}
+#form-beneficiari .box-date-generale .box-header .box-title, #form-beneficiari .box-date-tip .box-header .box-title {
+  padding: 4px 10px 4px 20px;
+}
+#form-beneficiari .box-date-generale .box-header .box-tools, #form-beneficiari .box-date-tip .box-header .box-tools {
+  padding-top: 1px;
+  padding-bottom: 0px;
+}
