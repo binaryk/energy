@@ -10,14 +10,12 @@ use App\Models\Institution;
 
 class InstitutionsController extends Controller
 {
-    public function __construct(){
-        $this->middleware('jwt.auth', ['except' => ['authenticate']]);
-    }
+     
      
     public function index()
     {
         $institutions = Institution::all();
-        return $institutions;
+        return view('energetic.institutions.institution')->with('institutions', $institutions);
     }
 
     public function create()
