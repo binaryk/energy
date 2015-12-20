@@ -1,14 +1,14 @@
-<?php namespace App\Http\Controllers\Institutions;
+<?php namespace App\Http\Controllers\Buildings;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Institution;
+use App\Models\Build;
 use System\DatatableController;
 use System\Grids;
 
-class InstitutionsController extends DatatableController
+class BuildingsController extends DatatableController
 {
     protected $layout = '~layouts.template.layout';
 
@@ -18,23 +18,23 @@ class InstitutionsController extends DatatableController
     }
 
     public function index($type = NULL, $edit = NULL){
-        $config = Grids::make('institutions')->toIndexConfig('institutions');
+        $config = Grids::make('buildings')->toIndexConfig('buildings');
         $config['row-source'] .= $type ? '/'.$type  : '';
         $config['breadcrumbs'] = [
             [
-                'name' => 'Instituții',
-                'route'  => 'institutions_index',
+                'name' => 'Clădiri',
+                'route'  => 'buildings_index',
                 'ids' => ''
             ],
         ];
         $content = $this->show( $config + ['other-info' => ['test' => '54864',]] );
-       return $this->setPageContent($content);
+        return $this->setPageContent($content);
     }
 
     public function rows($id, $type = NULL){
         $config = Grids::make($id)->toRowDatasetConfig($id);
         $filters = $config['source']->custom_filters();
-        // $config['source']->custom_filters( $filters + [ 'test' => 'institutions.infrastructure_id = 1' ] );
+        // $config['source']->custom_filters( $filters + [ 'test' => 'buildings.institution_id = 1' ] );
         return $this->dataset( $config );
     }
 }

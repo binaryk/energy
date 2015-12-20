@@ -11,7 +11,7 @@ class CreateCountersTable extends Migration
         {
             $table->increments('id');
             $table->integer('build_id');
-            $table->integer('code_counter');
+            $table->integer('name');
             $table->string('type_utility');
             $table->string('name_supplier');
             $table->integer('code_client');
