@@ -1,7 +1,6 @@
 @extends ('~layouts.template.layout')
 
 @section('content')
-	<a class="action-insert-record"> Adaugă persoana</a>
 
 @yield('before-table-row')
 <div class="row">
@@ -11,7 +10,9 @@
 				<div class="box-header">
 					<div class="row">
 						<div class="col-xs-12">
-							<h3 class="box-title">{!! $dt->caption() !!}</h3>
+							<h3 class="box-title">{!! $dt->caption() !!}
+							<a type="button" class="action-insert-record pull-right btn btn-default btn-outline"> Adaugă instituție</a>
+							</h3>
 							<div class="title-actions pull-right">@yield('header-actions')</div>
 							<div class="clearfix"></div>
 						</div>
@@ -20,7 +21,7 @@
 					@if( ! empty($toolbar) )
 					<div class="row">
 						<div class="col-xs-12">
-							<div style="border-top:1px solid #d2d6de; padding-top:1px" class="dt-toolbar-container">{!! $toolbar!!}</div>
+							<div style="border-top:1px solid #d2d6de; padding-top:1px" class="dt-toolbar-container ">{!! $toolbar!!}</div>
 						</div>
 					</div>
 					@endif <!-- /toolbar -->
@@ -32,27 +33,24 @@
 				<!-- Filter --><div class="dt-filter-row row"><div class="col-xs-12">@yield('filter-form')</div></div><!-- /Filter -->
 				<!-- Insert/Update/Delete Form -->
 				@if($form)
-				<div class="dt-form-container" id="form-{!! $dt->id()!!}" style="display: none;">
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="box box-solid box-default">
-								<div class="box-header"><h3 id="action-title" class="box-title">-</h3>
-									<div class="box-tools pull-right">
-                    					<button class="btn btn-sm btn-close-form" data-widget="remove"><i class="fa fa-times"></i></button>
-                  					</div>
-								</div>
-								<div class="box-body">{!!$form->showForm()!!}</div>
-								<div class="box-footer">
-									<div class="row">
-										<div class="col-xs-12">
-											<button data-action="" class="btn btn-primary btn-do-action">Primary</button>
-										</div>
-									</div>
-								</div>
+				
+				<div class="card bg-white dt-form-container" id="form-{!! $dt->id()!!}" style="display: none;"> 
+		          <div class="card-header">
+					<button class="btn btn-sm btn-close-form box-tools pull-right" data-widget="remove"><i class="fa fa-times"></i></button>
+		            <h5 id="action-title" class="box-title"></h5>
+
+		          </div>
+		          <div class="card-block">
+	          		{!!$form->showForm()!!}
+		          </div>
+		          <div class="box-footer">
+						<div class="row">
+							<div class="col-xs-12">
+								<button data-action="" class="btn btn-primary btn-do-action">Primary</button> 
 							</div>
 						</div>
 					</div>
-				</div>
+		        </div>
 				@endif
 				<!-- Form -->
 				<!-- datatable -->{!! $dt->table() !!}<!-- /datatable -->
@@ -63,7 +61,7 @@
 </div>
 @stop
 
-@section('custom-styles')
+@section('scripts_grids')
 	{!! $dt->styles() !!}
 @stop
 

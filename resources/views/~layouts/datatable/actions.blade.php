@@ -5,7 +5,7 @@
             Actiuni </span>
         <i class="fa fa-angle-down"></i>
     </a>
-    <ul class="dropdown-menu pull-right bg-list-menu">
+    <ul class="dropdown-menu bg-list-menu" style="min-width: 110px">
         @yield('actions-items')
     </ul>
 </div>

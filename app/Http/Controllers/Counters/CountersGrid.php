@@ -1,21 +1,21 @@
-<?php namespace App\Http\Controllers\Institutions;
+<?php namespace App\Http\Controllers\Counters;
 use System\GridsRecord;
 
-class InstitutionsGrid extends GridsRecord
+class CountersGrid extends GridsRecord
 {
 
     public function __construct($id)
     {
         parent::__construct($id);
-        $this->view           = 'institutions.index';
+        $this->view           = 'counters.index';
         $this->icon           = 'admin/img/icons/dt/settings.png';
-        $this->caption        = 'Lista Institutii';
-        $this->toolbar        = 'institutions.toolbar';
+        $this->caption        = 'Lista Contoare';
+        $this->toolbar        = 'counters.toolbar';
         $this->name           = 'dt';
         $this->display_start  = 0;
         $this->display_length = 10;
         $this->default_order  = "1,'asc'";
-        $this->form           = 'App\Http\Controllers\Institutions\InstitutionsForm';
+        $this->form           = 'App\Http\Controllers\Counters\CountersForm';
         $this->css            = 'packages/datatables/css/1.10.4/datatable.css,
                               packages/datatables/css/1.10.4/dataTables.bootstrap.css,
                               admin/css/dt/dt.css,
@@ -23,13 +23,13 @@ class InstitutionsGrid extends GridsRecord
                               admin/css/dt/dtform.css,
                                        ';
         $this->js             = 'admin/js/libraries/form/dtform.js';
-        $this->row_source     = 'institutions_index_row_source';
+        $this->row_source     = 'counters_index_row_source';
         $this->rows_source_sql 				= 'SELECT
                                                 *
-                                                FROM institutions
+                                                FROM counters
                                                 :where: :order:';
-        $this->count_filtered_records_sql 	= 'SELECT COUNT(*) as cnt FROM institutions :where:';
-        $this->count_total_records_sql     	= 'SELECT COUNT(*) AS cnt FROM institutions';
+        $this->count_filtered_records_sql 	= 'SELECT COUNT(*) as cnt FROM counters :where:';
+        $this->count_total_records_sql     	= 'SELECT COUNT(*) AS cnt FROM counters';
         $this->columns        = [
             '1' => [
                 'id'        => '#',
@@ -45,18 +45,45 @@ class InstitutionsGrid extends GridsRecord
                 'orderable' => 'yes',
                 'class'     => 'td-align-left',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Nume institutie', 'style'   => 'width:90%',],
+                'header'    => ['caption' => 'Cod Contor', 'style'   => 'width:75%',],
                 'type'      => 'field',
                 'source'    => 'name',//numele coloanei din tabelul din BD
             ],
             '3' => [
+                'id'        => 'type_utility',
+                'orderable' => 'no',
+                'class'     => 'td-align-center',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Tip Utilizare', 'style'   => 'width:11%',],
+                'type'      => 'field',
+                'source'    => 'type_utility',//numele coloanei din tabelul din BD
+            ],
+            '4' => [
+                'id'        => 'name_supplier',
+                'orderable' => 'no',
+                'class'     => 'td-align-center',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Denumire Furnizor', 'style'   => 'width:4%',],
+                'type'      => 'field',
+                'source'    => 'name_supplier',//numele coloanei din tabelul din BD
+            ],
+            '5' => [
+                'id'        => 'code_client',
+                'orderable' => 'no',
+                'class'     => 'td-align-center',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Cod Client', 'style'   => 'width:4%',],
+                'type'      => 'field',
+                'source'    => 'code_client',//numele coloanei din tabelul din BD
+            ],
+            '6' => [
                 'id'        => 'action',
                 'orderable' => 'no',
                 'class'     => 'td-align-center td-actions',
                 'visible'   => 'yes',
                 'header'    => ['caption' => 'Acțiuni', 'style'   => 'width:7%',],
                 'type'      => 'view',
-                'source'    => 'institutions.~actions',
+                'source'    => 'counters.~actions',
             ],
         ];
          $this->fields = [
@@ -75,7 +102,7 @@ class InstitutionsGrid extends GridsRecord
 
     public static function create()
     {
-        return self::$instance = new InstitutionsGrid('institutions');
+        return self::$instance = new CountersGrid('counters');
     }
 
 }

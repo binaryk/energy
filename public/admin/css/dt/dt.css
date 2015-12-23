@@ -36,19 +36,19 @@
   margin-bottom: 0px;
 }
 .dt-container .dt-tb-right {
-  background-color: #fff;
+  background-color: transparent;
 }
 .dt-container .dt-tb-right .dataTables_paginate {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   border: none !important;
-  background-color: #fff;
+  background-color: transparent;
 }
 .dt-container .dt-tb-right .dataTables_paginate ul.pagination {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   border: none !important;
-  background-color: #fff;
+  background-color: transparent;
 }
 .dt-container .dt-tb-right .dataTables_paginate ul.pagination .paginate_button, .dt-container .dt-tb-right .dataTables_paginate ul.pagination .paginate_button.active {
   margin: 0px 0px 0px 0px;
@@ -60,7 +60,7 @@
 .dt-container .dt-tb-right .dataTables_paginate ul.pagination .paginate_button a, .dt-container .dt-tb-right .dataTables_paginate ul.pagination .paginate_button span, .dt-container .dt-tb-right .dataTables_paginate ul.pagination .paginate_button.active a, .dt-container .dt-tb-right .dataTables_paginate ul.pagination .paginate_button.active span {
   padding: 4px 10px;
   margin-left: -1px;
-  background-color: #fff;
+  background-color: transparent;
   border: 1px solid #ddd;
   box-shadow: none;
   height: 30px !important;
@@ -118,7 +118,7 @@
 .dt-container table.dataTable tbody td.td-align-left {
   text-align: left;
 }
-.dt-container table.dataTable tbody td.td-align-center {
+.dt-container table.dataTable tbody td.td-align-center,.dt-container table.dataTable thead th.td-align-center {
   text-align: center;
 }
 .dt-container table.dataTable td, .dt-container table.dataTable th {

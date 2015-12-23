@@ -1,14 +1,14 @@
-<?php namespace App\Http\Controllers\Institutions;
+<?php namespace App\Http\Controllers\Counters;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Institution;
+use App\Models\Counter;
 use System\DatatableController;
 use System\Grids;
 
-class InstitutionsController extends DatatableController
+class CountersController extends DatatableController
 {
     protected $layout = '~layouts.template.layout';
 
@@ -18,12 +18,12 @@ class InstitutionsController extends DatatableController
     }
 
     public function index($type = NULL, $edit = NULL){
-        $config = Grids::make('institutions')->toIndexConfig('institutions');
+        $config = Grids::make('counters')->toIndexConfig('counters');
         $config['row-source'] .= $type ? '/'.$type  : '';
         $config['breadcrumbs'] = [
             [
-                'name' => 'Instituții',
-                'route'  => 'institutions_index',
+                'name' => 'Contoare',
+                'route'  => 'counters_index',
                 'ids' => ''
             ],
         ];
@@ -34,7 +34,7 @@ class InstitutionsController extends DatatableController
     public function rows($id, $type = NULL){
         $config = Grids::make($id)->toRowDatasetConfig($id);
         $filters = $config['source']->custom_filters();
-        // $config['source']->custom_filters( $filters + [ 'test' => 'institutions.infrastructure_id = 1' ] );
+        // $config['source']->custom_filters( $filters + [ 'test' => 'counters.infrastructure_id = 1' ] );
         return $this->dataset( $config );
     }
 }

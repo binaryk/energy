@@ -1,7 +1,7 @@
-<?php namespace App\Http\Controllers\Institutions;
+<?php namespace App\Http\Controllers\Buildings;
 use System\FormsRecord;
 
-class InstitutionsRules extends FormsRecord
+class BuildingsRules extends FormsRecord
 {
 
     public function __construct($id)
@@ -29,7 +29,7 @@ class InstitutionsRules extends FormsRecord
 
     public static function create()
     {
-        return self::$instance = new InstitutionsRules('institutions');
+        return self::$instance = new BuildingsRules('buildings');
     }
 
 }
