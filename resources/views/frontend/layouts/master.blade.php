@@ -1,48 +1,56 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="_token" content="{{ csrf_token() }}" />
-        <title>@yield('title', app_name())</title>
-        <meta name="description" content="@yield('meta_description', 'Default Description')">
-        <meta name="author" content="@yield('author', 'Anthony Rappa')">
-        @yield('meta')
+<head>
+    <meta charset="utf-8">
+    <title>Reactor - Bootstrap Admin Template</title>
+    <meta name="description" content="">
+    <meta name="csrf_token" content="{!! csrf_token() !!}"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <!-- page stylesheets -->
+    <!-- end page stylesheets -->
+    <!-- build:css({.tmp,app}) styles/app.min.css -->
+    <link rel="stylesheet" href="{!! asset('template/styles/webfont.css')!!}">
+    <link rel="stylesheet" href="{!! asset('template/styles/climacons-font.css')!!}">
+    <link rel="stylesheet" href="{!! asset('template/vendor/bootstrap/dist/css/bootstrap.css')!!}">
+    <link rel="stylesheet" href="{!! asset('template/styles/font-awesome.css')!!}">
+    <link rel="stylesheet" href="{!! asset('template/styles/card.css')!!}">
+    <link rel="stylesheet" href="{!! asset('template/styles/sli.css')!!}">
+    <link rel="stylesheet" href="{!! asset('template/styles/animate.css')!!}">
+    <link rel="stylesheet" href="{!! asset('template/styles/app.css')!!}">
+    <link rel="stylesheet" href="{!! asset('template/styles/app.skins.css')!!}">
+    <!-- endbuild -->
 
-        @yield('before-styles-end')
-        {!! HTML::style(elixir('css/frontend.css')) !!}
-        @yield('after-styles-end')
+    @yield('custom-styles')
+    @yield('scripts_grids')
+</head>
+<body>
+@include('includes.partials.messages')
+@yield('content')
+</body>
+<!-- build:js({.tmp,app}) scripts/app.min.js -->
+<script src="{!! asset('template/scripts/helpers/modernizr.js')!!}"></script>
+<script src="{!! asset('template/vendor/jquery/dist/jquery.js')!!}"></script>
+<script src="{!! asset('template/vendor/bootstrap/dist/js/bootstrap.js')!!}"></script>
+<script src="{!! asset('template/vendor/fastclick/lib/fastclick.js')!!}"></script>
+<script src="{!! asset('template/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.js')!!}"></script>
+<script src="{!! asset('template/scripts/helpers/smartresize.js')!!}"></script>
+<script src="{!! asset('template/scripts/constants.js')!!}"></script>
+<script src="{!! asset('template/scripts/main.js')!!}"></script>
+<!-- endbuild -->
+<!-- initialize page scripts -->
+<script src="{!! asset('template/scripts/helpers/sameheight.js')!!}"></script>
+<!-- end initialize page scripts -->
+<script>
+    var token = $('meta[name="csrf_token"]').attr('content');
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': token,
+            'X-XSRF-TOKEN': token
+        },
+        '_token' : token,
+        async    : false
+    });
+</script>
+@yield('custom-scripts')
 
-        <!-- Fonts -->
-        <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-
-        <!-- Icons-->
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-
-        {!! HTML::script("js/vendor/modernizr-2.8.3.min.js") !!}
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        @include('frontend.includes.nav')
-
-        <div class="container-fluid">
-            @include('includes.partials.messages')
-            @yield('content')
-        </div><!-- container -->
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{{asset('js/vendor/jquery-1.11.2.min.js')}}"><\/script>')</script>
-        {!! HTML::script('js/vendor/bootstrap.min.js') !!}
-
-        @yield('before-scripts-end')
-        {!! HTML::script(elixir('js/frontend.js')) !!}
-        @yield('after-scripts-end')
-
-        @include('includes.partials.ga')
-    </body>
 </html>
