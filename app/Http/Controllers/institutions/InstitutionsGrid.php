@@ -62,7 +62,10 @@ class InstitutionsGrid extends GridsRecord
         $this->fields = [
             'fields'      => '',
             'searchables' => 'id, name',
-            'orderables'  => [],//[1 => "id"],
+            'orderables'  => [
+                1 => 'id',
+                2 => 'name'
+            ],//[1 => "id"],
         ];
         $this->filters = [
             'deleted' => 'deleted_at is null',

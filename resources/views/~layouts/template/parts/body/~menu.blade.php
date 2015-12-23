@@ -8,7 +8,7 @@
           </a>
            <ul class="sub-menu">
             <li>
-              <a href="{{URL('/institutions') }}">
+              <a href="{{URL('/institutii') }}">
                 <span>Gradinite</span>
               </a>
             </li>
