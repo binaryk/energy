@@ -1,58 +1,46 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-	<div class="row">
-
-		<div class="col-md-8 col-md-offset-2">
-
-			<div class="panel panel-default">
-				<div class="panel-heading">{{ trans('labels.register_box_title') }}</div>
-
-				<div class="panel-body">
-
-					{!! Form::open(['to' => 'auth/register', 'class' => 'form-horizontal', 'role' => 'form']) !!}
-
-						<div class="form-group">
-							{!! Form::label('name', trans('validation.attributes.name'), ['class' => 'col-md-4 control-label']) !!}
-							<div class="col-md-6">
-								{!! Form::input('name', 'name', old('name'), ['class' => 'form-control']) !!}
-							</div>
+	<div class="app signup v2 usersession">
+		<div class="session-wrapper">
+			<div class="session-carousel slide" data-ride="carousel" data-interval="3000">
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active" style="background-image:url(http://lorempixel.com/1200/800);background-size:cover;background-repeat: no-repeat;background-position: 50% 50%;">
+					</div>
+					<div class="item" style="background-image:url(http://lorempixel.com/1200/800?2);background-size:cover;background-repeat: no-repeat;background-position: 50% 50%;">
+					</div>
+					<div class="item" style="background-image:url(http://lorempixel.com/1200/800?3);background-size:cover;background-repeat: no-repeat;background-position: 50% 50%;">
+					</div>
+				</div>
+			</div>
+			<div class="card bg-white no-border">
+				<div class="card-block">
+                    {!! Form::open(['to' => 'auth/register', 'class' => 'form-horizontal', 'role' => 'form']) !!}
+						<div class="text-center m-b">
+							<h4 class="text-uppercase">Fă un cont acum</h4>
+							<p>Alăturăte comunității noastre</p>
 						</div>
-
-						<div class="form-group">
-							{!! Form::label('email', trans('validation.attributes.email'), ['class' => 'col-md-4 control-label']) !!}
-							<div class="col-md-6">
-								{!! Form::input('email', 'email', old('email'), ['class' => 'form-control']) !!}
+						<div class="form-inputs">
+							<div class="name">
+								<label class="text-uppercase">Nume</label>
+                                {!! Form::input('name', 'name', old('name'), ['class' => 'form-control input-lg']) !!}
 							</div>
+							<label class="text-uppercase">Adresa de email</label>
+                            {!! Form::input('email', 'email', old('email'), ['class' => 'form-control']) !!}
+							<label class="text-uppercase">Parola</label>
+                            {!! Form::input('password', 'password', null, ['class' => 'form-control']) !!}
+							<label class="text-uppercase">Confirmă parola</label>
+                            {!! Form::input('password', 'password_confirmation', null, ['class' => 'form-control']) !!}
 						</div>
-
-						<div class="form-group">
-							{!! Form::label('password', trans('validation.attributes.password'), ['class' => 'col-md-4 control-label']) !!}
-							<div class="col-md-6">
-								{!! Form::input('password', 'password', null, ['class' => 'form-control']) !!}
-							</div>
-						</div>
-
-						<div class="form-group">
-							{!! Form::label('password_confirmation', trans('validation.attributes.password_confirmation'), ['class' => 'col-md-4 control-label']) !!}
-							<div class="col-md-6">
-								{!! Form::input('password', 'password_confirmation', null, ['class' => 'form-control']) !!}
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								{!! Form::submit(trans('labels.register_button'), ['class' => 'btn btn-primary']) !!}
-							</div>
-						</div>
-
-					{!! Form::close() !!}
-
-				</div><!-- panel body -->
-
-            </div><!-- panel -->
-
-        </div><!-- col-md-8 -->
-
-    </div><!-- row -->
+						<button class="btn btn-primary btn-block btn-lg m-b" type="submit">Creează contul</button>
+						<p class="text-center"><small><em>Prin crearea contului accepți <a href="#">termenii și condițiile</a> platformei.</em></small>
+						</p>
+                        <p class="text-center"><a href="{!! url('auth/login') !!}" class="bottom-link">Pagina de login.</a></p>
+                    {!! Form::close() !!}
+				</div>
+			</div>
+			<div class="push"></div>
+		</div>
+	</div>
 @endsection

@@ -47,7 +47,7 @@
                 <a href="javascript:;">Help</a>
               </li>
               <li>
-                <a href="extras-signin.html">Logout</a>
+                <a href="{!! url('auth/logout') !!}">Logout</a>
               </li>
             </ul>
           </li>
