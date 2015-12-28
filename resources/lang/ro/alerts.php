@@ -15,7 +15,7 @@ return [
 
     'permissions' => [
         'created' => 'Permisiunea a fost creata cu succes.',
-        'updated' => 'Permisiunea successfully updated.',
+        'updated' => 'Permisiunea a fost actualizata cu succes.',
         'deleted' => 'Permisiunea successfully deleted.',
         'groups'  => [
             'created' => 'Permission group successfully created.',

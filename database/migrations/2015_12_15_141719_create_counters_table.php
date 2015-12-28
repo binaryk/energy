@@ -11,10 +11,10 @@ class CreateCountersTable extends Migration
         {
             $table->increments('id');
             $table->integer('build_id');
-            $table->integer('name');
-            $table->string('type_utility');
-            $table->string('name_supplier');
-            $table->integer('code_client');
+            $table->integer('code');
+            $table->string('type_utility_id')->comment('gaze naturale, electricitate, apa');
+            $table->string('provider_id');
+            $table->integer('client_code');
             $table->timestamps();
             $table->softDeletes();
             

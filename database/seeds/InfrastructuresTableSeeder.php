@@ -16,15 +16,15 @@ class InfrastructuresTableSeeder extends Seeder
     {
         Model::unguard();
 
-        DB::table('type_infrastructures')->delete();
+        DB::table('category_id')->delete();
 
         $infrastructures = array(
-                ['type' => 'kindergartens'],
-                ['type' => 'schools'],
-                ['type' => 'high schools'],
-                ['type' => 'colleges'],
-                ['type' => 'school groups'],
-                ['type' => 'public buildings'],
+                ['type' => 'Gradinite'],
+                ['type' => 'Scoli generale'],
+                ['type' => 'Licee'],
+                ['type' => 'Colegii'],
+                ['type' => 'Grupuri scolare'],
+                ['type' => 'Cladiri publice'],
         );
 
         foreach ($infrastructures as $infrastructure)

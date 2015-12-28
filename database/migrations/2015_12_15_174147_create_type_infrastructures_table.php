@@ -7,19 +7,19 @@ class CreateTypeInfrastructuresTable extends Migration
 {
   public function up()
     {
-        Schema::create('type_infrastructures', function($table)
+        Schema::create('power_type', function($t)
         {
-            $table->increments('id');
-            $table->string('type');
-            $table->timestamps();
-            $table->softDeletes();
+            $t->increments('id');
+            $t->string('name');
+            $t->timestamps();
+            $t->softDeletes();
             
         });
     }
     
     public function down()
     {
-        Schema::dropIfExists('type_infrastructures');
+        Schema::dropIfExists('power_type');
     }
     
 }
