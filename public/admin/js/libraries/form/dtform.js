@@ -369,6 +369,10 @@ function DTFORM(formid, loadformurl, model, doactionurl, dt)
 			self.hideform();
 		});
 
+		$(document).on( 'keyup', 'input' , function(){
+			$(self.classDoButton).removeClass('disabled');
+		});
+
 		$(document).find('.input-group > ' + this.inputTypeCheckbox ).closest('.input-group').on('mouseover mouseout click', this, function(event) {
 			var label = $(this).siblings('label');
 			switch(event.type) {
