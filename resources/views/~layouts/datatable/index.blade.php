@@ -1,7 +1,6 @@
 @extends ('~layouts.template.layout')
 
 @section('content')
-
 @yield('before-table-row')
 <div class="row">
 	<div class="col-xs-12">
@@ -11,7 +10,7 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<h3 class="box-title">{!! $dt->caption() !!}
-							<a type="button" class="action-insert-record pull-right btn btn-default btn-outline"> Adaugă instituție</a>
+							<a type="button" class="action-insert-record pull-right btn btn-default btn-outline"> Adaugă </a>
 							</h3>
 							<div class="title-actions pull-right">@yield('header-actions')</div>
 							<div class="clearfix"></div>
@@ -37,7 +36,7 @@
 				<div class="card bg-white dt-form-container" id="form-{!! $dt->id()!!}" style="display: none;"> 
 		          <div class="card-header">
 					<button class="btn btn-sm btn-close-form box-tools pull-right" data-widget="remove"><i class="fa fa-times"></i></button>
-		            <h5 id="action-title" class="box-title"></h5>
+		            <span id="action-title" class="box-title"></span>
 
 		          </div>
 		          <div class="card-block">

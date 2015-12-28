@@ -1,7 +1,8 @@
 @extends('~layouts.datatable.index')
 
-@section('custom-styles')
-@stop
+@section('title')
+    Institutii
+@endsection
 
 @section('datatable-specific-page-jquery-initializations')
 

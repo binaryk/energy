@@ -6,6 +6,8 @@
 <script src="{!! asset('template/scripts/helpers/smartresize.js')!!}"></script>
 <script src="{!! asset('template/scripts/constants.js')!!}"></script>
 <script src="{!! asset('template/scripts/main.js')!!}"></script>
+
+<script src="{!! asset('custom/js/utils/math.js')!!}"></script>
 <!-- end page scripts -->
 <script>
     var token = $('meta[name="csrf_token"]').attr('content');

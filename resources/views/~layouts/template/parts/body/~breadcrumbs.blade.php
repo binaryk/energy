@@ -2,9 +2,11 @@
 	<li>
 		<a href="{{URL::to('/') }}">
 			<i class="icon-home"></i>
-			Acasă</a>
+			Acasă
+		</a>
 
 	</li>
+
 @if( isset($breadcrumbs) )
 	@foreach($breadcrumbs as $key => $breadcrumb)
 		<li>

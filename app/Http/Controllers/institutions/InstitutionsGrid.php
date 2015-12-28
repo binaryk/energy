@@ -9,7 +9,7 @@ class InstitutionsGrid extends GridsRecord
         parent::__construct($id);
         $this->view           = 'institutions.index';
         $this->icon           = 'admin/img/icons/dt/settings.png';
-        $this->caption        = 'Lista Institutii';
+        $this->caption        = 'Lista ';
         $this->toolbar        = 'institutions.toolbar';
         $this->name           = 'dt';
         $this->display_start  = 0;
@@ -19,7 +19,6 @@ class InstitutionsGrid extends GridsRecord
         $this->css            = 'packages/datatables/css/1.10.4/datatable.css,
                               packages/datatables/css/1.10.4/dataTables.bootstrap.css,
                               admin/css/dt/dt.css,
-                              admin/css/dt/toolbar.css,
                               admin/css/dt/dtform.css,
                                        ';
         $this->js             = 'admin/js/libraries/form/dtform.js';

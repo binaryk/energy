@@ -1,99 +1,91 @@
-<?php
-namespace System;
+<?php namespace System;
 
-class Sidebar {
+use App\Models\Institution;
+
+class Sidebar
+{
 
 	protected static $instance = NULL;
 
 	protected $sidebar = [
-		'principal' => [
+		'institutii' => [
 			'header' => [
-				'caption' => 'Principala',
-				'icon' => 'icon-home',
+				'caption' => 'Institutii publice',
+				'icon'    => 'icon-globe-alt',
+			    'childs'  => '6',
 			],
 			'options' => [],
-			'active' => [],
-		],
-		'persoane_fizice' => [
-			'header' => [
-				'caption' => 'Persoane fizice',
-				'icon' => 'icon-user',
-			],
-			'options' => [],
-			'active' => ['persoane=fizice*'],
-		],
-		'date-baza' => [
-			'header' => [
-				'caption' => 'Nomenclator',
-				'icon' => 'icon-folder ',
-			],
-			'options' => [],
-			'active' => ['nomenclatoare/tip_intermediar', 'nomenclatoare/tip_categorie_imobil', 'nomenclatoare/tip_stadii_ansamblu', 'nomenclatoare/tip_imobile', 'nomenclatoare/judet'],
+			'active'  => ['institutii*'],
 		],
 
 	];
 
-	protected function addOption($group, $url, $caption, $icon) {
+	protected function addOption($group, $url, $caption, $icon, $active = false)
+	{
 		$this->sidebar[$group]['options'][] = [
-			'url' => $url,
+			'url'     => $url,
 			'caption' => $caption,
-			'icon' => $icon,
+			'icon'    => $icon,
+			'active'  => true
 		];
-
 		return $this;
 	}
 
-	public function __construct() {
-		$this
-//			->addOption('date-baza', \URL::route('datatable-index', ['id' => 'tip_intermediar']), 'Tipuri de intermediari', 'fa-circle-o')
-		;
+	public function __construct()
+	{
+        foreach(Institution::categories() as $k => $category){
+            $this->addOption('institutii', route('institutions_index',['type' => $k]), $category, 'user-plus', '/institutii/1');
+        }
 	}
 
-	public static function make() {
+	public static function make()
+	{
 		return self::$instance = new Sidebar();
 
 	}
 
-	public function OutGroupHeader($header) {
-		return '<a href="javascript:;">
-		<i class="' . $header['icon'] . '"></i>
-		<span class="title">' . $header['caption'] . '</span>
-		<span class="selected"></span>
-		<span class="arrow open"></span>
-		</a>';
-
-//		return '<a href="#"><i class="fa ' . $header['icon'] . '"></i><span>' . $header ['caption'] . '</span><i class="fa fa-angle-left pull-right"></i></a>';
+	public function OutGroupHeader( $header )
+	{
+		return '<a href="javascript:;"><span class="badge pull-right">'. $header['childs'] .'</span>&nbsp;<i class="' . $header['icon'] . '"></i><span>' . $header ['caption'] . '</span></a>';
 	}
 
-	public function OutOption($option) {
-		return '<li><a href="' . $option['url'] . '"><i class="fa ' . $option['icon'] . '"></i><span>' . $option['caption'] . '</span></a></li>';
+	public function OutOption( $option )
+	{
+		return '<li><a class="' . ( $option['active'] ? 'bar-selected' : '') . '" href="' . $option['url'] . '"><i class="fa ' . $option['icon'] . '"></i><span>' . $option['caption'] . '</span></a></li>';
 	}
 
-	protected function _active($actives) {
+	protected function _active($actives)
+	{
 		$result = '';
-		foreach ($actives as $i => $item) {
-			if (\Request::is($item)) {
-				return ' active open';
+		foreach($actives as $i => $item)
+		{
+			if(\Request::is($item))
+			{
+				return ' active selected open';
 			}
 		}
 		return $result;
 	}
 
-	public function OutGroup($group) {
-		$result = $this->OutGroupHeader($group['header']);
+	public function OutGroup($group)
+	{
+		$result = $this->OutGroupHeader( $group['header'] );
 		$result .= '<ul class="sub-menu">';
-		foreach ($group['options'] as $key => $option) {
+		foreach($group['options'] as $key => $option)
+		{
 			$result .= $this->OutOption($option);
 		}
 		$result .= '</ul>';
 		return $result;
 	}
 
-	public function Out() {
+	public function Out()
+	{
 
 		$result = '';
-		foreach ($this->sidebar as $key => $group) {
-			$result .= '<li class="start' . $this->_active($group['active']) . '">' . $this->OutGroup($group) . '</li>';
+		foreach($this->sidebar as $key => $group)
+		{
+			$result .= '<li class="' . $this->_active($group['active'])  . '">' . $this->OutGroup($group) . '</li>';
 		}
 		return $result;
 	}

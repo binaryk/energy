@@ -5,6 +5,11 @@ use App\Http\Controllers\BaseController;
 class DatatableController extends BaseController
 {
 
+	protected function setPageContent($content)
+	{
+		return view($this->layout, ['content' => $content]);
+	}
+
 	public function show($config)
 	{
 		if( empty($config['view']) )
@@ -33,7 +38,7 @@ class DatatableController extends BaseController
 			'toolbar' 	=> view($config['toolbar'])->with($other_info)->render(),
 			'form'      => $form,
 			'breadcrumbs' => $config['breadcrumbs']
-		] + $other_info);
+		] + $other_info)  ;
 	}
 
 	public function dataset($config)

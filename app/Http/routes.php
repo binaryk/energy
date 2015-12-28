@@ -37,7 +37,6 @@ $router->group(['namespace' => 'Backend'], function () use ($router) {
 
 
 $router->group(['middleware' => 'auth'], function () use ($router) {
-    Route::resource('institutions', 'InstitutionsController');
     System\Route::make()->define();
 });
 

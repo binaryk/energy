@@ -39,4 +39,16 @@ class Institution extends Model
 		}
 		return $record->delete();
 	}
+
+	public static function categories()
+	{
+		return [
+			'1' => 'Gradinite',
+			'2' => 'Scoli generale',
+			'3' => 'Licee',
+			'4' => 'Colegii',
+			'5' => 'Grupuri scolare',
+			'6' => 'Cladiri publice'
+		];
+	}
 }

@@ -1,0 +1,9 @@
+@import "form/main";
+@import "tables/main";
+$bw: white;
+
+body{
+  .app.layout-fixed-header,.main-panel{
+    background-color: $bw;
+  }
+}

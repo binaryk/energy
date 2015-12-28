@@ -16,7 +16,7 @@ class InfrastructuresTableSeeder extends Seeder
     {
         Model::unguard();
 
-        DB::table('category_id')->delete();
+        DB::table('power_type')->delete();
 
         $infrastructures = array(
                 ['type' => 'Gradinite'],

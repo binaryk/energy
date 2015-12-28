@@ -32,9 +32,9 @@ class Datatable
 		$this->addStyleFile('packages/datatables/css/1.10.4/datatable.css');
 		$this->addStyleFile('packages/datatables/css/1.10.4/dataTables.bootstrap.css');
 		
-		$this->addStyleFile('admin/css/dt/dt.css');
-		$this->addStyleFile('admin/css/dt/toolbar.css');
-		$this->addStyleFile('admin/css/dt/dtform.css');
+//		$this->addStyleFile('admin/css/dt/dt.css');
+//		$this->addStyleFile('admin/css/dt/toolbar.css');
+//		$this->addStyleFile('admin/css/dt/dtform.css');
 
 		$this->scripts = new Collection();
 		$this->addScriptFile('packages/datatables/js/1.10.4/datatable.js');

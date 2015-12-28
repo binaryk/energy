@@ -10,8 +10,8 @@
     <!-- /toggle offscreen menu -->
     <!-- logo -->
     <a class="brand-logo">
-      <span>Reactor</span>
+      <span>Pactul primariilor</span>
     </a>
-    <a href="#" class="small-menu-visible brand-logo">R</a>
+    <a href="#" class="small-menu-visible brand-logo">E</a>
     <!-- /logo -->
 </div>
