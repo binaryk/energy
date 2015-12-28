@@ -27,9 +27,9 @@ class BuildingsRules extends FormsRecord
         ;
     }
 
-    public static function create()
+    public static function create($id = NULL)
     {
-        return self::$instance = new BuildingsRules('buildings');
+        return self::$instance = new BuildingsRules($id);
     }
 
 }

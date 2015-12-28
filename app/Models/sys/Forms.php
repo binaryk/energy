@@ -10,14 +10,14 @@ class Forms
 
 	protected $maps = [
 		'institutions' => 'App\Http\Controllers\Institutions\InstitutionsRules',
-		'buildings'    => 'App\Http\Controllers\Buildings\BuildingsRules',
+		 'cladiri'    => 'App\Http\Controllers\Buildings\BuildingsRules',
 		'counters'     => 'App\Http\Controllers\Counters\CountersRules',
 
 	];
 
 	public function __construct($id)
 	{
-		$this->addForm( call_user_func([$this->maps[$id], 'create']));
+		$this->addForm( call_user_func([$this->maps[$id], 'create'], $id));
 	}
 
 	protected function addForm( FormsRecord $form)

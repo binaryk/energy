@@ -41,7 +41,6 @@ class Sidebar
 	public static function make()
 	{
 		return self::$instance = new Sidebar();
-
 	}
 
 	public function OutGroupHeader( $header )

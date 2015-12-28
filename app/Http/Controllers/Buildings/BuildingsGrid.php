@@ -91,9 +91,9 @@ class BuildingsGrid extends GridsRecord
 
     }
 
-    public static function create()
+    public static function create($id = NULL)
     {
-        return self::$instance = new BuildingsGrid('buildings');
+        return self::$instance = new BuildingsGrid($id);
     }
 
 }

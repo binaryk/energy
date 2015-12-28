@@ -13,14 +13,14 @@ class Grids {
 
 	protected $maps = [
 		'institutions' 		=> '\App\Http\Controllers\Institutions\InstitutionsGrid',
-		'buildings' 		=> '\App\Http\Controllers\Buildings\BuildingsGrid',
+		'cladiri' 			=> '\App\Http\Controllers\Buildings\BuildingsGrid',
 		'counters' 		    => '\App\Http\Controllers\Counters\CountersGrid',
 
 	];
 
 	public function __construct($id) {
 //        responsabilitatea lui este de apune in array-ul grids instanta obiectului creat
-		$this->addGrid(call_user_func([$this->maps[$id], 'create']));
+		$this->addGrid(call_user_func([$this->maps[$id], 'create'],$id));
 	}
 
 	protected function addGrid(GridsRecord $grid) {
