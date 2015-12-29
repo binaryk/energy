@@ -7,7 +7,7 @@ class CreateCountersTable extends Migration
 {
     public function up()
     {
-        Schema::create('counters', function($table)
+        Schema::create('counters', function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('build_id');

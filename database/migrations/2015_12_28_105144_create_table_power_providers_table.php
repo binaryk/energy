@@ -12,7 +12,7 @@ class CreateTablePowerProvidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('power_providers', function($t) {
+        Schema::create('power_providers', function(Blueprint $t) {
             $t->increments('id');
             $t->integer('power_type_id');
             $t->string('name',100);

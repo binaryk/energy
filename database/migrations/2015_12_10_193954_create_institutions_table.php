@@ -8,7 +8,7 @@ class CreateInstitutionsTable extends Migration
 
     public function up()
     {
-        Schema::create('institutions', function($t)
+        Schema::create('institutions', function(Blueprint $t)
         {
             $t->increments('id');
             $t->tinyinteger('category_id');

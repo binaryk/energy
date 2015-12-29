@@ -7,7 +7,7 @@ class CreateTypeInfrastructuresTable extends Migration
 {
   public function up()
     {
-        Schema::create('power_type', function($t)
+        Schema::create('power_type', function(Blueprint $t)
         {
             $t->increments('id');
             $t->string('name');

@@ -10,9 +10,10 @@ class Forms
 
 	protected $maps = [
 		 'institutions' => 'App\Http\Controllers\Institutions\InstitutionsRules',
-		 'cladiri'    => 'App\Http\Controllers\Buildings\BuildingsRules',
+		 'cladiri'      => 'App\Http\Controllers\Buildings\BuildingsRules',
 		 'contoare'     => 'App\Http\Controllers\Counters\CountersRules',
-
+		 'programdmi'   => '\App\Http\Controllers\Programdmi\ProgramdmiRules',
+		 'programoug'   => '\App\Http\Controllers\Programoug\ProgramougRules',
 	];
 
 	public function __construct($id)

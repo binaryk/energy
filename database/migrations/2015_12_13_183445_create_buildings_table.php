@@ -7,7 +7,7 @@ class CreateBuildingsTable extends Migration
 {
    public function up()
     {
-        Schema::create('buildings', function($t)
+        Schema::create('buildings', function(Blueprint $t)
         {
             $t->increments('id');
             $t->integer('institution_id');

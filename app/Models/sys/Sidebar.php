@@ -18,6 +18,16 @@ class Sidebar
 			'active'  => ['institutii*'],
 		],
 
+		'eficienta_energetica'=> [
+					'header'  => [
+					'caption' => 'Eficienta Energetica',
+					'icon'    => 'icon-energy',
+				    'childs'  => '2',
+					],
+					'options' => [],
+					'active'  => ['eficienta_energetica*'],
+		],
+
 	];
 
 	protected function addOption($group, $url, $caption, $icon, $active = false)
@@ -36,6 +46,8 @@ class Sidebar
         foreach(Institution::categories() as $k => $category){
             $this->addOption('institutii', route('institutions_index',['type' => $k]), $category, 'user-plus', '/institutii/1');
         }
+        $this->addOption('eficienta_energetica', route('programoug_index',['id' => 'programoug']), 'Program OUG 18', 'user-plus');
+        $this->addOption('eficienta_energetica', route('programdmi_index',['id' => 'programdmi']), 'POR DMI 12', 'user-plus');
 	}
 
 	public static function make()
