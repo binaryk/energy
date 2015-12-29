@@ -82,7 +82,8 @@
 				'{!! $form->model()!!}',
 				"{!! URL::route('datatable-do-action', ['id' => $dt->id()])!!}",
 				eval('{!! $dt->name()!!}'),
-				"{!! csrf_token()!!}"
+				"{!! csrf_token()!!}",
+				"{!! $dt->id()!!}"
 			);
 		@endif
 		/**

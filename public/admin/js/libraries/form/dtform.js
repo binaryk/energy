@@ -1,5 +1,6 @@
-function DTFORM(formid, loadformurl, model, doactionurl, dt)
+function DTFORM(formid, loadformurl, model, doactionurl, dt,token, id)
 {
+	this.id                = '#' + id;
 	this.classActionInsert   = '.action-insert-record';
 	this.classActionUpdate   = '.action-update-record';
 	this.classActionDelete   = '.action-delete-record';
@@ -167,7 +168,7 @@ function DTFORM(formid, loadformurl, model, doactionurl, dt)
         		console.log('4 -----> Show form');
         		console.log(result);
         		self.showform(result);
-        		$(self.classDoButton).removeClass('disabled');
+        		$(this.formid + ' ' + self.classDoButton).removeClass('disabled');
         	}
 		});
 	};
@@ -212,7 +213,7 @@ function DTFORM(formid, loadformurl, model, doactionurl, dt)
 	{
 		var self     = this;
 		var result   = new Object();
-		var controls = $(this.classSourceControls);
+		var controls = $( self.formid + ' ' +this.classSourceControls);
 		controls.each( function(i) {
 			result[$(this).data('control-source')] = self.controlvalue($(this));
 		});
@@ -328,7 +329,7 @@ function DTFORM(formid, loadformurl, model, doactionurl, dt)
         		if( ! result.success)
         		{
         			self.showFieldsErrors(result.fieldserrors);
-        			$(self.classDoButton).removeClass('disabled');
+        			$(this.formid + ' ' + self.classDoButton).removeClass('disabled');
         		}
         		else
         		{
@@ -356,8 +357,11 @@ function DTFORM(formid, loadformurl, model, doactionurl, dt)
 			console.log('1 -----> Click on [Add] => load form');
 			self.loadform('insert', null);
 		});
-
-		$(document).on( 'click', this.classActionUpdate, function(){
+		console.log(self.id + ' ' + this.classActionUpdate);
+		
+		$(document).on( 'click', self.id + ' ' + this.classActionUpdate, function(){
+			console.log(self.id);
+			
 			self.loadform('update', $(this).data('id'));
 		});
 
@@ -370,7 +374,7 @@ function DTFORM(formid, loadformurl, model, doactionurl, dt)
 		});
 
 		$(document).on( 'keyup', 'input' , function(){
-			$(self.classDoButton).removeClass('disabled');
+			$(self.formid + ' ' + self.classDoButton).removeClass('disabled');
 		});
 
 		$(document).find('.input-group > ' + this.inputTypeCheckbox ).closest('.input-group').on('mouseover mouseout click', this, function(event) {
@@ -388,8 +392,10 @@ function DTFORM(formid, loadformurl, model, doactionurl, dt)
 			}
 		});
 
-
-		$(document).on( 'click', this.classDoButton, function(){
+		console.log(self.formid + ' ' + self.classDoButton);
+		$(document).on( 'click', self.formid + ' ' + self.classDoButton, function(){
+			console.log(self);
+			
 			if( ! $(this).hasClass('disabled') )
 			{
 				self.doaction( $(this).attr('data-action') );
