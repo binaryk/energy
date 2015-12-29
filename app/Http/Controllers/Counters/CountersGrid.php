@@ -45,11 +45,39 @@ class CountersGrid extends GridsRecord
                 'orderable' => 'yes',
                 'class'     => 'td-align-left',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Cod Contor', 'style'   => 'width:75%',],
+                'header'    => ['caption' => 'Cod Contor', 'style'   => 'width:25%',],
                 'type'      => 'field',
                 'source'    => 'code',//numele coloanei din tabelul din BD
             ],
             '3' => [
+                'id'        => 'type_utility_id',
+                'orderable' => 'yes',
+                'class'     => 'td-align-left',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Tip Utilitate', 'style'   => 'width:15%',],
+                'type'      => 'field',
+                'source'    => 'type_utility_id',//numele coloanei din tabelul din BD
+            ],
+            '4' => [
+                'id'        => 'provider_id',
+                'orderable' => 'yes',
+                'class'     => 'td-align-left',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Denumire Furnizor', 'style'   => 'width:30%',],
+                'type'      => 'field',
+                'source'    => 'provider_id',//numele coloanei din tabelul din BD
+            ],
+            '5' => [
+                'id'        => 'client_code',
+                'orderable' => 'yes',
+                'class'     => 'td-align-left',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Cod Client', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'client_code',//numele coloanei din tabelul din BD
+            ],
+
+            '6' => [
                 'id'        => 'action',
                 'orderable' => 'no',
                 'class'     => 'td-align-center td-actions',

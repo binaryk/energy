@@ -29,7 +29,7 @@ class CountersForm extends \Processing\Form\Form
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
                     ->name('code')
                     ->caption('Cod Contor')
-                    ->class('form-control  data-source')
+                    ->class('form-control  data-source integer')
                     //->placeholder('Nume')
                     ->controlsource('code')
                     ->controltype('textbox')
@@ -38,11 +38,11 @@ class CountersForm extends \Processing\Form\Form
 
             ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
-                    ->name('type_utility')
+                    ->name('type_utility_id')
                     ->caption('Tip Utilizare')
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
-                    ->controlsource('type_utility')
+                    ->controlsource('type_utility_id')
                     ->controltype('textbox')
                     ->maxlength(255)
 
@@ -51,11 +51,11 @@ class CountersForm extends \Processing\Form\Form
 
              ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
-                    ->name('name_supplier')
+                    ->name('provider_id')
                     ->caption('Denumire Furnizor')
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
-                    ->controlsource('name_supplier')
+                    ->controlsource('provider_id')
                     ->controltype('textbox')
                     ->maxlength(255)
 
@@ -63,11 +63,11 @@ class CountersForm extends \Processing\Form\Form
             )
              ->addControl(
             \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
-                ->name('code_client')
+                ->name('client_code')
                 ->caption('Cod Client')
                 ->class('form-control  data-source')
                 //->placeholder('Nume')
-                ->controlsource('code_client')
+                ->controlsource('client_code')
                 ->controltype('textbox')
                 ->maxlength(255)
 
