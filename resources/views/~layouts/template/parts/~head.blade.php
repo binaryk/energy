@@ -17,5 +17,8 @@
 <link rel="stylesheet" href="{!! asset('template/styles/app.skins.css')!!}">
 <!-- endbuild -->
 <link rel="stylesheet" href="{!! asset('custom/css/main.css') !!}">
+<script>
+    var _config = {};
+</script>
 @yield('custom-styles')
 @yield('scripts_grids')

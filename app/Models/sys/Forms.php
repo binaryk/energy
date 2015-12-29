@@ -9,9 +9,9 @@ class Forms
 	protected $forms =[];
 
 	protected $maps = [
-		'institutions' => 'App\Http\Controllers\Institutions\InstitutionsRules',
+		 'institutions' => 'App\Http\Controllers\Institutions\InstitutionsRules',
 		 'cladiri'    => 'App\Http\Controllers\Buildings\BuildingsRules',
-		'counters'     => 'App\Http\Controllers\Counters\CountersRules',
+		 'contoare'     => 'App\Http\Controllers\Counters\CountersRules',
 
 	];
 

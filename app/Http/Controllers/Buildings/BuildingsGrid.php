@@ -8,6 +8,7 @@ class BuildingsGrid extends GridsRecord
     {
         parent::__construct($id);
         $this->view           = 'buildings.index';
+        $this->ngCtrl         = 'buildCtrl';
         $this->icon           = 'admin/img/icons/dt/settings.png';
         $this->caption        = 'Lista Clădiri';
         $this->toolbar        = 'buildings.toolbar';
@@ -22,7 +23,7 @@ class BuildingsGrid extends GridsRecord
                               admin/css/dt/toolbar.css,
                               admin/css/dt/dtform.css,
                                        ';
-        $this->js             = 'admin/js/libraries/form/dtform.js';
+        $this->js             = 'admin/js/libraries/form/dtform.js, custom/js/angular/controllers/buildCtrl.js, custom/js/angular/services/Count.js';
         $this->row_source     = 'buildings_index_row_source';
         $this->rows_source_sql 				= 'SELECT
                                                 *
@@ -59,15 +60,6 @@ class BuildingsGrid extends GridsRecord
                 'source'    => 'street',//numele coloanei din tabelul din BD
             ],
             '4' => [
-                'id'        => 'nr',
-                'orderable' => 'no',
-                'class'     => 'td-align-center',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Nr', 'style'   => 'width:4%',],
-                'type'      => 'field',
-                'source'    => 'nr',//numele coloanei din tabelul din BD
-            ],
-            '5' => [
                 'id'        => 'action',
                 'orderable' => 'no',
                 'class'     => 'td-align-center td-actions',

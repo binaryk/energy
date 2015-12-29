@@ -154,5 +154,9 @@ class AccessServiceProvider extends ServiceProvider
         Blade::directive('endauth', function () {
             return '<?php endif; ?>';
         });
+
+        Blade::directive('object', function ($array) {
+            return "<?php echo json_encode($array) ?>";
+        });
     }
 }

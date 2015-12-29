@@ -22,8 +22,8 @@ class Route {
 			->add('get', 'buildings_index', 'institutie/{id}/{institution_id}', 'BuildingsController@index', 'Buildings')
 			->add('get', 'buildings_index_row_source', 'buildings_index_row_source/{id}/{institution_id}', 'BuildingsController@rows', 'Buildings')
 
-			->add('get', 'counters_index', 'contoare/{type?}/{edit?}', 'CountersController@index', 'Counters')
-			->add('get', 'counters_index_row_source', 'contoare_row_source/{id}/{type?}', 'CountersController@rows', 'Counters')
+			->add('get', 'counters_index', 'institutie/cladire/{id}/{build_id}', 'CountersController@index', 'Counters')
+			->add('get', 'counters_index_row_source', 'contoare_row_source/{id}/{build_id}', 'CountersController@rows', 'Counters')
 			// ->add('get', 'home', '/', 'HomeController@showWelcome', '')
 		;
 	}

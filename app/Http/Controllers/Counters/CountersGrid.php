@@ -41,42 +41,15 @@ class CountersGrid extends GridsRecord
                 'source'    => 'row-number',
             ],
             '2' => [
-                'id'        => 'name',
+                'id'        => 'code',
                 'orderable' => 'yes',
                 'class'     => 'td-align-left',
                 'visible'   => 'yes',
                 'header'    => ['caption' => 'Cod Contor', 'style'   => 'width:75%',],
                 'type'      => 'field',
-                'source'    => 'name',//numele coloanei din tabelul din BD
+                'source'    => 'code',//numele coloanei din tabelul din BD
             ],
             '3' => [
-                'id'        => 'type_utility',
-                'orderable' => 'no',
-                'class'     => 'td-align-center',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Tip Utilizare', 'style'   => 'width:11%',],
-                'type'      => 'field',
-                'source'    => 'type_utility',//numele coloanei din tabelul din BD
-            ],
-            '4' => [
-                'id'        => 'name_supplier',
-                'orderable' => 'no',
-                'class'     => 'td-align-center',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Denumire Furnizor', 'style'   => 'width:4%',],
-                'type'      => 'field',
-                'source'    => 'name_supplier',//numele coloanei din tabelul din BD
-            ],
-            '5' => [
-                'id'        => 'code_client',
-                'orderable' => 'no',
-                'class'     => 'td-align-center',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Cod Client', 'style'   => 'width:4%',],
-                'type'      => 'field',
-                'source'    => 'code_client',//numele coloanei din tabelul din BD
-            ],
-            '6' => [
                 'id'        => 'action',
                 'orderable' => 'no',
                 'class'     => 'td-align-center td-actions',
@@ -100,9 +73,9 @@ class CountersGrid extends GridsRecord
 
     }
 
-    public static function create()
+    public static function create($id = NULL)
     {
-        return self::$instance = new CountersGrid('counters');
+        return self::$instance = new CountersGrid($id);
     }
 
 }

@@ -1,5 +1,10 @@
 @extends ('~layouts.template.layout')
-
+@section('ngCtrl')
+	@parent
+	@if($dt->ngCtrl())
+	ng-controller = "{!! $dt->ngCtrl() !!}"
+	@endif
+@stop
 @section('content')
 @yield('before-table-row')
 <div class="row">

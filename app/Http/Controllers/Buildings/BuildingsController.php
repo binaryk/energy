@@ -9,14 +9,17 @@ use App\Models\Build;
 use Mockery\CountValidator\Exception;
 use System\DatatableController;
 use System\Grids;
+use System\Log;
+use System\StdHelper;
 
 class BuildingsController extends DatatableController
 {
+    use StdHelper;
     protected $layout = '~layouts.template.layout';
 
     public function index($id, $institution_id){
         if(! $institution = Institution::find($institution_id) ){
-            throw new Exception(__CLASS__.' :: nu gasim instutie cu id-ul:: '.$institution_id);
+            return $this->try_($institution);
         }
         $config = Grids::make($id)->toIndexConfig($id);
         $config['row-source'] .= '/'.$institution_id;
@@ -38,7 +41,7 @@ class BuildingsController extends DatatableController
 
     public function rows($id, $institution_id){
         if(! $institution = Institution::find($institution_id) ){
-            throw new Exception(__CLASS__.' :: nu gasim instutie cu id-ul:: '.$institution_id);
+            return $this->try_($institution);
         }
         $config = Grids::make($id)->toRowDatasetConfig($id);
         $filters = $config['source']->custom_filters();

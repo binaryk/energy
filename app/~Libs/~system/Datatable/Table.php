@@ -10,6 +10,7 @@ class Table
 		}
 		$dt = Datatable::make();
 		$dt->id( $config['id'] ); 									// Table id in the DOM
+		$dt->ngCtrl( $config['ngCtrl'] );
 		$dt->displayStart( $config['display-start'] );				// DT offset parameter
 		$dt->displayLength( $config['display-length'] );            // DT page length parameter
 		$dt->rowSourceUrl( $config['row-source'] );                 // DT row source URL

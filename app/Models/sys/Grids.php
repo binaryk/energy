@@ -14,7 +14,7 @@ class Grids {
 	protected $maps = [
 		'institutions' 		=> '\App\Http\Controllers\Institutions\InstitutionsGrid',
 		'cladiri' 			=> '\App\Http\Controllers\Buildings\BuildingsGrid',
-		'counters' 		    => '\App\Http\Controllers\Counters\CountersGrid',
+		'contoare' 		    => '\App\Http\Controllers\Counters\CountersGrid',
 
 	];
 
@@ -47,6 +47,7 @@ class Grids {
 		$result = [
 			'id' => $record->id,
 			'view' => $record->view,
+			'ngCtrl' => $record->ngCtrl,
 			'name' => $record->name,
 			'display-start' => $record->display_start,
 			'display-length' => $record->display_length,

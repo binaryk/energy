@@ -7,6 +7,7 @@ class GridsRecord
 
 	public $id             				= NULL;
 	public $view           				= '~layouts.datatable.index';
+	public $ngCtrl        				= NULL;
 	public $caption		   				= 'Caption';
 	public $icon           				= 'admin/img/icons/dt/settings.png';
 	public $toolbar        				= '';
@@ -50,7 +51,7 @@ class GridsRecord
 
 	public function column( $column )
 	{
-		return 
+		return
 			Column::make($column['id'])
 			->orderable($column['orderable'] == 'yes')
 			->header( 

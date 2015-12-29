@@ -27,11 +27,11 @@ class CountersForm extends \Processing\Form\Form
         $this
             ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
-                    ->name('name')
+                    ->name('code')
                     ->caption('Cod Contor')
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
-                    ->controlsource('name')
+                    ->controlsource('code')
                     ->controltype('textbox')
                     ->maxlength(255)
             )

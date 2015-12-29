@@ -3,6 +3,12 @@
 @section('custom-styles')
 @stop
 
-@section('datatable-specific-page-jquery-initializations')
+@section('content')
+    @parent
+@stop
 
-@stop 
+
+@section('datatable-specific-page-jquery-initializations')
+@parent
+
+@stop

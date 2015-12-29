@@ -8,6 +8,9 @@
 <script src="{!! asset('template/scripts/main.js')!!}"></script>
 
 <script src="{!! asset('custom/js/utils/math.js')!!}"></script>
+
+<script src="{!! asset('components/angular/angular.min.js') !!}"></script>
+<script src="{!! asset('custom/js/angular/~config.js') !!}"></script>
 <!-- end page scripts -->
 <script>
     var token = $('meta[name="csrf_token"]').attr('content');
@@ -17,7 +20,7 @@
             'X-XSRF-TOKEN': token
         },
         '_token' : token,
-        async    : false
+         async    : false
     });
 </script>
 @yield('custom-scripts')

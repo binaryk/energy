@@ -7,6 +7,7 @@ class Datatable
 	protected static $instance = NULL;
 
 	protected $id            = NULL;   // table id in the DOM 
+	protected $ngCtrl        = NULL;   // table Controller Angular in the DOM
 	protected $rowSourceUrl  = NULL;   // server side row source url
 	protected $columns       = NULL;
 	protected $displayStart  = 0;      // DT parameter
@@ -61,6 +62,8 @@ class Datatable
 
 	public function __call($method, $args)
 	{
+
+
 		if(! property_exists($this, $method))
 		{
 			throw new \Exception('Method: ' . __METHOD__ . '. File: ' . __FILE__ . '. Message: Property "' . $method . '" unknown.');

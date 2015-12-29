@@ -19,17 +19,17 @@ class CountersRules extends FormsRecord
             ->setFeedback('delete', 'success', 'Stergerea contorului a fost realizată cu succes.')
             ->setFeedback('delete', 'error', 'Ștergerea contorului <span class="badge">nu</span> a fost realizată.')
 
-            ->addRule('insert', 'name', 'required')
-            ->addRule('update', 'name', 'required')
+            ->addRule('insert', 'code', 'required')
+            ->addRule('update', 'code', 'required')
 
-            ->addMessage('insert', 'name.required', 'Denumirea contorului trebuie completată.')
-            ->addMessage('update', 'name.required', 'Denumirea contorului trebuie completată.')
+            ->addMessage('insert', 'code.required', 'Codul contorului trebuie completat.')
+            ->addMessage('update', 'code.required', 'Codul contorului trebuie completat.')
         ;
     }
 
-    public static function create()
+    public static function create($id)
     {
-        return self::$instance = new CountersRules('counters');
+        return self::$instance = new CountersRules($id);
     }
 
 }
