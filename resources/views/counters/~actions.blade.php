@@ -6,7 +6,7 @@
 	</i> <span>Editare</span></a></li>
 
 
-	<li class="action-delete-record"><a><i class="fa fa-eraser text-red">
+	<li class="action-delete-record"><a><i class="icon-trash text-red">
 	</i> <span class="text-red">Ştergere</span></a></li>
 
 	

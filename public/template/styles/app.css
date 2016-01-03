@@ -3157,8 +3157,8 @@ textarea {
   resize: none; }
 
 select.form-control {
-  display: inline-block;
-  width: auto;
+ /*  display: inline-block;
+ width: auto; */
   vertical-align: middle; }
 
 .placeholder {

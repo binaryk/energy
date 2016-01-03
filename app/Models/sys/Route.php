@@ -25,11 +25,17 @@ class Route {
 			->add('get', 'counters_index', 'institutie/cladire/{id}/{build_id}', 'CountersController@index', 'Counters')
 			->add('get', 'counters_index_row_source', 'contoare_row_source/{id}/{build_id}', 'CountersController@rows', 'Counters')
 		
-			->add('get', 'programdmi_index', 'programdmi/{id}', 'ProgramdmiController@index', 'Programdmi')
+			->add('get', 'programdmi_index', 'eficienta_energetica/{id}', 'ProgramdmiController@index', 'Programdmi')
 			->add('get', 'programdmi_index_row_source', 'programdmi_row_source/{id}/', 'ProgramdmiController@rows', 'Programdmi')
 
-			->add('get', 'programoug_index', 'programoug/{id}', 'ProgramougController@index', 'Programoug')
+			->add('get', 'programoug_index', 'eficienta-energetica/{id}', 'ProgramougController@index', 'Programoug')
 			->add('get', 'programoug_index_row_source', 'programoug_row_source/{id}/', 'ProgramougController@rows', 'Programoug')
+
+			->add('get', 'vehicles_index', 'transport-public/{id}', 'VehiclesController@index', 'Vehicles')
+			->add('get', 'vehicles_index_row_source', 'vehicles_row_source/{id}/', 'VehiclesController@rows', 'Vehicles')
+
+			->add('get', 'consumptions_index', 'transport-public/vehicol/{id}/{vehicle_id}', 'ConsumptionsController@index', 'Consumptions')
+			->add('get', 'consumptions_index_row_source', 'consumptions_row_source/{id}/{vehicle_id}', 'ConsumptionsController@rows', 'Consumptions')
 		;
 	}
 

@@ -17,6 +17,9 @@ class Grids {
 		'contoare' 		    => '\App\Http\Controllers\Counters\CountersGrid',
 		'programdmi' 		=> '\App\Http\Controllers\Programdmi\ProgramdmiGrid',
 		'programoug' 		=> '\App\Http\Controllers\Programoug\ProgramougGrid',
+		'vehicole' 		    => '\App\Http\Controllers\Vehicles\VehiclesGrid',
+		'consum' 		    => '\App\Http\Controllers\Consumptions\ConsumptionsGrid',
+
 	];
 
 	public function __construct($id) {

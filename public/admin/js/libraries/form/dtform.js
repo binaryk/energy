@@ -402,6 +402,7 @@ function DTFORM(formid, loadformurl, model, doactionurl, dt,token, id)
 				$(this).addClass('disabled');
 			}
 		});
+
 	};
 	/*
 	se asociaza evenimente la:

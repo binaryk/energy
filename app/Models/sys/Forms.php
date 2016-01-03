@@ -14,6 +14,9 @@ class Forms
 		 'contoare'     => 'App\Http\Controllers\Counters\CountersRules',
 		 'programdmi'   => '\App\Http\Controllers\Programdmi\ProgramdmiRules',
 		 'programoug'   => '\App\Http\Controllers\Programoug\ProgramougRules',
+		 'vehicole'     => '\App\Http\Controllers\Vehicles\VehiclesRules',
+		 'consum'       => '\App\Http\Controllers\Consumptions\ConsumptionsRules',
+
 	];
 
 	public function __construct($id)

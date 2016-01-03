@@ -27,6 +27,15 @@ class Sidebar
 					'options' => [],
 					'active'  => ['eficienta_energetica*'],
 		],
+		'transport_public'=> [
+					'header'  => [
+					'caption' => 'Transport Public',
+					'icon'    => 'icon-speedometer',
+				    'childs'  => '1',
+					],
+					'options' => [],
+					'active'  => ['transport_public*'],
+		],
 
 	];
 
@@ -48,6 +57,7 @@ class Sidebar
         }
         $this->addOption('eficienta_energetica', route('programoug_index',['id' => 'programoug']), 'Program OUG 18', 'user-plus');
         $this->addOption('eficienta_energetica', route('programdmi_index',['id' => 'programdmi']), 'POR DMI 12', 'user-plus');
+        $this->addOption('transport_public', route('vehicles_index',['id' => 'vehicole']), 'Lista Vehicole', 'user-plus');
 	}
 
 	public static function make()

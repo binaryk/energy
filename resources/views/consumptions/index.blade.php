@@ -10,12 +10,4 @@
 
 @section('datatable-specific-page-jquery-initializations')
 @parent
-$(function() {
-	$( ".datepicker" ).datepicker();
-});
-
-aftershow          = function(record, action){
-	$('.btn-do-update').removeClass('disabled');
-};
-
 @stop

@@ -1,25 +1,24 @@
-<?php namespace App\Http\Controllers\Programoug;
+<?php namespace App\Http\Controllers\Vehicles;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Program_dmi;
+use App\Models\Vehicle;
 use System\DatatableController;
 use System\Grids;
 
-class ProgramougController extends DatatableController
+class VehiclesController extends DatatableController
 {
     protected $layout = '~layouts.template.layout';
 
     public function index($id){
-        // dd($id);
         $config = Grids::make($id)->toIndexConfig($id); 
         $config['breadcrumbs'] = [
             [
-                'name'   => 'Program OUG',
-                'route'  => 'programoug_index',  
-                'ids'    => ['id' => 'programoug'],
+                'name'   => 'Lista Vehicole',
+                'route'  => 'vehicles_index', 
+                'ids'    => ['id' => 'programdmi'],
             ],
             // [
             //     'name'      => $config['caption'] .= Institution::categories()[$type],
