@@ -10,5 +10,8 @@
 
 @section('datatable-specific-page-jquery-initializations')
 @parent
-
+$(function() {
+	$( ".datepicker" ).datepicker();
+});
 @stop
+

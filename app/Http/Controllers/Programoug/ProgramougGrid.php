@@ -20,8 +20,13 @@ class ProgramougGrid extends GridsRecord
                               packages/datatables/css/1.10.4/dataTables.bootstrap.css,
                               admin/css/dt/dt.css,
                               admin/css/dt/dtform.css,
+                              packages/daterangepicker/css/daterangepicker-bs3.css,
+                              packages/datepicker/css/bootstrap-datepicker3.css
                                        ';
-        $this->js             = 'admin/js/libraries/form/dtform.js';
+        $this->js             = 'admin/js/libraries/form/dtform.js,
+                              packages/daterangepicker/js/daterangepicker.js,
+                              packages/datepicker/js/bootstrap-datepicker.js
+                                        ';
         $this->row_source     = 'programoug_index_row_source';
         $this->rows_source_sql 				= 'SELECT
                                                 *
@@ -40,30 +45,66 @@ class ProgramougGrid extends GridsRecord
                 'source'    => 'row-number',
             ],
             '2' => [
-                'id'        => 'number',
+                'id'        => 'address',
                 'orderable' => 'yes',
-                'class'     => 'td-align-left',
+                'class'     => 'td-align-center',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'teeeeeesst', 'style'   => 'width:90%',],
+                'header'    => ['caption' => 'Adresa', 'style'   => 'width:20%',],
                 'type'      => 'field',
-                'source'    => 'number',//numele coloanei din tabelul din BD
+                'source'    => 'address',//numele coloanei din tabelul din BD
             ],
             '3' => [
+                'id'        => 'locality',
+                'orderable' => 'yes',
+                'class'     => 'td-align-center',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Localitatea', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'locality',//numele coloanei din tabelul din BD
+            ],
+            '4' => [
+                'id'        => 'county',
+                'orderable' => 'yes',
+                'class'     => 'td-align-center',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Judetul', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'county',//numele coloanei din tabelul din BD
+            ],
+            '5' => [
+                'id'        => 'owner',
+                'orderable' => 'yes',
+                'class'     => 'td-align-center',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Proiectant', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'owner',//numele coloanei din tabelul din BD
+            ],
+             '6' => [
+                'id'        => 'realization_year',
+                'orderable' => 'yes',
+                'class'     => 'td-align-center',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Anul Realizarii', 'style'   => 'width:10%',],
+                'type'      => 'field',
+                'source'    => 'realization_year',//numele coloanei din tabelul din BD
+            ],
+            '7' => [
                 'id'        => 'action',
                 'orderable' => 'no',
                 'class'     => 'td-align-center td-actions',
                 'visible'   => 'yes',
                 'header'    => ['caption' => 'Acțiuni', 'style'   => 'width:7%',],
                 'type'      => 'view',
-                'source'    => 'programs_oug.~actions',
+                'source'    => 'programs_dmi.~actions',
             ],
         ];
          $this->fields = [
             'fields'      => '',
-            'searchables' => 'id, name',
+            'searchables' => 'id, address',
             'orderables'  => [
                 1 => 'id',
-                2 => 'name'
+                2 => 'address'
             ],//[1 => "id"],
         ];
         $this->filters = [
@@ -76,5 +117,4 @@ class ProgramougGrid extends GridsRecord
     {
         return self::$instance = new ProgramougGrid($id);
     }
-
 }

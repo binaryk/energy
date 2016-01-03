@@ -18,7 +18,7 @@ class ProgramougController extends DatatableController
         $config['breadcrumbs'] = [
             [
                 'name'   => 'Program OUG',
-                'route'  => 'programoug_index',
+                'route'  => 'programoug_index',  
                 'ids'    => ''
             ],
             // [

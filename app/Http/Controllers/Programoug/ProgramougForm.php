@@ -24,25 +24,14 @@ class ProgramougForm extends \Processing\Form\Form
 
     protected function addControls()
     {
-       $this
+        $this
             ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
-                    ->name('number')
-                    ->caption('Numar')
+                    ->name('address')
+                    ->caption('Adresa')
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
-                    ->controlsource('number')
-                    ->controltype('textbox')
-                    ->maxlength(255)
-            )
-
-            ->addControl(
-                \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
-                    ->name('street')
-                    ->caption('Strada')
-                    ->class('form-control  data-source')
-                    //->placeholder('Nume')
-                    ->controlsource('street')
+                    ->controlsource('address')
                     ->controltype('textbox')
                     ->maxlength(255)
             )
@@ -65,16 +54,6 @@ class ProgramougForm extends \Processing\Form\Form
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
                     ->controlsource('county')
-                    ->controltype('textbox')
-                    ->maxlength(255)
-            )
-              ->addControl(
-                \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
-                    ->name('country')
-                    ->caption('Tara')
-                    ->class('form-control  data-source')
-                    //->placeholder('Nume')
-                    ->controlsource('country')
                     ->controltype('textbox')
                     ->maxlength(255)
             )
@@ -262,7 +241,7 @@ class ProgramougForm extends \Processing\Form\Form
               ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
                     ->name('annual_consumption_for_heating')
-                    ->caption('Consum Anual Specific Pentru Incalzire Initial')
+                    ->caption('Consum Anual Pentru Incalzire Initial')
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
                     ->controlsource('annual_consumption_for_heating')
@@ -304,7 +283,7 @@ class ProgramougForm extends \Processing\Form\Form
               ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
                     ->name('annual_consumption_restored')
-                    ->caption('Consum Anual Specific De Energie Reabilitat')
+                    ->caption('Consum Anual De Energie Reabilitat')
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
                     ->controlsource('annual_consumption_restored')
@@ -315,7 +294,7 @@ class ProgramougForm extends \Processing\Form\Form
              ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
                     ->name('annual_consumption_for_heating_restored')
-                    ->caption('Consum Anual Specific Pentru Incalzire Reabilitat')
+                    ->caption('Consum Anual Pentru Incalzire Reabilitat')
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
                     ->controlsource('annual_consumption_for_heating_restored')
@@ -388,14 +367,14 @@ class ProgramougForm extends \Processing\Form\Form
             )
 
              ->addControl(
-                \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
+                \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox-addon')
                     ->name('data_exchenge_rate')
                     ->caption('Data Cursului Valutar')
-                    ->class('form-control  data-source')
+                    ->class('form-control  data-source datepicker')
                     //->placeholder('Nume')
                     ->controlsource('data_exchenge_rate')
                     ->controltype('textbox')
-                    ->maxlength(255)
+                    ->addon(['before' => '<i class="fa fa-calendar"></i>', 'after' => NULL])
             )
               ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
@@ -430,18 +409,18 @@ class ProgramougForm extends \Processing\Form\Form
             )
 
              ->addControl(
-                \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
+                \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox-addon')
                     ->name('data_termination_works')
                     ->caption('Data Pv Terminarea Lucrarii')
-                    ->class('form-control  data-source')
+                    ->class('form-control  data-source datepicker')
                     //->placeholder('Nume')
                     ->controlsource('data_termination_works')
                     ->controltype('textbox')
-                    ->maxlength(255)
+                    ->addon(['before' => '<i class="fa fa-calendar"></i>', 'after' => NULL])
             )
 
               ->addControl(
-                \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
+                \Easy\Form\Textbox::make('~layouts.form.controls.editboxes.editbox')
                     ->name('observations')
                     ->caption('Observatii')
                     ->class('form-control  data-source')
@@ -449,10 +428,8 @@ class ProgramougForm extends \Processing\Form\Form
                     ->controlsource('observations')
                     ->controltype('textbox')
                     ->maxlength(255)
+                    
             )
-
-            
         ;      
-
     }
-}
+}  

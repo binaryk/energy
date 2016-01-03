@@ -21,7 +21,6 @@
         {!! $controls[25]->out() !!}
         {!! $controls[29]->out() !!}
         {!! $controls[33]->out() !!}
-        {!! $controls[37]->out() !!}
     </div>
     <div class="col-md-3">
         {!! $controls[2]->out() !!}
@@ -33,7 +32,6 @@
         {!! $controls[26]->out() !!}
         {!! $controls[30]->out() !!}
         {!! $controls[34]->out() !!}
-        {!! $controls[38]->out() !!}
     </div>
     <div class="col-md-3">
         {!! $controls[3]->out() !!}
@@ -45,6 +43,8 @@
         {!! $controls[27]->out() !!}
         {!! $controls[31]->out() !!}
         {!! $controls[35]->out() !!}
-        {!! $controls[39]->out() !!}
+    </div>
+    <div class="col-md-12">
+        {!! $controls[37]->out() !!}
     </div>
 </div>

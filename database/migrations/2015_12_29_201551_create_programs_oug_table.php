@@ -11,11 +11,9 @@ class CreateProgramsOugTable extends Migration
     Schema::create('programs_oug', function(Blueprint $t)
         {
             $t->increments('id');
-            $t->integer('number');
-            $t->string('street');
+            $t->string('address');
             $t->string('locality');
             $t->string('county');
-            $t->string('country');
             $t->string('owner');
             $t->string('nr_project');
             $t->string('realization_year');
