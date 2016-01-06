@@ -19,6 +19,7 @@ class Grids {
 		'programoug' 		=> '\App\Http\Controllers\Programoug\ProgramougGrid',
 		'vehicole' 		    => '\App\Http\Controllers\Vehicles\VehiclesGrid',
 		'consum' 		    => '\App\Http\Controllers\Consumptions\ConsumptionsGrid',
+		'factura' 		    => '\App\Http\Controllers\Bills\BillsGrid',
 
 	];
 

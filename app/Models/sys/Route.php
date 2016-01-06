@@ -36,6 +36,9 @@ class Route {
 
 			->add('get', 'consumptions_index', 'transport-public/vehicol/{id}/{vehicle_id}', 'ConsumptionsController@index', 'Consumptions')
 			->add('get', 'consumptions_index_row_source', 'consumptions_row_source/{id}/{vehicle_id}', 'ConsumptionsController@rows', 'Consumptions')
+
+			->add('get', 'bills_index', 'institutie/cladire/contor/{id}/{counter_id}', 'BillsController@index', 'Bills')
+			->add('get', 'bills_index_row_source', 'bills_row_source/{id}/{counter_id}', 'BillsController@rows', 'Bills')
 		;
 	}
 

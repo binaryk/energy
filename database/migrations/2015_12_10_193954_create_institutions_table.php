@@ -15,7 +15,7 @@ class CreateInstitutionsTable extends Migration
             $t->string('name');
             $t->string('address',100);
             $t->string('locality');
-            $t->string('country');
+            $t->string('county');
             $t->string('energy_responsable');
             $t->string('owner');
             $t->string('destination');
@@ -23,7 +23,7 @@ class CreateInstitutionsTable extends Migration
             $t->string('year',10);
             $t->string('designer');
             $t->string('builder');
-            $t->string('height');
+            $t->integer('height');
             $t->string('structure_construct');
             $t->string('particularities');
             $t->timestamps();

@@ -44,11 +44,29 @@ class InstitutionsGrid extends GridsRecord
                 'orderable' => 'yes',
                 'class'     => 'td-align-left',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Nume institutie', 'style'   => 'width:90%',],
+                'header'    => ['caption' => 'Nume institutie', 'style'   => 'width:50%',],
                 'type'      => 'field',
                 'source'    => 'name',//numele coloanei din tabelul din BD
             ],
             '3' => [
+                'id'        => 'locality',
+                'orderable' => 'yes',
+                'class'     => 'td-align-left',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Localitatea', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'locality',//numele coloanei din tabelul din BD
+            ],
+            '4' => [
+                'id'        => 'county',
+                'orderable' => 'yes',
+                'class'     => 'td-align-left',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Judetul', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'county',//numele coloanei din tabelul din BD
+            ],
+            '5' => [
                 'id'        => 'action',
                 'orderable' => 'no',
                 'class'     => 'td-align-center td-actions',

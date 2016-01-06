@@ -1,1 +1,1 @@
-@extends('~layouts.datatable.index_modal')
+@extends('~layouts.datatable.index')

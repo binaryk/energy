@@ -22,7 +22,7 @@ class CreateBuildingsTable extends Migration
             $t->string('year',10);
             $t->string('designer');
             $t->string('builder');
-            $t->string('height');
+            $t->integer('height');
             $t->string('structure_construct');
             $t->string('particularities');
             $t->timestamps();

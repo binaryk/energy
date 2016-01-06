@@ -59,11 +59,11 @@ class InstitutionsForm extends \Processing\Form\Form
             )
               ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
-                    ->name('country')
+                    ->name('county')
                     ->caption('Tara')
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
-                    ->controlsource('country')
+                    ->controlsource('county')
                     ->controltype('textbox')
                     ->maxlength(255)
             )
