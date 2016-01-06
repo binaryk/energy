@@ -38,11 +38,11 @@ class BuildingsForm extends \Processing\Form\Form
 
             ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
-                    ->name('street')
+                    ->name('address')
                     ->caption('Adresa')
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
-                    ->controlsource('street')
+                    ->controlsource('address')
                     ->controltype('textbox')
                     ->maxlength(255)
 
@@ -61,11 +61,11 @@ class BuildingsForm extends \Processing\Form\Form
             )
               ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
-                    ->name('country')
-                    ->caption('Tara')
+                    ->name('county')
+                    ->caption('Judetul')
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
-                    ->controlsource('country')
+                    ->controlsource('county')
                     ->controltype('textbox')
                     ->maxlength(255)
             )

@@ -41,23 +41,32 @@ class BuildingsGrid extends GridsRecord
                 'type'      => 'row-number',
                 'source'    => 'row-number',
             ],
-            '2' => [
+           '2' => [
                 'id'        => 'name',
                 'orderable' => 'yes',
                 'class'     => 'td-align-left',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Nume institutie', 'style'   => 'width:75%',],
+                'header'    => ['caption' => 'Nume institutie', 'style'   => 'width:50%',],
                 'type'      => 'field',
                 'source'    => 'name',//numele coloanei din tabelul din BD
             ],
             '3' => [
-                'id'        => 'street',
-                'orderable' => 'no',
-                'class'     => 'td-align-center',
+                'id'        => 'locality',
+                'orderable' => 'yes',
+                'class'     => 'td-align-left',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Strada', 'style'   => 'width:11%',],
+                'header'    => ['caption' => 'Localitatea', 'style'   => 'width:20%',],
                 'type'      => 'field',
-                'source'    => 'street',//numele coloanei din tabelul din BD
+                'source'    => 'locality',//numele coloanei din tabelul din BD
+            ],
+            '4' => [
+                'id'        => 'county',
+                'orderable' => 'yes',
+                'class'     => 'td-align-left',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Judetul', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'county',//numele coloanei din tabelul din BD
             ],
             '4' => [
                 'id'        => 'action',

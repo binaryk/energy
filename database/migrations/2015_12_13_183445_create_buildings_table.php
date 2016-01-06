@@ -12,9 +12,9 @@ class CreateBuildingsTable extends Migration
             $t->increments('id');
             $t->integer('institution_id');
             $t->string('name');
-            $t->string('street');
+            $t->string('address');
             $t->string('locality');
-            $t->string('country');
+            $t->string('county');
             $t->string('energy_responsable');
             $t->string('owner');
             $t->string('destination');

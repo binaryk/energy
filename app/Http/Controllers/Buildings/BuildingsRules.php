@@ -21,8 +21,8 @@ class BuildingsRules extends FormsRecord
 
             ->addRule('insert', 'name', 'required')
             ->addRule('update', 'name', 'required')
-            ->addRule('insert', 'street', 'required')
-            ->addRule('update', 'street', 'required')
+            ->addRule('insert', 'address', 'required')
+            ->addRule('update', 'address', 'required')
             ->addRule('insert', 'locality', 'required')
             ->addRule('update', 'locality', 'required')
             ->addRule('insert', 'energy_responsable', 'required')
@@ -34,8 +34,8 @@ class BuildingsRules extends FormsRecord
 
             ->addMessage('insert', 'name.required', 'Denumirea cladirii trebuie completata.')
             ->addMessage('update', 'name.required', 'Denumirea cladirii trebuie completata.')
-            ->addMessage('insert', 'street.required', 'Adresa cladirii trebuie completata.')
-            ->addMessage('update', 'street.required', 'Adresa cladirii trebuie completata.')
+            ->addMessage('insert', 'address.required', 'Adresa cladirii trebuie completata.')
+            ->addMessage('update', 'address.required', 'Adresa cladirii trebuie completata.')
             ->addMessage('insert', 'locality.required', 'Introduceti localitatea.')
             ->addMessage('update', 'locality.required', 'Introduceti localitatea.')
             ->addMessage('insert', 'energy_responsable.required', 'Introduceti anul contstructiei.')
