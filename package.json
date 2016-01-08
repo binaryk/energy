@@ -18,5 +18,25 @@
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.0",
     "zone.js": "0.5.10"
-  }
+  },
+  "name": "energy",
+  "description": "Proiect destinat gestionarii energetice la nivel national",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binaryk/energy.git"
+  },
+  "author": "binaryk.net",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binaryk/energy/issues"
+  },
+  "homepage": "https://github.com/binaryk/energy#readme"
 }

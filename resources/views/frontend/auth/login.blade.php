@@ -6,11 +6,9 @@
             <div class="session-carousel slide" data-ride="carousel" data-interval="3000">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                    <div class="item active" style="background-image:url(http://lorempixel.com/1200/800);background-size:cover;background-repeat: no-repeat;background-position: 50% 50%;">
+                    <div class="item active" style="background-image:url({!! asset('custom/img/bg1.jpg') !!});background-size:cover;background-repeat: no-repeat;background-position: 50% 50%;">
                     </div>
-                    <div class="item" style="background-image:url(http://lorempixel.com/1200/800?2);background-size:cover;background-repeat: no-repeat;background-position: 50% 50%;">
-                    </div>
-                    <div class="item" style="background-image:url(http://lorempixel.com/1200/800?3);background-size:cover;background-repeat: no-repeat;background-position: 50% 50%;">
+                    <div class="item active" style="background-image:url({!! asset('custom/img/bg2.jpg') !!});background-size:cover;background-repeat: no-repeat;background-position: 50% 50%;">
                     </div>
                 </div>
             </div>

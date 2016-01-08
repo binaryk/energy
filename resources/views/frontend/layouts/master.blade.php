@@ -2,7 +2,7 @@
 <html class="no-js" lang="">
 <head>
     <meta charset="utf-8">
-    <title>Reactor - Bootstrap Admin Template</title>
+    <title>PactulPrimariilor</title>
     <meta name="description" content="">
     <meta name="csrf_token" content="{!! csrf_token() !!}"/>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
