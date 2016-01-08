@@ -42,7 +42,7 @@ class AuthController extends Controller
     {
         if (config('access.users.confirm_email')) {
             $this->auth->create($request->all());
-            return redirect()->route('home')->withFlashSuccess('Your account was successfully created. We have sent you an e-mail to confirm your account.');
+            return redirect()->route('home')->withFlashSuccess('Contul dvs a fost creat cu succes. Verificati email-ul pentru a confirma contul.');
         } else {
             //Use native auth login because do not need to check status when registering
             auth()->login($this->auth->create($request->all()));
@@ -136,7 +136,7 @@ class AuthController extends Controller
             return redirect()->back()->withInput()->withFlashDanger($e->getMessage());
         }
 
-        return redirect()->to('auth/login')->withFlashSuccess('Your account has been successfully confirmed!');
+        return redirect()->to('auth/login')->withFlashSuccess('Constul dvs a fost confirmat cu succes!');
     }
 
     /**
@@ -148,7 +148,7 @@ class AuthController extends Controller
         //Don't know why the exception handler is not catching this
         try {
             $this->auth->resendConfirmationEmail($user_id);
-            return redirect()->route('home')->withFlashSuccess('A new confirmation e-mail has been sent to the address on file.');
+            return redirect()->route('home')->withFlashSuccess('Un nou mail de confirmare a fost trimis.');
         } catch (GeneralException $e) {
             return redirect()->back()->withInput()->withFlashDanger($e->getMessage());
         }

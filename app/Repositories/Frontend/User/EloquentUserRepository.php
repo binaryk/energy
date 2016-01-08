@@ -40,7 +40,7 @@ class EloquentUserRepository implements UserContract
             return $user;
         }
 
-        throw new GeneralException('That user does not exist.');
+        throw new GeneralException('Acest utilizator nu exista.');
     }
 
     /**
@@ -207,7 +207,7 @@ class EloquentUserRepository implements UserContract
             if ($user->email != $input['email']) {
                 //Emails have to be unique
                 if (User::where('email', $input['email'])->first()) {
-                    throw new GeneralException('That e-mail address is already taken.');
+                    throw new GeneralException('Acest email este folosit deja.');
                 }
 
                 $user->email = $input['email'];
@@ -232,7 +232,7 @@ class EloquentUserRepository implements UserContract
             return $user->save();
         }
 
-        throw new GeneralException('That is not your old password.');
+        throw new GeneralException('Aceasta nu este vechea parola.');
     }
 
     /**
@@ -245,7 +245,7 @@ class EloquentUserRepository implements UserContract
 
         if ($user) {
             if ($user->confirmed == 1) {
-                throw new GeneralException('Your account is already confirmed.');
+                throw new GeneralException('Contul este deja confirmat.');
             }
 
             if ($user->confirmation_code == $token) {
@@ -253,10 +253,10 @@ class EloquentUserRepository implements UserContract
                 return $user->save();
             }
 
-            throw new GeneralException('Your confirmation code does not match.');
+            throw new GeneralException('Codul de confirmare nu este bun.');
         }
 
-        throw new GeneralException('That confirmation code does not exist.');
+        throw new GeneralException('Acest cod de confirmare nu este in baza de date.');
     }
 
     /**
@@ -271,7 +271,7 @@ class EloquentUserRepository implements UserContract
         }
 
         return Mail::send('emails.confirm', ['token' => $user->confirmation_code], function ($message) use ($user) {
-            $message->to($user->email, $user->name)->subject(app_name() . ': Confirm your account!');
+            $message->to($user->email, $user->name)->subject(app_name() . ': Confirma contul!');
         });
     }
 }
