@@ -14,6 +14,6 @@ return [
 	*/
 
 	'failed' => 'Aceste credentiale nu conicid.',
-	'throttle' => 'Pre multe incercari. Reveniti peste :seconds secunde.',
+	'throttle' => 'Prea multe incercari. Reveniti peste :seconds secunde.',
 
 ];

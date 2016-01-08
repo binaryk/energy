@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="{!! asset('template/styles/animate.css')!!}">
 <link rel="stylesheet" href="{!! asset('template/styles/app.css')!!}">
 <link rel="stylesheet" href="{!! asset('template/styles/app.skins.css')!!}">
+<link href="{!! asset('custom/img/favicon.ico') !!}" rel="icon" type="image/x-icon" />
 <!-- endbuild -->
 <link rel="stylesheet" href="{!! asset('custom/css/main.css') !!}">
 <script>
