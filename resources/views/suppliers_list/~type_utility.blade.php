@@ -1,0 +1,1 @@
+{!! @\App\Models\Supplier::type_supplier()[$record->type] !!}

@@ -12,15 +12,17 @@ class Grids {
 	protected $grids = [];
 
 	protected $maps = [
-		'institutions' 		=> '\App\Http\Controllers\Institutions\InstitutionsGrid',
-		'cladiri' 			=> '\App\Http\Controllers\Buildings\BuildingsGrid',
-		'contoare' 		    => '\App\Http\Controllers\Counters\CountersGrid',
-		'programdmi' 		=> '\App\Http\Controllers\Programdmi\ProgramdmiGrid',
-		'programoug' 		=> '\App\Http\Controllers\Programoug\ProgramougGrid',
-		'vehicole' 		    => '\App\Http\Controllers\Vehicles\VehiclesGrid',
-		'consum' 		    => '\App\Http\Controllers\Consumptions\ConsumptionsGrid',
-		'factura' 		    => '\App\Http\Controllers\Bills\BillsGrid',
-		'furnizori' 		    => '\App\Http\Controllers\Suppliers\SuppliersGrid',
+		'institutions' 		  => '\App\Http\Controllers\Institutions\InstitutionsGrid',
+		'cladiri' 			  => '\App\Http\Controllers\Buildings\BuildingsGrid',
+		'contoare' 		      => '\App\Http\Controllers\Counters\CountersGrid',
+		'programdmi' 		  => '\App\Http\Controllers\Programdmi\ProgramdmiGrid',
+		'programoug' 		  => '\App\Http\Controllers\Programoug\ProgramougGrid',
+		'vehicole' 		      => '\App\Http\Controllers\Vehicles\VehiclesGrid',
+		'consum' 		      => '\App\Http\Controllers\Consumptions\ConsumptionsGrid',
+		'factura' 		      => '\App\Http\Controllers\Bills\BillsGrid',
+		'furnizori' 		  => '\App\Http\Controllers\Suppliers\SuppliersGrid',
+		'puncte-de-masurare'  => '\App\Http\Controllers\Measuringpoints\MeasuringpointsGrid',
+
 
 	];
 

@@ -36,14 +36,14 @@ class Sidebar
 					'options' => [],
 					'active'  => ['transport_public*'],
 		],
-		'lista furnizori'=> [
+		'nomenclator'=> [
 					'header'  => [
 					'caption' => 'Nomenclator',
 					'icon'    => 'icon-layers',
-				    'childs'  => '1',
+				    'childs'  => '2',
 					],
 					'options' => [],
-					'active'  => ['lista furnizori*'],
+					'active'  => ['nomenclator*'],
 		],
 
 	];
@@ -67,7 +67,8 @@ class Sidebar
         $this->addOption('eficienta_energetica', route('programoug_index',['id' => 'programoug']), 'Program OUG 18', 'user-plus');
         $this->addOption('eficienta_energetica', route('programdmi_index',['id' => 'programdmi']), 'POR DMI 12', 'user-plus');
         $this->addOption('transport_public', route('vehicles_index',['id' => 'vehicole']), 'Lista Vehicole', 'user-plus');
-        $this->addOption('lista furnizori', route('suppliers_index',['id' => 'furnizori']), 'Lista Furnizori', 'user-plus');
+        $this->addOption('nomenclator', route('suppliers_index',['id' => 'furnizori']), 'Lista Furnizori', 'user-plus');
+        $this->addOption('nomenclator', route('points_index',['id' => 'puncte-de-masurare']), 'Puncte de Masurare', 'user-plus');
 
 	}
 

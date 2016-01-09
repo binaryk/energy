@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Supplier extends Model
+class Point extends Model
 {
 	protected $guarded = ['token'];
-	protected $table = 'suppliers_list';
+	protected $table = 'measuring_points';
 
 	public static function getRecord( $id )
 	{
@@ -37,16 +37,5 @@ class Supplier extends Model
 			return false;
 		}
 		return $record->delete();
-	}
-	public static function type_supplier()
-	{
-		return [
-			'0'   => '--Alege--',
-			'1'   => 'Electricitate',
-			'2'   => 'Gaze Naturale',
-			'3'   => 'Apa Potabila',
-			'4'   => 'Energie Termica',
-			'5'   => 'Combustibili Lichizi'
-		];
 	}
 }
