@@ -51,11 +51,20 @@ class BuildingsGrid extends GridsRecord
                 'orderable' => 'yes',
                 'class'     => 'td-align-left',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Nume institutie', 'style'   => 'width:50%',],
+                'header'    => ['caption' => 'Nume institutie', 'style'   => 'width:30%',],
                 'type'      => 'field',
                 'source'    => 'name',//numele coloanei din tabelul din BD
             ],
             '3' => [
+                'id'        => 'address',
+                'orderable' => 'yes',
+                'class'     => 'td-align-left',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Adresa', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'address',//numele coloanei din tabelul din BD
+            ],
+            '4' => [
                 'id'        => 'locality',
                 'orderable' => 'yes',
                 'class'     => 'td-align-left',
@@ -64,16 +73,16 @@ class BuildingsGrid extends GridsRecord
                 'type'      => 'field',
                 'source'    => 'locality',//numele coloanei din tabelul din BD
             ],
-            '4' => [
-                'id'        => 'county',
+            '5' => [
+                'id'        => 'energy_responsable',
                 'orderable' => 'yes',
                 'class'     => 'td-align-left',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Judetul', 'style'   => 'width:20%',],
+                'header'    => ['caption' => 'Responsabil Energetic', 'style'   => 'width:20%',],
                 'type'      => 'field',
-                'source'    => 'county',//numele coloanei din tabelul din BD
+                'source'    => 'energy_responsable',//numele coloanei din tabelul din BD
             ],
-            '4' => [
+            '6' => [
                 'id'        => 'action',
                 'orderable' => 'no',
                 'class'     => 'td-align-center td-actions',
