@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Bill;
+use Illuminate\Support\Facades\Input;
 use System\DatatableController;
 use System\Grids;
 use System\StdHelper;

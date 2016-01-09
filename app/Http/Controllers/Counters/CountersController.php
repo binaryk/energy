@@ -2,6 +2,7 @@
 
 use App\Models\Institution;
 use App\Models\Build;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -62,13 +63,11 @@ class CountersController extends DatatableController
     public function furnizori()
     {
         $id_utilitate = Input::get('id');
-       switch($id_utilitate){
-           case 1:
-               return [ 'options' => ['0' => '--Alege--','1' => 'Electrica SRL'] ];
-               break;
-       }
         $out = [];
-
-        return ['options' => ['0' => count($out) > 0 ? '-- Selectati produs --' : '-- Nu are produse --' ,] + $out];
+        $data = Supplier::where('type',$id_utilitate)->get()->toArray();
+        foreach($data as $k => $d){
+            $out[$d['id']] = $d['name'];
+        }
+        return ['options' => ['0' => count($out) > 0 ? '-- Selectati furnizor --' : '-- Nu are furnizor --'] + $out];
     }
 }

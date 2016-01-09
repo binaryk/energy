@@ -40,12 +40,28 @@ class Route {
 			->add('get', 'bills_index', 'institutie/cladire/contor/{id}/{counter_id}', 'BillsController@index', 'Bills')
 			->add('get', 'bills_index_row_source', 'bills_row_source/{id}/{counter_id}', 'BillsController@rows', 'Bills')
 
-<<<<<<< HEAD
 			->add('get', 'suppliers_index', 'monitorizare-energetica/{id}', 'SuppliersController@index', 'Suppliers')
-			->add('get', 'suppliers_index_row_source', 'suppliers_row_source/{id}/', 'SuppliersController@rows', 'Suppliers')
-=======
+<<<<<<< HEAD
 			->add('post', 'get_furnizor_by_utilitate', 'get_furnizor_by_utilitate', 'CountersController@furnizori', 'Counters')
->>>>>>> 14e3c8da17e922cfa8d785bda882a6fda53f6737
+
+			->add('get', 'suppliers_index_row_source', 'suppliers_row_source/{id}/', 'SuppliersController@rows', 'Suppliers')
+
+			/**
+			 *Monitorizare
+			*/
+			->add('get', 'consum_institutie', 'consum_institutie/{per}/', 'ConsumInstitutii@index', 'Monitorizare')
+			->add('get', 'consum_institutie_buildings_index', 'consum_institutie_cladiri/{id}', 'BuildingsController@index', 'Monitorizare')
+			->add('get', 'consum_institutie_buildings_index_row_source', 'consum_institutie_buildings_index_row_source/{id}', 'BuildingsController@rows', 'Monitorizare')
+
+			->add('get', 'facturi_by_type', 'facturi_by_type/{type}/{id}', 'ConsumInstitutii@byType', 'Monitorizare')
+=======
+			->add('get', 'suppliers_index_row_source', 'suppliers_row_source/{id}/', 'SuppliersController@rows', 'Suppliers')
+
+			->add('get', 'points_index', 'monitorizare_energetica/{id}', 'MeasuringpointsController@index', 'Measuringpoints')
+			->add('get', 'points_index_row_source', 'points_row_source/{id}/', 'MeasuringpointsController@rows', 'Measuringpoints')
+
+			->add('post', 'get_furnizor_by_utilitate', 'get_furnizor_by_utilitate', 'CountersController@furnizori', 'Counters')
+>>>>>>> 1f82345f4ab881e46230d668faadd9b5dc278027
 		;
 	}
 

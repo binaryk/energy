@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Bill extends Model
@@ -48,5 +49,45 @@ class Bill extends Model
 			'3' => 'Estimare+Regularizare',
 			'4' => 'Regularizare'
 		];
+	}
+
+	public function setDateBillAttribute($value)
+	{
+		$date = Carbon::parse($value)->format('Y-m-d');
+		$this->attributes['date_bill'] = strtolower($date);
+	}
+
+	public function getDateBillAttribute($value)
+	{
+		return $date = Carbon::parse($value)->format('m/d/Y');
+	}
+
+	public function setStartBillingAttribute($value)
+	{
+		$date = Carbon::parse($value)->format('Y-m-d');
+		$this->attributes['start_billing'] = strtolower($date);
+	}
+
+	public function getStartBillingAttribute($value)
+	{
+		return $date = Carbon::parse($value)->format('m/d/Y');
+	}
+
+	public function setStopBillingAttribute($value)
+	{
+		$date = Carbon::parse($value)->format('Y-m-d');
+		$this->attributes['stop_billing'] = strtolower($date);
+	}
+
+	public function getStopBillingAttribute($value)
+	{
+		return $date = Carbon::parse($value)->format('m/d/Y');
+	}
+
+
+
+	public function counter()
+	{
+		return $this->belongsTo('App\Models\Counter','counter_id');
 	}
 }

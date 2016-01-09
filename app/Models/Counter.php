@@ -49,4 +49,14 @@ class Counter extends Model
 			'3' => 'Apa',
 		];
 	}
+
+	public function bills()
+	{
+		return $this->hasMany('\App\Models\Bill','counter_id');
+	}
+
+	public function build()
+	{
+		return $this->belongsTo('App\Models\Build','build_id');
+	}
 }

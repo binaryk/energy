@@ -40,6 +40,8 @@ class Supplier extends Model
 	}
 	public static function type_supplier()
 	{
+		return Counter::utilitate();
+
 		return [
 			'0'   => '--Alege--',
 			'1'   => 'Electricitate',

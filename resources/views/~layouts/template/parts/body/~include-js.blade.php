@@ -7,7 +7,6 @@
 <script src="{!! asset('template/scripts/constants.js')!!}"></script>
 <script src="{!! asset('template/scripts/main.js')!!}"></script>
 
-<script src="{!! asset('custom/js/utils/math.js')!!}"></script>
 
 <script src="{!! asset('components/angular/angular.min.js') !!}"></script>
 <script src="{!! asset('custom/js/angular/~config.js') !!}"></script>

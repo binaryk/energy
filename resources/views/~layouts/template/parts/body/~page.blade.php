@@ -8,8 +8,8 @@
 	      <!-- /top header -->
 	    <div class="main-content">
 	    @include('~layouts.template.parts.body.~breadcrumbs	')
-
-		@yield('content')
+		@include('includes.partials.messages')
+			@yield('content')
 		</div>
 	</div>
 

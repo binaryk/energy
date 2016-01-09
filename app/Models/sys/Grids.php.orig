@@ -12,6 +12,18 @@ class Grids {
 	protected $grids = [];
 
 	protected $maps = [
+<<<<<<< HEAD
+		'institutions' 		=> '\App\Http\Controllers\Institutions\InstitutionsGrid',
+		'cladiri' 			=> '\App\Http\Controllers\Buildings\BuildingsGrid',
+		'contoare' 		    => '\App\Http\Controllers\Counters\CountersGrid',
+		'programdmi' 		=> '\App\Http\Controllers\Programdmi\ProgramdmiGrid',
+		'programoug' 		=> '\App\Http\Controllers\Programoug\ProgramougGrid',
+		'vehicole' 		    => '\App\Http\Controllers\Vehicles\VehiclesGrid',
+		'consum' 		    => '\App\Http\Controllers\Consumptions\ConsumptionsGrid',
+		'factura' 		    => '\App\Http\Controllers\Bills\BillsGrid',
+		'furnizori' 		    => '\App\Http\Controllers\Suppliers\SuppliersGrid',
+		'cladirile' 		    => '\App\Http\Controllers\Monitorizare\CladiriGrid',
+=======
 		'institutions' 		  => '\App\Http\Controllers\Institutions\InstitutionsGrid',
 		'cladiri' 			  => '\App\Http\Controllers\Buildings\BuildingsGrid',
 		'contoare' 		      => '\App\Http\Controllers\Counters\CountersGrid',
@@ -21,9 +33,9 @@ class Grids {
 		'consum' 		      => '\App\Http\Controllers\Consumptions\ConsumptionsGrid',
 		'factura' 		      => '\App\Http\Controllers\Bills\BillsGrid',
 		'furnizori' 		  => '\App\Http\Controllers\Suppliers\SuppliersGrid',
-		'cladirile' 		    => '\App\Http\Controllers\Monitorizare\CladiriGrid',
 		'puncte-de-masurare'  => '\App\Http\Controllers\Measuringpoints\MeasuringpointsGrid',
 
+>>>>>>> 1f82345f4ab881e46230d668faadd9b5dc278027
 
 	];
 
