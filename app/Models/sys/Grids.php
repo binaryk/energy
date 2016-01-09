@@ -20,6 +20,7 @@ class Grids {
 		'vehicole' 		    => '\App\Http\Controllers\Vehicles\VehiclesGrid',
 		'consum' 		    => '\App\Http\Controllers\Consumptions\ConsumptionsGrid',
 		'factura' 		    => '\App\Http\Controllers\Bills\BillsGrid',
+		'furnizori' 		    => '\App\Http\Controllers\Suppliers\SuppliersGrid',
 
 	];
 

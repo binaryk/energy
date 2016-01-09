@@ -16,7 +16,6 @@ class Sidebar
 			],
 			'options' => [],
 			'active'  => ['institutii*'],
-			'submenu' => false,
 		],
 
 		'eficienta_energetica'=> [
@@ -27,7 +26,6 @@ class Sidebar
 					],
 					'options' => [],
 					'active'  => ['eficienta_energetica*'],
-					'submenu' => false,
 		],
 		'transport_public'=> [
 					'header'  => [
@@ -37,27 +35,15 @@ class Sidebar
 					],
 					'options' => [],
 					'active'  => ['transport_public*'],
-					'submenu' => false,
 		],
-		'monitorizare_energetica'=> [
+		'lista furnizori'=> [
 					'header'  => [
-					'caption' => 'Monitorizare',
-					'icon'    => 'icon-speedometer',
+					'caption' => 'Nomenclator',
+					'icon'    => 'icon-layers',
 				    'childs'  => '1',
 					],
 					'options' => [],
-					'active'  => ['monitorizare*'],
-					'submenu' => false,
-		],
-		'monitorizare_energetica_consum_utilitati'=> [
-					'header'  => [
-					'caption' => 'Monitorizare',
-					'icon'    => 'icon-speedometer',
-				    'childs'  => '1',
-					],
-					'options' => [],
-					'active'  => ['monitorizare*'],
-					'submenu' => false,
+					'active'  => ['lista furnizori*'],
 		],
 
 	];
@@ -81,7 +67,8 @@ class Sidebar
         $this->addOption('eficienta_energetica', route('programoug_index',['id' => 'programoug']), 'Program OUG 18', 'user-plus');
         $this->addOption('eficienta_energetica', route('programdmi_index',['id' => 'programdmi']), 'POR DMI 12', 'user-plus');
         $this->addOption('transport_public', route('vehicles_index',['id' => 'vehicole']), 'Lista Vehicole', 'user-plus');
-        $this->addOption('monitorizare_energetica', route('vehicles_index',['id' => 'vehicole']), 'Lista Vehicole', 'user-plus');
+        $this->addOption('lista furnizori', route('suppliers_index',['id' => 'furnizori']), 'Lista Furnizori', 'user-plus');
+
 	}
 
 	public static function make()

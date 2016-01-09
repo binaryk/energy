@@ -9,9 +9,9 @@
     </div>
     <!-- /toggle offscreen menu -->
     <!-- logo -->
-    <a class="brand-logo">
+    <a href=" {{ URL::to('/') }}" class="brand-logo">
       <span>Pactul primariilor</span>
     </a>
-    <a href="#" class="small-menu-visible brand-logo">E</a>
+    <a href=" {{ URL::to('/') }}" class="small-menu-visible brand-logo">E</a>
     <!-- /logo -->
 </div>
