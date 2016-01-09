@@ -12,7 +12,7 @@ class CreateBillsTable extends Migration
             $table->increments('id');
             $table->tinyinteger('counter_id');
             $table->integer('nr_bill');
-            $table->string('type_bill');
+            $table->integer('type_bill');
             $table->float('consumption_billed');
             $table->float('value_witch_tva');
             $table->datetime('date_bill');

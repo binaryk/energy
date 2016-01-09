@@ -37,7 +37,15 @@ function COMBOBOX(parameters)
         	data     : this.data(),
         	success  : function(result)
         	{
-        		self.setOptions(result.options, value);
+						var array = $.map(result.options, function(value, index) {
+							var out = [];
+							var obj = {};
+							obj.id = index;
+							obj.text = value;
+							out.push(obj)
+							return out;
+						});
+        		self.setOptions(array, value);
         		$(self.control).focus();
         	}
 		})

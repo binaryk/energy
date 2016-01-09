@@ -36,6 +36,15 @@ class Sidebar
 					'options' => [],
 					'active'  => ['transport_public*'],
 		],
+		'monitorizare_energetica'=> [
+					'header'  => [
+					'caption' => 'Monitorizare',
+					'icon'    => 'icon-speedometer',
+				    'childs'  => '1',
+					],
+					'options' => [],
+					'active'  => ['monitorizare*'],
+		],
 
 	];
 
@@ -58,6 +67,7 @@ class Sidebar
         $this->addOption('eficienta_energetica', route('programoug_index',['id' => 'programoug']), 'Program OUG 18', 'user-plus');
         $this->addOption('eficienta_energetica', route('programdmi_index',['id' => 'programdmi']), 'POR DMI 12', 'user-plus');
         $this->addOption('transport_public', route('vehicles_index',['id' => 'vehicole']), 'Lista Vehicole', 'user-plus');
+        $this->addOption('monitorizare_energetica', route('vehicles_index',['id' => 'vehicole']), 'Lista Vehicole', 'user-plus');
 	}
 
 	public static function make()

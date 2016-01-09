@@ -22,7 +22,7 @@ class CountersGrid extends GridsRecord
                               admin/css/dt/toolbar.css,
                               admin/css/dt/dtform.css,
                                        ';
-        $this->js             = 'admin/js/libraries/form/dtform.js';
+        $this->js             = 'admin/js/libraries/form/dtform.js, admin/js/libraries/form/combobox.js';
         $this->row_source     = 'counters_index_row_source';
         $this->rows_source_sql 				= 'SELECT
                                                 *
@@ -55,8 +55,8 @@ class CountersGrid extends GridsRecord
                 'class'     => 'td-align-left',
                 'visible'   => 'yes',
                 'header'    => ['caption' => 'Tip Utilitate', 'style'   => 'width:15%',],
-                'type'      => 'field',
-                'source'    => 'type_utility_id',//numele coloanei din tabelul din BD
+                'type'      => 'view',
+                'source'    => 'counters.~utilitate',//numele coloanei din tabelul din BD
             ],
             '4' => [
                 'id'        => 'provider_id',

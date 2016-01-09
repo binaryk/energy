@@ -38,4 +38,15 @@ class Bill extends Model
 		}
 		return $record->delete();
 	}
+
+	public static function tip()
+	{
+		return [
+			'0' => '--Alege--',
+			'1' => 'Corectie',
+			'2' => 'Estimare',
+			'3' => 'Estimare+Regularizare',
+			'4' => 'Regularizare'
+		];
+	}
 }

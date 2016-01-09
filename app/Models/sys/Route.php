@@ -39,6 +39,8 @@ class Route {
 
 			->add('get', 'bills_index', 'institutie/cladire/contor/{id}/{counter_id}', 'BillsController@index', 'Bills')
 			->add('get', 'bills_index_row_source', 'bills_row_source/{id}/{counter_id}', 'BillsController@rows', 'Bills')
+
+			->add('post', 'get_furnizor_by_utilitate', 'get_furnizor_by_utilitate', 'CountersController@furnizori', 'Counters')
 		;
 	}
 

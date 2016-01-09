@@ -1,0 +1,1 @@
+{!! @\App\Models\Counter::utilitate()[$record->type_utility_id] !!}
