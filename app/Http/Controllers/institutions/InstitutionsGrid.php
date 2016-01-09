@@ -44,7 +44,7 @@ class InstitutionsGrid extends GridsRecord
                 'orderable' => 'yes',
                 'class'     => 'td-align-left',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Nume institutie', 'style'   => 'width:50%',],
+                'header'    => ['caption' => 'Nume institutie', 'style'   => 'width:20%',],
                 'type'      => 'field',
                 'source'    => 'name',//numele coloanei din tabelul din BD
             ],
@@ -58,15 +58,33 @@ class InstitutionsGrid extends GridsRecord
                 'source'    => 'locality',//numele coloanei din tabelul din BD
             ],
             '4' => [
-                'id'        => 'county',
+                'id'        => 'owner',
                 'orderable' => 'yes',
                 'class'     => 'td-align-left',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Judetul', 'style'   => 'width:20%',],
+                'header'    => ['caption' => 'Proprietar', 'style'   => 'width:20%',],
                 'type'      => 'field',
-                'source'    => 'county',//numele coloanei din tabelul din BD
+                'source'    => 'owner',//numele coloanei din tabelul din BD
             ],
             '5' => [
+                'id'        => 'destination',
+                'orderable' => 'yes',
+                'class'     => 'td-align-left',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Destinatie principala', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'destination',//numele coloanei din tabelul din BD
+            ],
+            '6' => [
+                'id'        => 'type_building',
+                'orderable' => 'yes',
+                'class'     => 'td-align-left',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Tipul institutiei', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'type_building',//numele coloanei din tabelul din BD
+            ],
+            '7' => [
                 'id'        => 'action',
                 'orderable' => 'no',
                 'class'     => 'td-align-center td-actions',

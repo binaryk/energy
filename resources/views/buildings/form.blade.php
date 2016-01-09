@@ -11,7 +11,6 @@
         {!! $controls[5]->out() !!}
         {!! $controls[6]->out() !!}
         {!! $controls[7]->out() !!}
-        {!! $controls[3]->out() !!}
         {!! $controls[9]->out() !!}
 		
     </div>

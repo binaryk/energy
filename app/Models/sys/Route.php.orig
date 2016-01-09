@@ -40,9 +40,12 @@ class Route {
 			->add('get', 'bills_index', 'institutie/cladire/contor/{id}/{counter_id}', 'BillsController@index', 'Bills')
 			->add('get', 'bills_index_row_source', 'bills_row_source/{id}/{counter_id}', 'BillsController@rows', 'Bills')
 
+<<<<<<< HEAD
 			->add('get', 'suppliers_index', 'monitorizare-energetica/{id}', 'SuppliersController@index', 'Suppliers')
-			->add('post', 'get_furnizor_by_utilitate', 'get_furnizor_by_utilitate', 'CountersController@furnizori', 'Counters')
 			->add('get', 'suppliers_index_row_source', 'suppliers_row_source/{id}/', 'SuppliersController@rows', 'Suppliers')
+=======
+			->add('post', 'get_furnizor_by_utilitate', 'get_furnizor_by_utilitate', 'CountersController@furnizori', 'Counters')
+>>>>>>> 14e3c8da17e922cfa8d785bda882a6fda53f6737
 		;
 	}
 

@@ -15,12 +15,12 @@ class CreateVehiclesTable extends Migration
             $table->string('license_plate_number');
             $table->string('property_type');
             $table->string('fuel_type');
-            $table->string('capacity_cm3');
-            $table->string('year_of_manufacture');
+            $table->float('capacity_cm3');
+            $table->integer('year_of_manufacture');
             $table->string('function_type');
-            $table->string('internal_consumption');
-            $table->string('external_consumption');
-            $table->string('mixed_consumption');
+            $table->float('internal_consumption');
+            $table->floatfloat('external_consumption');
+            $table->float('mixed_consumption');
             $table->timestamps();
             $table->softDeletes();
             

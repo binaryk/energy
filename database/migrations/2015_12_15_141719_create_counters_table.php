@@ -12,8 +12,8 @@ class CreateCountersTable extends Migration
             $table->increments('id');
             $table->integer('build_id');
             $table->integer('code');
-            $table->string('type_utility_id')->comment('gaze naturale, electricitate, apa');
-            $table->string('provider_id');
+            $table->integer('type_utility_id')->comment('gaze naturale, electricitate, apa');
+            $table->integer('provider_id');
             $table->integer('client_code');
             $table->timestamps();
             $table->softDeletes();

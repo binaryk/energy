@@ -39,4 +39,14 @@ class Counter extends Model
 		}
 		return $record->delete();
 	}
+
+	public static function utilitate()
+	{
+		return [
+			'0' => '-- Alege --',
+			'1' => 'Electricitate',
+			'2' => 'Gaze Naturale',
+			'3' => 'Apa',
+		];
+	}
 }

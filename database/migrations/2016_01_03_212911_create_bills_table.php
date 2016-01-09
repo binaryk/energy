@@ -11,14 +11,14 @@ class CreateBillsTable extends Migration
         {
             $table->increments('id');
             $table->tinyinteger('counter_id');
-            $table->string('nr_bill');
-            $table->string('type_bill');
-            $table->string('consumption_billed');
-            $table->string('value_witch_tva');
-            $table->string('date_bill');
-            $table->string('start_billing');
-            $table->string('stop_billing');
-            $table->string('super_power');
+            $table->integer('nr_bill');
+            $table->integer('type_bill');
+            $table->float('consumption_billed');
+            $table->float('value_witch_tva');
+            $table->datetime('date_bill');
+            $table->datetime('start_billing');
+            $table->datetime('stop_billing');
+            $table->float('super_power');
             $table->string('observations');
             $table->timestamps();
             $table->softDeletes();

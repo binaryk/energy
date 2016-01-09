@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers\Bills;
+use App\Models\Bill;
 use Processing\Form\Form;
 
 class BillsForm extends \Processing\Form\Form
@@ -35,16 +36,17 @@ class BillsForm extends \Processing\Form\Form
                     ->controltype('textbox')
                     ->maxlength(255)
             )
-             ->addControl(
-                \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
-                    ->name('type_bill')
-                    ->caption('Tip Factura')
-                    ->class('form-control  data-source')
-                    //->placeholder('Nume')
-                    ->controlsource('type_bill')
-                    ->controltype('textbox')
-                    ->maxlength(255)
-            )
+
+           ->addControl(
+               \Easy\Form\Combobox::make('~layouts.form.controls.comboboxes.combobox')
+                   ->name('type_bill')
+                   ->caption('Tip Factura')
+                   ->class('form-control data-source input-group form-select init-on-update-delete')
+                   ->controlsource('type_bill')
+                   ->controltype('combobox')
+                   ->enabled('false')
+                   ->options(Bill::tip())
+           )
             ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
                     ->name('consumption_billed')

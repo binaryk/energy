@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers\Counters;
+use App\Models\Counter;
 use Processing\Form\Form;
 
 class CountersForm extends \Processing\Form\Form
@@ -37,29 +38,25 @@ class CountersForm extends \Processing\Form\Form
             )
 
             ->addControl(
-                \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
+                \Easy\Form\Combobox::make('~layouts.form.controls.comboboxes.combobox')
                     ->name('type_utility_id')
                     ->caption('Tip Utilizare')
-                    ->class('form-control  data-source')
-                    //->placeholder('Nume')
+                    ->class('form-control data-source input-group form-select init-on-update-delete')
                     ->controlsource('type_utility_id')
-                    ->controltype('textbox')
-                    ->maxlength(255)
-
-                    
+                    ->controltype('combobox')
+                    ->enabled('false')
+                    ->options(Counter::utilitate())
             )
 
-             ->addControl(
-                \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
+            ->addControl(
+                \Easy\Form\Combobox::make('~layouts.form.controls.comboboxes.combobox')
                     ->name('provider_id')
                     ->caption('Denumire Furnizor')
-                    ->class('form-control  data-source')
-                    //->placeholder('Nume')
+                    ->class('form-control data-source input-group form-select init-on-update-delete')
                     ->controlsource('provider_id')
-                    ->controltype('textbox')
-                    ->maxlength(255)
-
-                    
+                    ->controltype('combobox')
+                    ->enabled('false')
+                    ->options(['0' => '--Nu exista denumire --'])
             )
              ->addControl(
             \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')

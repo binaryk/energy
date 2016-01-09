@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Counter;
+use Illuminate\Support\Facades\Input;
 use System\DatatableController;
 use System\Grids;
 use System\StdHelper;
@@ -56,5 +57,18 @@ class CountersController extends DatatableController
         $filters = $config['source']->custom_filters();
         $config['source']->custom_filters( $filters + [ 'test' => 'counters.build_id = '.$build_id ] );
         return $this->dataset( $config );
+    }
+
+    public function furnizori()
+    {
+        $id_utilitate = Input::get('id');
+       switch($id_utilitate){
+           case 1:
+               return [ 'options' => ['0' => '--Alege--','1' => 'Electrica SRL'] ];
+               break;
+       }
+        $out = [];
+
+        return ['options' => ['0' => count($out) > 0 ? '-- Selectati produs --' : '-- Nu are produse --' ,] + $out];
     }
 }

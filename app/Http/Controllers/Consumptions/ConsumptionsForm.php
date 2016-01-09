@@ -43,7 +43,7 @@ class ConsumptionsForm extends \Processing\Form\Form
                     //->placeholder('Nume')
                     ->controlsource('month_faz')
                     ->controltype('combobox')
-                    ->options(\App\Models\Consumer::months())
+                    ->options( \App\Models\Consumer::months() )
                     // ->maxlength(255)
             )
              ->addControl(

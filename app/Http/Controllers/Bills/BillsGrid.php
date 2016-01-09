@@ -59,8 +59,8 @@ class BillsGrid extends GridsRecord
                 'class'     => 'td-align-center',
                 'visible'   => 'yes',
                 'header'    => ['caption' => 'Tip Factura', 'style'   => 'width:18%',],
-                'type'      => 'field',
-                'source'    => 'type_bill',//numele coloanei din tabelul din BD
+                'type'      => 'view',
+                'source'    => 'bills.~type_bill',//numele coloanei din tabelul din BD
             ],
             '4' => [
                 'id'        => 'consumption_billed',
