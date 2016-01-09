@@ -10,19 +10,6 @@
                 <a href="{!! route('frontend.dashboard') !!}">Profil</a>
             </li>
             <li>
-                <a href="javascript:;">Upgrade</a>
-            </li>
-            <li>
-                <a href="javascript:;">
-                    <span class="label bg-danger pull-right">34</span>
-                    <span>Notifications</span>
-                </a>
-            </li>
-            <li role="separator" class="divider"></li>
-            <li>
-                <a href="javascript:;">Help</a>
-            </li>
-            <li>
                 <a href="{!! url('auth/logout') !!}">Logout</a>
             </li>
         </ul>

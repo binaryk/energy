@@ -25,7 +25,7 @@ class Sidebar
 			'childs'  => '2',
 			],
 			'options' => [],
-			'active'  => ['eficienta_energetica*'],
+			'active'  => ['eficienta-energetica*', 'eficienta_energetica*'],
 		],
 		'transport_public'=> [
 			'header'  => [
@@ -34,16 +34,16 @@ class Sidebar
 			'childs'  => '1',
 			],
 			'options' => [],
-			'active'  => ['transport_public*'],
+			'active'  => ['transport*'],
 		],
 		'nomenclator'=> [
 			'header'  => [
 			'caption' => 'Nomenclator',
 			'icon'    => 'icon-layers',
-			'childs'  => '1',
+			'childs'  => '2',
 			],
 			'options' => [],
-			'active'  => ['lista furnizori*'],
+			'active'  => ['monitorizare-energetica*', 'monitorizare_energetica*'],
 		],
 		'monitorizare_energetica'=> [
 			'header'  => [
@@ -53,7 +53,7 @@ class Sidebar
 			],
 			'options' => [],
 			'childs' => [],
-			'active'  => ['monitorizare*'],
+			'active'  => ['consum_institutie_cladiri*'],
 		],
 
 	];
