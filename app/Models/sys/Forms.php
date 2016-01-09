@@ -16,7 +16,8 @@ class Forms
 		 'programoug'   => '\App\Http\Controllers\Programoug\ProgramougRules',
 		 'vehicole'     => '\App\Http\Controllers\Vehicles\VehiclesRules',
 		 'consum'       => '\App\Http\Controllers\Consumptions\ConsumptionsRules',
-		 'factura'       => '\App\Http\Controllers\Bills\BillsRules',
+		 'factura'      => '\App\Http\Controllers\Bills\BillsRules',
+		 'furnizori'    => '\App\Http\Controllers\Suppliers\SuppliersRules',
 
 	];
 
