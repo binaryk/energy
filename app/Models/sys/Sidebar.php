@@ -13,7 +13,6 @@ class Sidebar
 				'caption' => 'Institutii publice',
 				'icon'    => 'icon-globe-alt',
 			    'childs'  => '6',
-				'submenu' => false,
 			],
 			'options' => [],
 			'active'  => ['institutii*'],
@@ -24,7 +23,6 @@ class Sidebar
 			'caption' => 'Eficienta Energetica',
 			'icon'    => 'icon-energy',
 			'childs'  => '2',
-			'submenu' => false,
 			],
 			'options' => [],
 			'active'  => ['eficienta_energetica*'],
@@ -34,7 +32,6 @@ class Sidebar
 			'caption' => 'Transport Public',
 			'icon'    => 'icon-speedometer',
 			'childs'  => '1',
-			'submenu' => false,
 			],
 			'options' => [],
 			'active'  => ['transport_public*'],
@@ -44,7 +41,6 @@ class Sidebar
 			'caption' => 'Nomenclator',
 			'icon'    => 'icon-layers',
 			'childs'  => '1',
-			'submenu' => false,
 			],
 			'options' => [],
 			'active'  => ['lista furnizori*'],
@@ -54,20 +50,9 @@ class Sidebar
 				'caption' => 'Monitorizare',
 				'icon'    => 'icon-speedometer',
 				'childs'  => '1',
-				'submenu' => false,
 			],
 			'options' => [],
 			'childs' => [],
-			'active'  => ['monitorizare*'],
-		],
-		'monitorizare_energetica_consum_utilitati'=> [
-			'header'  => [
-				'caption' => 'Monitorizare',
-				'icon'    => 'icon-speedometer',
-				'childs'  => '1',
-				'submenu' => 'monitorizare_energetica',
-			],
-			'options' => [],
 			'active'  => ['monitorizare*'],
 		],
 
@@ -92,7 +77,6 @@ class Sidebar
         $this->addOption('eficienta_energetica', route('programoug_index',['id' => 'programoug']), 'Program OUG 18', 'user-plus');
         $this->addOption('eficienta_energetica', route('programdmi_index',['id' => 'programdmi']), 'POR DMI 12', 'user-plus');
         $this->addOption('transport_public', route('vehicles_index',['id' => 'vehicole']), 'Lista Vehicole', 'user-plus');
-        $this->addOption('lista_furnizori', route('suppliers_index',['id' => 'furnizori']), 'Lista Furnizori', 'user-plus');
         $this->addOption('monitorizare_energetica', route('consum_institutie_buildings_index',['id' => 'cladirile']), 'Lista Cladiri', 'user-plus');
         $this->addOption('nomenclator', route('suppliers_index',['id' => 'furnizori']), 'Lista Furnizori', 'user-plus');
         $this->addOption('nomenclator', route('points_index',['id' => 'puncte-de-masurare']), 'Puncte de Masurare', 'user-plus');
@@ -145,7 +129,7 @@ class Sidebar
 		$result = '';
 		foreach($this->sidebar as $key => $group)
 		{
-			$result .= '<li class="' . $this->_active($group['active'])  . '">' . $this->OutGroup($group) . '</li>';
+			$result .= '<li class="' . $this->_active(@$group['active'])  . '">' . $this->OutGroup($group) . '</li>';
 		}
 		return $result;
 	}
