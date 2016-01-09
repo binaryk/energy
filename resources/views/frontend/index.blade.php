@@ -7,7 +7,7 @@
         </div>
         <div class="row post-header text-white">
             <div class="col p-b-lg col-xs-10 col-xs-offset-2">
-                <h2>INDICATORI DE EFICIENTA ENERGETICA pentru ROMANIA</h2>
+                <h2 align="center">INDICATORI DE EFICIENTA ENERGETICA pentru ROMANIA</h2>
                 <h4 align="center">Referinte: <a href="http://www.worldenergy.org/data/efficiency-indicators/" target="_blanck">http://www.worldenergy.org/data/efficiency-indicators/</a></h4>
             </div>
         </div>
@@ -35,7 +35,7 @@
                 <div class="col-md-6">
                     <figure class="cap-right">
                         <img src="{!! asset('images/imagine.jpg') !!}" alt="" class="img-responsive">
-                        <figcaption>GreenPeace.</figcaption>
+                        <figcaption>Fara energie nu ai nimic.</figcaption>
                     </figure>
                 </div>
                     <h4>Mergem mai departe</h4>
