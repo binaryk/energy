@@ -42,7 +42,17 @@ class Route {
 
 			->add('get', 'suppliers_index', 'monitorizare-energetica/{id}', 'SuppliersController@index', 'Suppliers')
 			->add('post', 'get_furnizor_by_utilitate', 'get_furnizor_by_utilitate', 'CountersController@furnizori', 'Counters')
+
 			->add('get', 'suppliers_index_row_source', 'suppliers_row_source/{id}/', 'SuppliersController@rows', 'Suppliers')
+
+			/**
+			 *Monitorizare
+			*/
+			->add('get', 'consum_institutie', 'consum_institutie/{per}/', 'ConsumInstitutii@index', 'Monitorizare')
+			->add('get', 'consum_institutie_buildings_index', 'consum_institutie_cladiri/{id}', 'BuildingsController@index', 'Monitorizare')
+			->add('get', 'consum_institutie_buildings_index_row_source', 'consum_institutie_buildings_index_row_source/{id}', 'BuildingsController@rows', 'Monitorizare')
+
+			->add('get', 'facturi_by_type', 'facturi_by_type/{type}/{id}', 'ConsumInstitutii@byType', 'Monitorizare')
 		;
 	}
 

@@ -49,4 +49,9 @@ class Bill extends Model
 			'4' => 'Regularizare'
 		];
 	}
+
+	public function counter()
+	{
+		return $this->belongsTo('App\Models\Counter','counter_id');
+	}
 }

@@ -122,9 +122,9 @@ function _startDate($dat, $option){
     return $temp - $option->start_mounth + 1;
 }
 
-function _before_out($in, $lenght){
+function _before_out($in,$start, $lenght){
     $out = [];
-    for ($i=1; $i <= $lenght; $i++) {
+    for ($i=$start; $i <= $lenght; $i++) {
         $out[$i] = array_key_exists($i, $in) ? $in[$i] : 0;
     }
     return $out;

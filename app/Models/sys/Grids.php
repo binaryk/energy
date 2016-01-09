@@ -21,6 +21,7 @@ class Grids {
 		'consum' 		    => '\App\Http\Controllers\Consumptions\ConsumptionsGrid',
 		'factura' 		    => '\App\Http\Controllers\Bills\BillsGrid',
 		'furnizori' 		    => '\App\Http\Controllers\Suppliers\SuppliersGrid',
+		'cladirile' 		    => '\App\Http\Controllers\Monitorizare\CladiriGrid',
 
 	];
 

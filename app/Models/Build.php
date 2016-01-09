@@ -39,4 +39,9 @@ class Build extends Model
 		}
 		return $record->delete();
 	}
+
+	public function counters()
+	{
+		return $this->hasMany('\App\Models\Counter', 'build_id');
+	}
 }

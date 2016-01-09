@@ -13,37 +13,62 @@ class Sidebar
 				'caption' => 'Institutii publice',
 				'icon'    => 'icon-globe-alt',
 			    'childs'  => '6',
+				'submenu' => false,
 			],
 			'options' => [],
 			'active'  => ['institutii*'],
 		],
 
 		'eficienta_energetica'=> [
-					'header'  => [
-					'caption' => 'Eficienta Energetica',
-					'icon'    => 'icon-energy',
-				    'childs'  => '2',
-					],
-					'options' => [],
-					'active'  => ['eficienta_energetica*'],
+			'header'  => [
+			'caption' => 'Eficienta Energetica',
+			'icon'    => 'icon-energy',
+			'childs'  => '2',
+			'submenu' => false,
+			],
+			'options' => [],
+			'active'  => ['eficienta_energetica*'],
 		],
 		'transport_public'=> [
-					'header'  => [
-					'caption' => 'Transport Public',
-					'icon'    => 'icon-speedometer',
-				    'childs'  => '1',
-					],
-					'options' => [],
-					'active'  => ['transport_public*'],
+			'header'  => [
+			'caption' => 'Transport Public',
+			'icon'    => 'icon-speedometer',
+			'childs'  => '1',
+			'submenu' => false,
+			],
+			'options' => [],
+			'active'  => ['transport_public*'],
 		],
-		'lista furnizori'=> [
-					'header'  => [
-					'caption' => 'Nomenclator',
-					'icon'    => 'icon-layers',
-				    'childs'  => '1',
-					],
-					'options' => [],
-					'active'  => ['lista furnizori*'],
+		'lista_furnizori'=> [
+			'header'  => [
+			'caption' => 'Nomenclator',
+			'icon'    => 'icon-layers',
+			'childs'  => '1',
+			'submenu' => false,
+			],
+			'options' => [],
+			'active'  => ['lista furnizori*'],
+		],
+		'monitorizare_energetica'=> [
+			'header'  => [
+				'caption' => 'Monitorizare',
+				'icon'    => 'icon-speedometer',
+				'childs'  => '1',
+				'submenu' => false,
+			],
+			'options' => [],
+			'childs' => [],
+			'active'  => ['monitorizare*'],
+		],
+		'monitorizare_energetica_consum_utilitati'=> [
+			'header'  => [
+				'caption' => 'Monitorizare',
+				'icon'    => 'icon-speedometer',
+				'childs'  => '1',
+				'submenu' => 'monitorizare_energetica',
+			],
+			'options' => [],
+			'active'  => ['monitorizare*'],
 		],
 
 	];
@@ -67,7 +92,8 @@ class Sidebar
         $this->addOption('eficienta_energetica', route('programoug_index',['id' => 'programoug']), 'Program OUG 18', 'user-plus');
         $this->addOption('eficienta_energetica', route('programdmi_index',['id' => 'programdmi']), 'POR DMI 12', 'user-plus');
         $this->addOption('transport_public', route('vehicles_index',['id' => 'vehicole']), 'Lista Vehicole', 'user-plus');
-        $this->addOption('lista furnizori', route('suppliers_index',['id' => 'furnizori']), 'Lista Furnizori', 'user-plus');
+        $this->addOption('lista_furnizori', route('suppliers_index',['id' => 'furnizori']), 'Lista Furnizori', 'user-plus');
+        $this->addOption('monitorizare_energetica', route('consum_institutie_buildings_index',['id' => 'cladirile']), 'Lista Cladiri', 'user-plus');
 
 	}
 
@@ -78,7 +104,9 @@ class Sidebar
 
 	public function OutGroupHeader( $header )
 	{
-		return '<a href="javascript:;"><span class="badge pull-right">'. $header['childs'] .'</span>&nbsp;<i class="' . $header['icon'] . '"></i><span>' . $header ['caption'] . '</span></a>';
+		if(! $header['submenu']){
+			return '<a href="javascript:;"><span class="badge pull-right">'. $header['childs'] .'</span>&nbsp;<i class="' . $header['icon'] . '"></i><span>' . $header ['caption'] . '</span></a>';
+		}
 	}
 
 	public function OutOption( $option )
