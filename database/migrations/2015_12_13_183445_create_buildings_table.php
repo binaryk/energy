@@ -19,7 +19,7 @@ class CreateBuildingsTable extends Migration
             $t->string('owner');
             $t->string('destination');
             $t->string('type_building');
-            $t->string('year',10);
+            $t->integer('year');
             $t->string('designer');
             $t->string('builder');
             $t->integer('height');
