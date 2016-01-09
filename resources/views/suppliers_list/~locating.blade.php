@@ -1,0 +1,1 @@
+<a href="https://www.google.com/maps/place/{{$record->county}} {{$record->locality}} {{$record->address}}" class="btn btn-default btn-round btn-xs" target="_blank">Localizare</a>

@@ -1,21 +1,21 @@
-<?php namespace App\Http\Controllers\Suppliers;
+<?php namespace App\Http\Controllers\Measuringpoints;
 use System\GridsRecord;
 
-class SuppliersGrid extends GridsRecord
+class MeasuringpointsGrid extends GridsRecord
 {
 
     public function __construct($id)
     {
         parent::__construct($id);
-        $this->view           = 'suppliers_list.index';
+        $this->view           = 'measuring_points.index';
         $this->icon           = 'admin/img/icons/dt/settings.png';
-        $this->caption        = 'Lista Furnizori';
-        $this->toolbar        = 'suppliers_list.toolbar';
+        $this->caption        = 'Puncte de masurare a iluminatului public';
+        $this->toolbar        = 'measuring_points.toolbar';
         $this->name           = 'dt';
         $this->display_start  = 0;
         $this->display_length = 10;
         $this->default_order  = "1,'asc'";
-        $this->form           = 'App\Http\Controllers\Suppliers\SuppliersForm';
+        $this->form           = 'App\Http\Controllers\Measuringpoints\MeasuringpointsForm';
         $this->css            = 'packages/datatables/css/1.10.4/datatable.css,
                               packages/datatables/css/1.10.4/dataTables.bootstrap.css,
                               admin/css/dt/dt.css,
@@ -23,13 +23,13 @@ class SuppliersGrid extends GridsRecord
                                        ';
         $this->js             = 'admin/js/libraries/form/dtform.js,
                                         ';
-        $this->row_source     = 'suppliers_index_row_source';
+        $this->row_source     = 'points_index_row_source';
         $this->rows_source_sql 				= 'SELECT
                                                 *
-                                                FROM suppliers_list
+                                                FROM measuring_points
                                                 :where: :order:';
-        $this->count_filtered_records_sql 	= 'SELECT COUNT(*) as cnt FROM suppliers_list :where:';
-        $this->count_total_records_sql     	= 'SELECT COUNT(*) AS cnt FROM suppliers_list';
+        $this->count_filtered_records_sql 	= 'SELECT COUNT(*) as cnt FROM measuring_points :where:';
+        $this->count_total_records_sql     	= 'SELECT COUNT(*) AS cnt FROM measuring_points';
         $this->columns        = [
             '1' => [
                 'id'        => '#',
@@ -41,65 +41,56 @@ class SuppliersGrid extends GridsRecord
                 'source'    => 'row-number',
             ],
             '2' => [
-                'id'        => 'name',
-                'orderable' => 'yes',
-                'class'     => 'td-align-center',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Denumire Furnizor', 'style'   => 'width:28%',],
-                'type'      => 'field',
-                'source'    => 'name',//numele coloanei din tabelul din BD
-            ],
-            '3' => [
-                'id'        => 'type',
-                'orderable' => 'yes',
-                'class'     => 'td-align-center',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Tip Factura', 'style'   => 'width:18%',],
-                'type'      => 'view',
-                'source'    => 'suppliers_list.~type_utility',//numele coloanei din tabelul din BD
-            ],
-            '4' => [
-                'id'        => 'unit_measurement',
-                'orderable' => 'yes',
-                'class'     => 'td-align-center',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'U.M.', 'style'   => 'width:8%',],
-                'type'      => 'field',
-                'source'    => 'unit_measurement',//numele coloanei din tabelul din BD
-            ],
-            '5' => [
                 'id'        => 'address',
                 'orderable' => 'yes',
                 'class'     => 'td-align-center',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Adresa', 'style'   => 'width:18%',],
+                'header'    => ['caption' => 'Adresa Punct De Masurare', 'style'   => 'width:30%',],
                 'type'      => 'field',
                 'source'    => 'address',//numele coloanei din tabelul din BD
             ],
-            '6' => [
-                'id'        => 'test',
-                'orderable' => 'no',
-                'class'     => 'td-align-center td-actions',
+            '3' => [
+                'id'        => 'locality',
+                'orderable' => 'yes',
+                'class'     => 'td-align-center',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Localizare', 'style'   => 'width:7%',],
-                'type'      => 'view',
-                'source'    => 'suppliers_list.~locating',
+                'header'    => ['caption' => 'Localitate', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'locality',//numele coloanei din tabelul din BD
             ],
-            '7' => [
+            '4' => [
+                'id'        => 'county',
+                'orderable' => 'yes',
+                'class'     => 'td-align-center',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'Judet', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'county',//numele coloanei din tabelul din BD
+            ],
+            '5' => [
+                'id'        => 'nlc',
+                'orderable' => 'yes',
+                'class'     => 'td-align-center',
+                'visible'   => 'yes',
+                'header'    => ['caption' => 'NLC', 'style'   => 'width:20%',],
+                'type'      => 'field',
+                'source'    => 'nlc',//numele coloanei din tabelul din BD
+            ],
+            '6' => [
                 'id'        => 'action',
                 'orderable' => 'no',
                 'class'     => 'td-align-center td-actions',
                 'visible'   => 'yes',
                 'header'    => ['caption' => 'Acțiuni', 'style'   => 'width:7%',],
                 'type'      => 'view',
-                'source'    => 'suppliers_list.~actions',
+                'source'    => 'measuring_points.~actions',
             ],
         ];
          $this->fields = [
             'fields'      => '',
-            'searchables' => 'name',
+            'searchables' => 'address',
             'orderables'  => [
-                1 => 'name',
+                1 => 'address',
             ],//[1 => "id"],
         ];
         $this->filters = [
@@ -109,6 +100,6 @@ class SuppliersGrid extends GridsRecord
 
     public static function create($id = NULL)
     {
-        return self::$instance = new SuppliersGrid($id);
+        return self::$instance = new MeasuringpointsGrid($id);
     }
 }

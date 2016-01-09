@@ -39,7 +39,8 @@ class Sidebar
 			'options' => [],
 			'active'  => ['transport_public*'],
 		],
-		'nomenclator'=> [
+<<<<<<< HEAD
+		'lista_furnizori'=> [
 			'header'  => [
 			'caption' => 'Nomenclator',
 			'icon'    => 'icon-layers',
@@ -69,6 +70,16 @@ class Sidebar
 			],
 			'options' => [],
 			'active'  => ['monitorizare*'],
+=======
+		'nomenclator'=> [
+					'header'  => [
+					'caption' => 'Nomenclator',
+					'icon'    => 'icon-layers',
+				    'childs'  => '2',
+					],
+					'options' => [],
+					'active'  => ['nomenclator*'],
+>>>>>>> 1f82345f4ab881e46230d668faadd9b5dc278027
 		],
 
 	];
@@ -92,10 +103,13 @@ class Sidebar
         $this->addOption('eficienta_energetica', route('programoug_index',['id' => 'programoug']), 'Program OUG 18', 'user-plus');
         $this->addOption('eficienta_energetica', route('programdmi_index',['id' => 'programdmi']), 'POR DMI 12', 'user-plus');
         $this->addOption('transport_public', route('vehicles_index',['id' => 'vehicole']), 'Lista Vehicole', 'user-plus');
+<<<<<<< HEAD
         $this->addOption('lista_furnizori', route('suppliers_index',['id' => 'furnizori']), 'Lista Furnizori', 'user-plus');
         $this->addOption('monitorizare_energetica', route('consum_institutie_buildings_index',['id' => 'cladirile']), 'Lista Cladiri', 'user-plus');
+=======
         $this->addOption('nomenclator', route('suppliers_index',['id' => 'furnizori']), 'Lista Furnizori', 'user-plus');
         $this->addOption('nomenclator', route('points_index',['id' => 'puncte-de-masurare']), 'Puncte de Masurare', 'user-plus');
+>>>>>>> 1f82345f4ab881e46230d668faadd9b5dc278027
 
 	}
 
@@ -106,7 +120,9 @@ class Sidebar
 
 	public function OutGroupHeader( $header )
 	{
-		return '<a href="javascript:;"><span class="badge pull-right">'. $header['childs'] .'</span>&nbsp;<i class="' . $header['icon'] . '"></i><span>' . $header ['caption'] . '</span></a>';
+		if(! $header['submenu']){
+			return '<a href="javascript:;"><span class="badge pull-right">'. $header['childs'] .'</span>&nbsp;<i class="' . $header['icon'] . '"></i><span>' . $header ['caption'] . '</span></a>';
+		}
 	}
 
 	public function OutOption( $option )

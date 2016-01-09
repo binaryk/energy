@@ -41,10 +41,13 @@ class Route {
 			->add('get', 'bills_index_row_source', 'bills_row_source/{id}/{counter_id}', 'BillsController@rows', 'Bills')
 
 			->add('get', 'suppliers_index', 'monitorizare-energetica/{id}', 'SuppliersController@index', 'Suppliers')
-			->add('post', 'get_furnizor_by_utilitate', 'get_furnizor_by_utilitate', 'CountersController@furnizori', 'Counters')
 
 			->add('get', 'suppliers_index_row_source', 'suppliers_row_source/{id}/', 'SuppliersController@rows', 'Suppliers')
 
+			->add('get', 'points_index', 'monitorizare_energetica/{id}', 'MeasuringpointsController@index', 'Measuringpoints')
+			->add('get', 'points_index_row_source', 'points_row_source/{id}/', 'MeasuringpointsController@rows', 'Measuringpoints')
+
+			->add('post', 'get_furnizor_by_utilitate', 'get_furnizor_by_utilitate', 'CountersController@furnizori', 'Counters')
 			/**
 			 *Monitorizare
 			*/
