@@ -16,6 +16,7 @@ class Sidebar
 			],
 			'options' => [],
 			'active'  => ['institutii*'],
+			'submenu' => false,
 		],
 
 		'eficienta_energetica'=> [
@@ -26,6 +27,7 @@ class Sidebar
 					],
 					'options' => [],
 					'active'  => ['eficienta_energetica*'],
+					'submenu' => false,
 		],
 		'transport_public'=> [
 					'header'  => [
@@ -35,6 +37,7 @@ class Sidebar
 					],
 					'options' => [],
 					'active'  => ['transport_public*'],
+					'submenu' => false,
 		],
 		'monitorizare_energetica'=> [
 					'header'  => [
@@ -44,6 +47,17 @@ class Sidebar
 					],
 					'options' => [],
 					'active'  => ['monitorizare*'],
+					'submenu' => false,
+		],
+		'monitorizare_energetica_consum_utilitati'=> [
+					'header'  => [
+					'caption' => 'Monitorizare',
+					'icon'    => 'icon-speedometer',
+				    'childs'  => '1',
+					],
+					'options' => [],
+					'active'  => ['monitorizare*'],
+					'submenu' => false,
 		],
 
 	];
