@@ -22,8 +22,13 @@ class BuildingsGrid extends GridsRecord
                               admin/css/dt/dt.css,
                               admin/css/dt/toolbar.css,
                               admin/css/dt/dtform.css,
+                              packages/daterangepicker/css/daterangepicker-bs3.css,
+                              packages/datepicker/css/bootstrap-datepicker3.css
                                        ';
-        $this->js             = 'admin/js/libraries/form/dtform.js, custom/js/angular/controllers/buildCtrl.js, custom/js/angular/services/Count.js';
+        $this->js             = 'admin/js/libraries/form/dtform.js,custom/js/angular/controllers/buildCtrl.js, custom/js/angular/services/Count.js,
+                              packages/daterangepicker/js/daterangepicker.js,
+                              packages/datepicker/js/bootstrap-datepicker.js
+                                        ';
         $this->row_source     = 'buildings_index_row_source';
         $this->rows_source_sql 				= 'SELECT
                                                 *

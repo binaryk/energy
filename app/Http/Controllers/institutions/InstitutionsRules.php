@@ -29,8 +29,6 @@ class InstitutionsRules extends FormsRecord
             ->addRule('update', 'energy_responsable', 'required')
             ->addRule('insert', 'year', 'required')
             ->addRule('update', 'year', 'required')
-            ->addRule('update', 'height', 'required')
-            ->addRule('update', 'height', 'required')
 
             ->addMessage('insert', 'name.required', 'Denumirea institutiei trebuie completata.')
             ->addMessage('update', 'name.required', 'Denumirea institutiei trebuie completata.')
@@ -42,8 +40,6 @@ class InstitutionsRules extends FormsRecord
             ->addMessage('update', 'energy_responsable.required', 'Introduceti anul contstructiei.')
             ->addMessage('insert', 'year.required', 'Responsabilul energetic trebuie declarat.')
             ->addMessage('update', 'year.required', 'Responsabilul energetic trebuie declarat.')
-            ->addMessage('insert', 'height.required', 'Regimul de inaltime a institutiei trebuie declarat.')
-            ->addMessage('update', 'height.required', 'Regimul de inaltime a institutiei trebuie declarat.')
         ;
     }
 

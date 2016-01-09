@@ -19,7 +19,7 @@ class CreateVehiclesTable extends Migration
             $table->integer('year_of_manufacture');
             $table->string('function_type');
             $table->float('internal_consumption');
-            $table->floatfloat('external_consumption');
+            $table->float('external_consumption');
             $table->float('mixed_consumption');
             $table->timestamps();
             $table->softDeletes();

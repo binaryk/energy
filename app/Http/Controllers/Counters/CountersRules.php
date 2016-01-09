@@ -21,10 +21,10 @@ class CountersRules extends FormsRecord
 
             ->addRule('insert', 'code', 'required')
             ->addRule('update', 'code', 'required')
-            ->addRule('insert', 'type_utility_id', 'required')
-            ->addRule('update', 'type_utility_id', 'required')
-            ->addRule('insert', 'provider_id', 'required')
-            ->addRule('update', 'provider_id', 'required')
+            ->addRule('insert', 'type_utility_id', 'required|not_in:0')
+            ->addRule('update', 'type_utility_id', 'required|not_in:0')
+            ->addRule('insert', 'provider_id', 'required|not_in:0')
+            ->addRule('update', 'provider_id', 'required|not_in:0')
             ->addRule('update', 'client_code', 'required')
             ->addRule('update', 'client_code', 'required')
 
@@ -32,8 +32,12 @@ class CountersRules extends FormsRecord
             ->addMessage('update', 'code.required', 'Codul contorului trebuie completat.')
             ->addMessage('insert', 'type_utility_id.required', 'Tipul utilitatii trebuie completat.')
             ->addMessage('update', 'type_utility_id.required', 'Tipul utilitatii trebuie completat.')
+            ->addMessage('insert', 'type_utility_id.not_in', 'Tipul utilitatii trebuie completat.')
+            ->addMessage('update', 'type_utility_id.not_in', 'Tipul utilitatii trebuie completat.')
             ->addMessage('insert', 'provider_id.required', 'Denumirea furnizorului trebuie completata.')
             ->addMessage('update', 'provider_id.required', 'Denumirea furnizorului trebuie completata.')
+            ->addMessage('insert', 'provider_id.not_in', 'Denumirea furnizorului trebuie completata.')
+            ->addMessage('update', 'provider_id.not_in', 'Denumirea furnizorului trebuie completata.')
             ->addMessage('insert', 'client_code.required', 'Codul clientului trebuie completat.')
             ->addMessage('update', 'client_code.required', 'Codul clientului trebuie completat.')
         ;
