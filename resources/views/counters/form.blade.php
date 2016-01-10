@@ -4,8 +4,8 @@
         {!! $controls[1]->out() !!}
     </div>
     <div class="col-md-6">
-        {!! $controls[2]->out() !!}
         {!! $controls[3]->out() !!}
+        {!! $controls[2]->out() !!}
     </div>
  </div>
 {!!
