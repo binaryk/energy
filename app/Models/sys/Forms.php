@@ -12,14 +12,16 @@ class Forms
 		 'institutions'       => 'App\Http\Controllers\Institutions\InstitutionsRules',
 		 'cladiri'            => 'App\Http\Controllers\Buildings\BuildingsRules',
 		 'contoare'           => 'App\Http\Controllers\Counters\CountersRules',
+		 'factura'            => '\App\Http\Controllers\Bills\BillsRules',
+		 'contract'           => '\App\Http\Controllers\Contracts\ContractsRules',
 		 'programdmi'         => '\App\Http\Controllers\Programdmi\ProgramdmiRules',
 		 'programoug'         => '\App\Http\Controllers\Programoug\ProgramougRules',
 		 'vehicole'           => '\App\Http\Controllers\Vehicles\VehiclesRules',
 		 'consum'             => '\App\Http\Controllers\Consumptions\ConsumptionsRules',
-		 'factura'            => '\App\Http\Controllers\Bills\BillsRules',
 		 'furnizori'          => '\App\Http\Controllers\Suppliers\SuppliersRules',
 		 'puncte-de-masurare' => '\App\Http\Controllers\Measuringpoints\MeasuringpointsRules',
-
+		 'facturi'            => '\App\Http\Controllers\Publiclighting\PubliclightingRules',
+		 'indicatori'         => '\App\Http\Controllers\Indicators\IndicatorsRules',
 	];
 
 	public function __construct($id)

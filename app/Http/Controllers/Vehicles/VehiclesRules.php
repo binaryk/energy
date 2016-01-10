@@ -26,12 +26,12 @@ class VehiclesRules extends FormsRecord
             ->addRule('insert', 'mixed_consumption', 'required')
             ->addRule('update', 'mixed_consumption', 'required')
 
-            ->addMessage('insert', 'internal_consumption.required', 'Introduceti consumul mediu intern.')
-            ->addMessage('update', 'internal_consumption.required', 'Introduceti consumul mediu intern.')
-            ->addMessage('insert', 'external_consumption.required', 'Introduceti consumul mediu extern.')
-            ->addMessage('update', 'external_consumption.required', 'Introduceti consumul mediu extern.')
-            ->addMessage('insert', 'mixed_consumption.required', 'Introduceti consumul mediu mixt.')
-            ->addMessage('update', 'mixed_consumption.required', 'Introduceti consumul mediu mixt.')
+            ->addMessage('insert', 'internal_consumption.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'internal_consumption.required', 'Acest cimp trebuie completat.')
+            ->addMessage('insert', 'external_consumption.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'external_consumption.required', 'Acest cimp trebuie completat.')
+            ->addMessage('insert', 'mixed_consumption.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'mixed_consumption.required', 'Acest cimp trebuie completat.')
             
         ;
     }

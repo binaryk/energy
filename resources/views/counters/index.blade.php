@@ -15,7 +15,6 @@
         'field'   : 'name'
         });
         combobox.populate(0);
-
     });
 
 

@@ -15,15 +15,17 @@ class Grids {
 		'institutions' 		  => '\App\Http\Controllers\Institutions\InstitutionsGrid',
 		'cladiri' 			  => '\App\Http\Controllers\Buildings\BuildingsGrid',
 		'contoare' 		      => '\App\Http\Controllers\Counters\CountersGrid',
+		'factura' 		      => '\App\Http\Controllers\Bills\BillsGrid',
+		'contract' 		      => '\App\Http\Controllers\Contracts\ContractsGrid',
 		'programdmi' 		  => '\App\Http\Controllers\Programdmi\ProgramdmiGrid',
 		'programoug' 		  => '\App\Http\Controllers\Programoug\ProgramougGrid',
 		'vehicole' 		      => '\App\Http\Controllers\Vehicles\VehiclesGrid',
 		'consum' 		      => '\App\Http\Controllers\Consumptions\ConsumptionsGrid',
-		'factura' 		      => '\App\Http\Controllers\Bills\BillsGrid',
 		'furnizori' 		  => '\App\Http\Controllers\Suppliers\SuppliersGrid',
-		'cladirile' 		    => '\App\Http\Controllers\Monitorizare\CladiriGrid',
+		'cladirile' 		  => '\App\Http\Controllers\Monitorizare\CladiriGrid',
 		'puncte-de-masurare'  => '\App\Http\Controllers\Measuringpoints\MeasuringpointsGrid',
-
+		'facturi' 		      => '\App\Http\Controllers\Publiclighting\PubliclightingGrid',
+		'indicatori' 		  => '\App\Http\Controllers\Indicators\IndicatorsGrid',
 
 	];
 

@@ -21,7 +21,7 @@ class Sidebar
 		'eficienta_energetica'=> [
 			'header'  => [
 			'caption' => 'Eficienta Energetica',
-			'icon'    => 'icon-energy',
+			'icon'    => 'icon-fire',
 			'childs'  => '2',
 			],
 			'options' => [],
@@ -36,24 +36,33 @@ class Sidebar
 			'options' => [],
 			'active'  => ['transport*'],
 		],
-		'nomenclator'=> [
+		'iluminat_public'=> [
 			'header'  => [
-			'caption' => 'Nomenclator',
-			'icon'    => 'icon-layers',
-			'childs'  => '2',
+			'caption' => 'Iluminat public',
+			'icon'    => 'icon-energy',
+			'childs'  => '1',
 			],
 			'options' => [],
-			'active'  => ['monitorizare-energetica*', 'monitorizare_energetica*'],
+			'active'  => ['iluminat-public*'],
 		],
 		'monitorizare_energetica'=> [
 			'header'  => [
 				'caption' => 'Monitorizare',
-				'icon'    => 'icon-speedometer',
+				'icon'    => 'icon-eye',
 				'childs'  => '1',
 			],
 			'options' => [],
 			'childs' => [],
 			'active'  => ['consum_institutie_cladiri*'],
+		],
+		'nomenclator'=> [
+			'header'  => [
+			'caption' => 'Nomenclator',
+			'icon'    => 'icon-layers',
+			'childs'  => '3',
+			],
+			'options' => [],
+			'active'  => ['monitorizare-energetica*', 'monitorizare_energetica*','indicatori-statistici*'],
 		],
 
 	];
@@ -80,6 +89,10 @@ class Sidebar
         $this->addOption('monitorizare_energetica', route('consum_institutie_buildings_index',['id' => 'cladirile']), 'Lista Cladiri', 'user-plus');
         $this->addOption('nomenclator', route('suppliers_index',['id' => 'furnizori']), 'Lista Furnizori', 'user-plus');
         $this->addOption('nomenclator', route('points_index',['id' => 'puncte-de-masurare']), 'Puncte de Masurare', 'user-plus');
+        $this->addOption('nomenclator', route('indicators_index',['id' => 'indicatori']), 'Indicatori Statistici', 'user-plus');
+
+        $this->addOption('iluminat_public', route('publiclighting_index',['id' => 'facturi']), 'Lista Facturi', 'user-plus');
+        // $this->addOption('iluminat_public', route('publiclighting_index',['id' => 'consum-general']), 'Consum General', 'user-plus');
 
 	}
 

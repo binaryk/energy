@@ -42,7 +42,7 @@ class CreateProgramsDmiTable extends Migration
             $t->integer('cm_witch_tva');
             $t->string('specific_investment');
             $t->string('exchange_rate');
-            $t->date('data_exchenge_rate');
+            $t->datetime('data_exchenge_rate');
             $t->integer('duration_works');
             $t->integer('duration_recovery');
             $t->string('investments_stage');

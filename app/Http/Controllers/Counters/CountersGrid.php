@@ -36,7 +36,7 @@ class CountersGrid extends GridsRecord
                 'orderable' => 'no',
                 'class'     => 'td-record-count td-align-center',
                 'visible'   => 'yes',
-                'header'    => ['caption' => '#', 'style'   => 'width:3%',],
+                'header'    => ['caption' => 'Nr', 'style'   => 'width:3%',],
                 'type'      => 'row-number',
                 'source'    => 'row-number',
             ],
@@ -64,8 +64,8 @@ class CountersGrid extends GridsRecord
                 'class'     => 'td-align-left',
                 'visible'   => 'yes',
                 'header'    => ['caption' => 'Denumire Furnizor', 'style'   => 'width:30%',],
-                'type'      => 'field',
-                'source'    => 'provider_id',//numele coloanei din tabelul din BD
+                 'type'      => 'view',
+                'source'    => 'counters.~type_provider',//numele coloanei din tabelul din BD
             ],
             '5' => [
                 'id'        => 'client_code',

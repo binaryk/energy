@@ -28,14 +28,14 @@ class ProgramougRules extends FormsRecord
             ->addRule('insert', 'owner', 'required')
             ->addRule('update', 'owner', 'required')
 
-            ->addMessage('insert', 'address.required', 'Adresa blocului trebuie completata.')
-            ->addMessage('update', 'address.required', 'Adresa blocului trebuie completata.')
-            ->addMessage('insert', 'locality.required', 'Localitatea trebuie completata.')
-            ->addMessage('update', 'locality.required', 'Localitatea trebuie completata.')
-            ->addMessage('insert', 'county.required', 'Judetul trebuie completat.')
-            ->addMessage('update', 'county.required', 'Judetul trebuie completat.')
-            ->addMessage('insert', 'owner.required', 'Introduceti Proiectanul.')
-            ->addMessage('update', 'owner.required', 'Introduceti Proiectanul.')
+            ->addMessage('insert', 'address.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'address.required', 'Acest cimp trebuie completat.')
+            ->addMessage('insert', 'locality.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'locality.required', 'Acest cimp trebuie completat.')
+            ->addMessage('insert', 'county.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'county.required', 'Acest cimp trebuie completat.')
+            ->addMessage('insert', 'owner.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'owner.required', 'Acest cimp trebuie completat.')
             
        
         ;

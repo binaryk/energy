@@ -25,6 +25,15 @@ class Route {
 			->add('get', 'counters_index', 'institutie/cladire/{id}/{build_id}', 'CountersController@index', 'Counters')
 			->add('get', 'counters_index_row_source', 'contoare_row_source/{id}/{build_id}', 'CountersController@rows', 'Counters')
 		
+			->add('get', 'bills_index', 'institutie/cladire/contor/{id}/{counter_id}', 'BillsController@index', 'Bills')
+			->add('get', 'bills_index_row_source', 'bills_row_source/{id}/{counter_id}', 'BillsController@rows', 'Bills')
+
+
+
+			->add('get', 'contracts_index', 'institutie/cladire/contor./{id}/{counter_id}', 'ContractsController@index', 'Contracts')
+			->add('get', 'contracts_index_row_source', 'contracts_row_source/{id}/{counter_id}', 'ContractsController@rows', 'Contracts')
+
+
 			->add('get', 'programdmi_index', 'eficienta_energetica/{id}', 'ProgramdmiController@index', 'Programdmi')
 			->add('get', 'programdmi_index_row_source', 'programdmi_row_source/{id}/', 'ProgramdmiController@rows', 'Programdmi')
 
@@ -37,11 +46,8 @@ class Route {
 			->add('get', 'consumptions_index', 'transport-public/vehicol/{id}/{vehicle_id}', 'ConsumptionsController@index', 'Consumptions')
 			->add('get', 'consumptions_index_row_source', 'consumptions_row_source/{id}/{vehicle_id}', 'ConsumptionsController@rows', 'Consumptions')
 
-			->add('get', 'bills_index', 'institutie/cladire/contor/{id}/{counter_id}', 'BillsController@index', 'Bills')
-			->add('get', 'bills_index_row_source', 'bills_row_source/{id}/{counter_id}', 'BillsController@rows', 'Bills')
 
 			->add('get', 'suppliers_index', 'monitorizare-energetica/{id}', 'SuppliersController@index', 'Suppliers')
-
 			->add('get', 'suppliers_index_row_source', 'suppliers_row_source/{id}/', 'SuppliersController@rows', 'Suppliers')
 
 			->add('get', 'points_index', 'monitorizare_energetica/{id}', 'MeasuringpointsController@index', 'Measuringpoints')
@@ -56,6 +62,12 @@ class Route {
 			->add('get', 'consum_institutie_buildings_index_row_source', 'consum_institutie_buildings_index_row_source/{id}', 'BuildingsController@rows', 'Monitorizare')
 
 			->add('get', 'facturi_by_type', 'facturi_by_type/{type}/{id}', 'ConsumInstitutii@byType', 'Monitorizare')
+
+			->add('get', 'publiclighting_index', 'iluminat-public/{id}', 'PubliclightingController@index', 'Publiclighting')
+			->add('get', 'publiclighting_index_row_source', 'publiclighting_row_source/{id}/', 'PubliclightingController@rows', 'Publiclighting')
+
+			->add('get', 'indicators_index', 'indicatori-statistici/{id}', 'IndicatorsController@index', 'Indicators')
+			->add('get', 'indicators_index_row_source', 'indicators_row_source/{id}/', 'IndicatorsController@rows', 'Indicators')
 		;
 	}
 

@@ -30,16 +30,16 @@ class InstitutionsRules extends FormsRecord
             ->addRule('insert', 'year', 'required')
             ->addRule('update', 'year', 'required')
 
-            ->addMessage('insert', 'name.required', 'Denumirea institutiei trebuie completata.')
-            ->addMessage('update', 'name.required', 'Denumirea institutiei trebuie completata.')
-            ->addMessage('insert', 'address.required', 'Adresa institutiei trebuie completata.')
-            ->addMessage('update', 'address.required', 'Adresa institutiei trebuie completata.')
-            ->addMessage('insert', 'locality.required', 'Introduceti localitatea.')
-            ->addMessage('update', 'locality.required', 'Introduceti localitatea.')
-            ->addMessage('insert', 'energy_responsable.required', 'Introduceti anul contstructiei.')
-            ->addMessage('update', 'energy_responsable.required', 'Introduceti anul contstructiei.')
-            ->addMessage('insert', 'year.required', 'Responsabilul energetic trebuie declarat.')
-            ->addMessage('update', 'year.required', 'Responsabilul energetic trebuie declarat.')
+            ->addMessage('insert', 'name.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'name.required', 'Acest cimp trebuie completat.')
+            ->addMessage('insert', 'address.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'address.required', 'Acest cimp trebuie completat.')
+            ->addMessage('insert', 'locality.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'locality.required', 'Acest cimp trebuie completat.')
+            ->addMessage('insert', 'energy_responsable.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'energy_responsable.required', 'Acest cimp trebuie completat.')
+            ->addMessage('insert', 'year.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'year.required', 'Acest cimp trebuie completat.')
         ;
     }
 

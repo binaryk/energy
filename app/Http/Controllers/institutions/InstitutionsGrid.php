@@ -35,7 +35,7 @@ class InstitutionsGrid extends GridsRecord
                 'orderable' => 'no',
                 'class'     => 'td-record-count td-align-center',
                 'visible'   => 'yes',
-                'header'    => ['caption' => '#', 'style'   => 'width:3%',],
+                'header'    => ['caption' => 'Nr', 'style'   => 'width:3%',],
                 'type'      => 'row-number',
                 'source'    => 'row-number',
             ],

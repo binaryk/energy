@@ -1,21 +1,21 @@
-<?php namespace App\Http\Controllers\Programoug;
+<?php namespace App\Http\Controllers\Publiclighting;
 use System\GridsRecord;
 
-class ProgramougGrid extends GridsRecord
+class PubliclightingGrid extends GridsRecord
 {
 
     public function __construct($id)
     {
         parent::__construct($id);
-        $this->view           = 'programs_oug.index';
+        $this->view           = 'public_enlightments.index';
         $this->icon           = 'admin/img/icons/dt/settings.png';
-        $this->caption        = 'Lista ';
-        $this->toolbar        = 'programs_oug.toolbar';
+        $this->caption        = 'Lista Facturi';
+        $this->toolbar        = 'public_enlightments.toolbar';
         $this->name           = 'dt';
         $this->display_start  = 0;
         $this->display_length = 10;
         $this->default_order  = "1,'asc'";
-        $this->form           = 'App\Http\Controllers\Programoug\ProgramougForm';
+        $this->form           = 'App\Http\Controllers\Publiclighting\PubliclightingForm';
         $this->css            = 'packages/datatables/css/1.10.4/datatable.css,
                               packages/datatables/css/1.10.4/dataTables.bootstrap.css,
                               admin/css/dt/dt.css,
@@ -27,13 +27,13 @@ class ProgramougGrid extends GridsRecord
                               packages/daterangepicker/js/daterangepicker.js,
                               packages/datepicker/js/bootstrap-datepicker.js
                                         ';
-        $this->row_source     = 'programoug_index_row_source';
+        $this->row_source     = 'publiclighting_index_row_source';
         $this->rows_source_sql 				= 'SELECT
                                                 *
-                                                FROM programs_oug
+                                                FROM public_enlightments
                                                 :where: :order:';
-        $this->count_filtered_records_sql 	= 'SELECT COUNT(*) as cnt FROM programs_oug :where:';
-        $this->count_total_records_sql     	= 'SELECT COUNT(*) AS cnt FROM programs_oug';
+        $this->count_filtered_records_sql 	= 'SELECT COUNT(*) as cnt FROM public_enlightments :where:';
+        $this->count_total_records_sql     	= 'SELECT COUNT(*) AS cnt FROM public_enlightments';
         $this->columns        = [
             '1' => [
                 'id'        => '#',
@@ -45,76 +45,65 @@ class ProgramougGrid extends GridsRecord
                 'source'    => 'row-number',
             ],
             '2' => [
-                'id'        => 'address',
+                'id'        => 'provider_id',
                 'orderable' => 'yes',
                 'class'     => 'td-align-center',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Adresa', 'style'   => 'width:20%',],
-                'type'      => 'field',
-                'source'    => 'address',//numele coloanei din tabelul din BD
+                'header'    => ['caption' => 'Denumire Furnizor', 'style'   => 'width:18%',],
+                'type'      => 'view',
+                'source'    => 'public_enlightments.~type_utility',
             ],
             '3' => [
-                'id'        => 'locality',
+                'id'        => 'measuring_point',
                 'orderable' => 'yes',
                 'class'     => 'td-align-center',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Localitatea', 'style'   => 'width:20%',],
-                'type'      => 'field',
-                'source'    => 'locality',//numele coloanei din tabelul din BD
+                'header'    => ['caption' => 'Punct De Masurare', 'style'   => 'width:18%',],
+                'type'      => 'view',
+                'source'    => 'public_enlightments.~type_point',
             ],
             '4' => [
-                'id'        => 'county',
+                'id'        => 'nr_bill',
                 'orderable' => 'yes',
                 'class'     => 'td-align-center',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Judetul', 'style'   => 'width:20%',],
+                'header'    => ['caption' => 'Numar Factura', 'style'   => 'width:18%',],
                 'type'      => 'field',
-                'source'    => 'county',//numele coloanei din tabelul din BD
-            ],
+                'source'    => 'nr_bill',//numele coloanei din tabelul din BD
+            ], 
             '5' => [
-                'id'        => 'owner',
+                'id'        => 'date_of_issue',
                 'orderable' => 'yes',
                 'class'     => 'td-align-center',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Proiectant', 'style'   => 'width:20%',],
+                'header'    => ['caption' => 'Data Emitetii Facturii', 'style'   => 'width:18%',],
                 'type'      => 'field',
-                'source'    => 'owner',//numele coloanei din tabelul din BD
+                'source'    => 'date_of_issue',//numele coloanei din tabelul din BD
             ],
-             '6' => [
-                'id'        => 'realization_year',
-                'orderable' => 'yes',
-                'class'     => 'td-align-center',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Anul Realizarii', 'style'   => 'width:10%',],
-                'type'      => 'field',
-                'source'    => 'realization_year',//numele coloanei din tabelul din BD
-            ],
-            '7' => [
+            '6' => [
                 'id'        => 'action',
                 'orderable' => 'no',
                 'class'     => 'td-align-center td-actions',
                 'visible'   => 'yes',
                 'header'    => ['caption' => 'Acțiuni', 'style'   => 'width:7%',],
                 'type'      => 'view',
-                'source'    => 'programs_dmi.~actions',
+                'source'    => 'public_enlightments.~actions',
             ],
         ];
          $this->fields = [
             'fields'      => '',
-            'searchables' => 'id, address',
+            'searchables' => 'provider_id',
             'orderables'  => [
-                1 => 'id',
-                2 => 'address'
+                1 => 'provider_id',
             ],//[1 => "id"],
         ];
         $this->filters = [
             'deleted' => 'deleted_at is null',
         ];
-
     }
 
     public static function create($id = NULL)
     {
-        return self::$instance = new ProgramougGrid($id);
+        return self::$instance = new PubliclightingGrid($id);
     }
 }

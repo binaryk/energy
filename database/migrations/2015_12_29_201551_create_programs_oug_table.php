@@ -43,7 +43,7 @@ class CreateProgramsOugTable extends Migration
             $t->string('cm_witch_tva');
             $t->string('specific_investment');
             $t->string('exchange_rate');
-            $t->string('data_exchenge_rate');
+            $t->datetime('data_exchenge_rate');
             $t->string('duration_works');
             $t->string('duration_recovery');
             $t->string('investments_stage');

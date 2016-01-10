@@ -1,21 +1,21 @@
-<?php namespace App\Http\Controllers\Programoug;
+<?php namespace App\Http\Controllers\Contracts;
 use System\GridsRecord;
 
-class ProgramougGrid extends GridsRecord
+class ContractsGrid extends GridsRecord
 {
 
     public function __construct($id)
     {
         parent::__construct($id);
-        $this->view           = 'programs_oug.index';
+        $this->view           = 'contracts_list.index';
         $this->icon           = 'admin/img/icons/dt/settings.png';
-        $this->caption        = 'Lista ';
-        $this->toolbar        = 'programs_oug.toolbar';
+        $this->caption        = 'Lista Contracte';
+        $this->toolbar        = 'contracts_list.toolbar';
         $this->name           = 'dt';
         $this->display_start  = 0;
         $this->display_length = 10;
         $this->default_order  = "1,'asc'";
-        $this->form           = 'App\Http\Controllers\Programoug\ProgramougForm';
+        $this->form           = 'App\Http\Controllers\Contracts\ContractsForm';
         $this->css            = 'packages/datatables/css/1.10.4/datatable.css,
                               packages/datatables/css/1.10.4/dataTables.bootstrap.css,
                               admin/css/dt/dt.css,
@@ -27,13 +27,13 @@ class ProgramougGrid extends GridsRecord
                               packages/daterangepicker/js/daterangepicker.js,
                               packages/datepicker/js/bootstrap-datepicker.js
                                         ';
-        $this->row_source     = 'programoug_index_row_source';
+        $this->row_source     = 'contracts_index_row_source';
         $this->rows_source_sql 				= 'SELECT
                                                 *
-                                                FROM programs_oug
+                                                FROM contracts_list
                                                 :where: :order:';
-        $this->count_filtered_records_sql 	= 'SELECT COUNT(*) as cnt FROM programs_oug :where:';
-        $this->count_total_records_sql     	= 'SELECT COUNT(*) AS cnt FROM programs_oug';
+        $this->count_filtered_records_sql 	= 'SELECT COUNT(*) as cnt FROM contracts_list :where:';
+        $this->count_total_records_sql     	= 'SELECT COUNT(*) AS cnt FROM contracts_list';
         $this->columns        = [
             '1' => [
                 'id'        => '#',
@@ -45,76 +45,47 @@ class ProgramougGrid extends GridsRecord
                 'source'    => 'row-number',
             ],
             '2' => [
-                'id'        => 'address',
+                'id'        => 'nr_contract',
                 'orderable' => 'yes',
                 'class'     => 'td-align-center',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Adresa', 'style'   => 'width:20%',],
+                'header'    => ['caption' => 'Numar Contract', 'style'   => 'width:50%',],
                 'type'      => 'field',
-                'source'    => 'address',//numele coloanei din tabelul din BD
+                'source'    => 'nr_contract',//numele coloanei din tabelul din BD
             ],
             '3' => [
-                'id'        => 'locality',
+                'id'        => 'signature_date',
                 'orderable' => 'yes',
                 'class'     => 'td-align-center',
                 'visible'   => 'yes',
-                'header'    => ['caption' => 'Localitatea', 'style'   => 'width:20%',],
+                'header'    => ['caption' => 'Data Semnare', 'style'   => 'width:40%',],
                 'type'      => 'field',
-                'source'    => 'locality',//numele coloanei din tabelul din BD
+                'source'    => 'signature_date',//numele coloanei din tabelul din BD
             ],
             '4' => [
-                'id'        => 'county',
-                'orderable' => 'yes',
-                'class'     => 'td-align-center',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Judetul', 'style'   => 'width:20%',],
-                'type'      => 'field',
-                'source'    => 'county',//numele coloanei din tabelul din BD
-            ],
-            '5' => [
-                'id'        => 'owner',
-                'orderable' => 'yes',
-                'class'     => 'td-align-center',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Proiectant', 'style'   => 'width:20%',],
-                'type'      => 'field',
-                'source'    => 'owner',//numele coloanei din tabelul din BD
-            ],
-             '6' => [
-                'id'        => 'realization_year',
-                'orderable' => 'yes',
-                'class'     => 'td-align-center',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Anul Realizarii', 'style'   => 'width:10%',],
-                'type'      => 'field',
-                'source'    => 'realization_year',//numele coloanei din tabelul din BD
-            ],
-            '7' => [
                 'id'        => 'action',
                 'orderable' => 'no',
                 'class'     => 'td-align-center td-actions',
                 'visible'   => 'yes',
                 'header'    => ['caption' => 'Acțiuni', 'style'   => 'width:7%',],
                 'type'      => 'view',
-                'source'    => 'programs_dmi.~actions',
+                'source'    => 'contracts_list.~actions',
             ],
         ];
          $this->fields = [
             'fields'      => '',
-            'searchables' => 'id, address',
+            'searchables' => 'nr_contract',
             'orderables'  => [
-                1 => 'id',
-                2 => 'address'
+                1 => 'nr_contract',
             ],//[1 => "id"],
         ];
         $this->filters = [
             'deleted' => 'deleted_at is null',
         ];
-
     }
 
     public static function create($id = NULL)
     {
-        return self::$instance = new ProgramougGrid($id);
+        return self::$instance = new ContractsGrid($id);
     }
 }
