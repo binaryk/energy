@@ -22,14 +22,11 @@ class ContractsController extends DatatableController
         if(! $counter = Counter::find($counter_id) ){
             return $this->try_($counter);
         }
-        if(! $build = Build::find($counter->id) ){
+        if(! $build = Build::find($counter->build_id) ){
             return $this->try_($build);
         }
-        if(! $institution = Institution::find($build->id) ){
+        if(! $institution = Institution::find($build->institution_id) ){
             return $this->try_($institution);
-        }
-        if(! $counter = Counter::find($counter_id) ){
-            return $this->try_($counter);
         }
         $config = Grids::make($id)->toIndexConfig($id);
         $config['row-source'] .= '/'.$counter_id;
@@ -47,7 +44,7 @@ class ContractsController extends DatatableController
             [
                 'name' => 'Contoare',
                 'route'  => 'counters_index',
-                'ids' => ['build_id'  => $institution->id,'id' => 'contoare']
+                'ids' => ['build_id'  => $build->id,'id' => 'contoare']
             ],
             [
                 'name' => 'Contract',

@@ -1,4 +1,6 @@
 <?php namespace App\Http\Controllers\Bills;
+
+use App\Http\Controllers\Bills\BillsController;
 use App\Models\Bill;
 use Processing\Form\Form;
 
@@ -116,7 +118,15 @@ class BillsForm extends \Processing\Form\Form
                     ->controlsource('observations')
                     ->controltype('textbox')
                     ->maxlength(255)
-                    
+            )
+            ->addControl(
+                \Easy\Form\Combobox::make('~layouts.form.controls.comboboxes.combobox')
+                    ->name('nr_contract')
+                    ->caption('Denumire Furnizor')
+                    ->class('form-control data-source input-group form-select init-on-update-delete')
+                    ->controlsource('nr_contract')
+                    ->controltype('combobox')
+                    ->enabled('false')
             )
 
         ;      

@@ -11,6 +11,7 @@ class CreateBillsTable extends Migration
         {
             $table->increments('id');
             $table->tinyinteger('counter_id');
+            $table->string('nr_contract');
             $table->integer('nr_bill');
             $table->integer('type_bill');
             $table->float('consumption_billed');

@@ -3,6 +3,7 @@
 use App\Models\Counter;
 use App\Models\Build;
 use App\Models\Institution;
+use App\Models\Contract;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -19,17 +20,16 @@ class BillsController extends DatatableController
     protected $layout = '~layouts.template.layout';
 
     public function index($id,  $counter_id){
+
+        
         if(! $counter = Counter::find($counter_id) ){
             return $this->try_($counter);
         }
-        if(! $build = Build::find($counter->id) ){
+        if(! $build = Build::find($counter->build_id) ){
             return $this->try_($build);
         }
-        if(! $institution = Institution::find($build->id) ){
+        if(! $institution = Institution::find($build->institution_id) ){
             return $this->try_($institution);
-        }
-        if(! $counter = Counter::find($counter_id) ){
-            return $this->try_($counter);
         }
         $config = Grids::make($id)->toIndexConfig($id);
         $config['row-source'] .= '/'.$counter_id;
@@ -55,6 +55,7 @@ class BillsController extends DatatableController
                 'ids' => ['counter_id' => $counter_id,'id' => 'factura']
             ],
         ];
+
        return $this->show( $config + ['other-info' => ['counter' => $counter]] );
     }
 

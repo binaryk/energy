@@ -22,7 +22,7 @@ class CountersController extends DatatableController
         if(! $build = Build::find($build_id) ){
             return $this->try_($build);
         }
-        if(! $institution = Institution::find($build->id) ){
+        if(! $institution = Institution::find($build->institution_id) ){
             return $this->try_($institution);
         }
         $config = Grids::make($id)->toIndexConfig($id);
@@ -48,12 +48,7 @@ class CountersController extends DatatableController
     }
 
     public function rows($id, $build_id){
-        if(! $build = Institution::find($build_id) ){
-            return $this->try_($build);
-        }
-        if(! $institution = Institution::find($build->id) ){
-            return $this->try_($institution);
-        }
+        
         $config = Grids::make($id)->toRowDatasetConfig($id);
         $filters = $config['source']->custom_filters();
         $config['source']->custom_filters( $filters + [ 'test' => 'counters.build_id = '.$build_id ] );

@@ -38,4 +38,16 @@ class Contract extends Model
 		}
 		return $record->delete();
 	}
+
+
+    public static function byCounter($counter_id)
+    {   
+        
+        $out = [];
+        $data = self::where('counter_id','=', $counter_id)->get()->toArray();
+        foreach($data as $k => $d){
+            $out[$d['id']] = $d['nr_contract'];
+        }
+        return $out;
+    }
 }
