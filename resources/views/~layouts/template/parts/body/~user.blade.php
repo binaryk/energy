@@ -6,6 +6,11 @@
             <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
+            @role('Administrator')
+            <li>
+                <a href="{!! url('admin/dashboard') !!}">Administrare</a>
+            </li>
+            @endauth
             <li>
                 <a href="{!! route('frontend.dashboard') !!}">Profil</a>
             </li>
