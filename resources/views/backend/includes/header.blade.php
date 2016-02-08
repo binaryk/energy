@@ -2,7 +2,7 @@
           <header class="main-header">
 
             <!-- Logo -->
-            <a href="{!!route('home')!!}" class="logo"><b>L5</b>Bootstrap</a>
+            <a href="{!!route('home')!!}" class="logo"><b>Pactul</b>Primariilor</a>
 
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">

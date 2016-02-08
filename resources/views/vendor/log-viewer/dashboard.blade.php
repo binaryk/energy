@@ -2,8 +2,7 @@
 
 @section('page-header')
     <h1>
-        Log Viewer
-        <small>By <a href="https://github.com/ARCANEDEV/LogViewer" target="_blank">ARCANEDEV</a></small>
+        Pagina de loguri
     </h1>
 @endsection
 

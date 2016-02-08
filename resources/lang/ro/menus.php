@@ -19,7 +19,7 @@ return [
     'create_permission_group' => 'Create Group',
     'create_role' => 'Create Role',
     'create_user' => 'Create User',
-    'dashboard' => 'Dashboard',
+    'dashboard' => 'Principala',
     'deactivated_users' => 'Deactivated Users',
     'deleted_users' => 'Deleted Users',
     'edit_permission' => 'Edit Permission',
@@ -47,14 +47,14 @@ return [
         ],
     ],
     'log-viewer' => [
-        'main' => 'Log Viewer',
-        'dashboard' => 'Dashboard',
-        'logs' => 'Logs',
+        'main' => 'Pagina loguri',
+        'dashboard' => 'Generalizari',
+        'logs' => 'Loguri',
     ],
     'permission_management' => 'Permission Management',
     'role_management' => 'Role Management',
     'user_management' => 'User Management',
-    'access_management' => 'Access Management',
+    'access_management' => 'Acces Management',
     'language-picker' => [
         'language' => 'Language',
         'langs' => [
