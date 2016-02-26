@@ -10,10 +10,10 @@ class CreateMeasuringPointsTable extends Migration
         Schema::create('measuring_points', function(Blueprint $t)
         {
             $t->increments('id');
-            $t->string('address');
-            $t->string('locality');
-            $t->string('county');
-            $t->integer('nlc');
+            $t->string('address')->comment('Adresa Punct De Masurare');
+            $t->string('locality')->comment('Localitate');
+            $t->string('county')->comment('Judet');
+            $t->integer('nlc')->comment('NLC');
             $t->timestamps();
             $t->softDeletes();
         });

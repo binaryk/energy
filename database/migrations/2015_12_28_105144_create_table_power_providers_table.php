@@ -14,8 +14,8 @@ class CreateTablePowerProvidersTable extends Migration
     {
         Schema::create('power_providers', function(Blueprint $t) {
             $t->increments('id');
-            $t->integer('power_type_id');
-            $t->string('name',100);
+            $t->integer('power_type_id')->comment('Id Tip Energie');
+            $t->string('name',100)->comment('Nume Furnizor Energetic');
             $t->softdeletes();
             $t->timestamps();
         });

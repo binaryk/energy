@@ -10,11 +10,11 @@ class CreateConsumptionsTable extends Migration
         Schema::create('consumptions', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->tinyinteger('vehicle_id');
-            $table->string('year_faz');
-            $table->string('month_faz');
-            $table->string('month_distance');
-            $table->string('monthly_consumption');
+            $table->tinyinteger('vehicle_id')->comment('Id Vehicol');
+            $table->string('year_faz')->comment('An Faz');
+            $table->string('month_faz')->comment('Luna Faz');
+            $table->string('month_distance')->comment('Distanta Lunara Parcursa In Km');
+            $table->string('monthly_consumption')->comment('Consumul Total Pe Luna In Litri');
             $table->timestamps();
             $table->softDeletes();
             

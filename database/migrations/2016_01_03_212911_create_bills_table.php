@@ -10,17 +10,17 @@ class CreateBillsTable extends Migration
         Schema::create('bills', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->tinyinteger('counter_id');
-            $table->string('nr_contract');
-            $table->integer('nr_bill');
-            $table->integer('type_bill');
-            $table->float('consumption_billed');
-            $table->float('value_witch_tva');
-            $table->datetime('date_bill');
-            $table->datetime('start_billing');
-            $table->datetime('stop_billing');
-            $table->float('super_power');
-            $table->string('observations');
+            $table->tinyinteger('counter_id')->comment('Id Contor');
+            $table->string('nr_contract')->comment('Nr Factura');
+            $table->integer('nr_bill')->comment('Tip Factura');
+            $table->integer('type_bill')->comment('Consum Facturat');
+            $table->float('consumption_billed')->comment('Val Top cu T.V.A.');
+            $table->float('value_witch_tva')->comment('Data Facturii');
+            $table->datetime('date_bill')->comment('Inceput Facturare');
+            $table->datetime('start_billing')->comment('Sfirsit Perioada Facturare');
+            $table->datetime('stop_billing')->comment('Putere Cal Super');
+            $table->float('super_power')->comment('Observatii');
+            $table->string('observations')->comment('Denumire Furnizor');
             $table->timestamps();
             $table->softDeletes();
             

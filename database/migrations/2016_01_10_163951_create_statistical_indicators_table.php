@@ -10,8 +10,8 @@ class CreateStatisticalIndicatorsTable extends Migration
         Schema::create('statistical_indicators', function(Blueprint $t)
         {
             $t->increments('id');
-            $t->string('nr_indicator');
-            $t->string('name');
+            $t->string('nr_indicator')->comment('Indicatori Statistici');
+            $t->string('name')->comment('Localitate');
             $t->timestamps();
             $t->softDeletes();
         });

@@ -10,9 +10,9 @@ class CreateContractsListTable extends Migration
         Schema::create('contracts_list', function(Blueprint $t)
         {
             $t->increments('id');
-            $t->tinyinteger('counter_id');
-            $t->integer('nr_contract');
-            $t->datetime('signature_date');
+            $t->tinyinteger('counter_id')->comment('Id Contor');
+            $t->integer('nr_contract')->comment('Numar Contract');
+            $t->datetime('signature_date')->comment('Data Cursului Valutar');
             $t->timestamps();
             $t->softDeletes();
         });

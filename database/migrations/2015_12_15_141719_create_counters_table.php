@@ -10,11 +10,11 @@ class CreateCountersTable extends Migration
         Schema::create('counters', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('build_id');
-            $table->integer('code');
-            $table->integer('type_utility_id')->comment('gaze naturale, electricitate, apa');
-            $table->integer('provider_id');
-            $table->integer('client_code');
+            $table->integer('build_id')->comment('Id Cladire');
+            $table->integer('code')->comment('Cod Contor');
+            $table->integer('type_utility_id')->comment('Tip Utilizare:gaze naturale, electricitate, apa');
+            $table->integer('provider_id')->comment('Denumire Furnizor');
+            $table->integer('client_code')->comment('Cod Client');
             $table->timestamps();
             $table->softDeletes();
             
