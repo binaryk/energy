@@ -84,4 +84,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->status == 0;
     }
+
+    public function organizations()
+    {
+        return $this->belongsTo("App\Models\Organization\Organization");
+    }
 }

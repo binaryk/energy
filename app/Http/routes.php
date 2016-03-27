@@ -31,6 +31,7 @@ $router->group(['namespace' => 'Backend'], function () use ($router) {
             require (__DIR__ . '/Routes/Backend/Dashboard.php');
             require (__DIR__ . '/Routes/Backend/Access.php');
             require (__DIR__ . '/Routes/Backend/LogViewer.php');
+            require (__DIR__ . '/Routes/Backend/Organization.php');
         });
     });
 });

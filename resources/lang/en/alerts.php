@@ -39,6 +39,17 @@ return [
         'updated_password' => "The user's password was successfully updated.",
         'confirmation_email' => 'A new confirmation e-mail has been sent to the address on file.'
 
+    ],
+
+    'organizations' => [
+        'created' => 'The organization was successfully created.',
+        'updated' => 'The organization was successfully updated.',
+        'deleted' => 'The organization was successfully deleted.',
+        'deleted_permanently' => 'The organization was deleted permanently.',
+        'restored' => 'The organization was successfully restored.',
+        'updated_password' => "The organization's password was successfully updated.",
+        'confirmation_email' => 'A new confirmation e-mail has been sent to the address on file.'
+
     ]
 
 ];

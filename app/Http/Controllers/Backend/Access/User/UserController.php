@@ -18,6 +18,8 @@ use App\Http\Requests\Backend\Access\User\UpdateUserPasswordRequest;
 use App\Repositories\Backend\Permission\PermissionRepositoryContract;
 use App\Http\Requests\Backend\Access\User\PermanentlyDeleteUserRequest;
 use App\Http\Requests\Backend\Access\User\ResendConfirmationEmailRequest;
+use App\Models\Organization\Organization;
+
 
 /**
  * Class UserController
@@ -65,10 +67,12 @@ class UserController extends Controller
      * @return mixed
      */
     public function create(CreateUserRequest $request)
-    {
+    {   
+        $organizations = array('' => '') + Organization::all()->lists('name','id')->toArray();
         return view('backend.access.create')
             ->withRoles($this->roles->getAllRoles('sort', 'asc', true))
-            ->withPermissions($this->permissions->getAllPermissions());
+            ->withPermissions($this->permissions->getAllPermissions())
+            ->with(compact('organizations'));
     }
 
     /**
@@ -91,14 +95,16 @@ class UserController extends Controller
      * @return mixed
      */
     public function edit($id, EditUserRequest $request)
-    {
+    {   
+        $organizations = array('' => '') + Organization::all()->lists('name','id')->toArray();
         $user = $this->users->findOrThrowException($id, true);
         return view('backend.access.edit')
             ->withUser($user)
             ->withUserRoles($user->roles->lists('id')->all())
             ->withRoles($this->roles->getAllRoles('sort', 'asc', true))
             ->withUserPermissions($user->permissions->lists('id')->all())
-            ->withPermissions($this->permissions->getAllPermissions());
+            ->withPermissions($this->permissions->getAllPermissions())
+            ->with(compact('organizations'));
     }
 
     /**

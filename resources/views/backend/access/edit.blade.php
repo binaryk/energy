@@ -36,6 +36,13 @@
                     </div>
                 </div><!--form control-->
 
+                <div class="form-group">
+                    {!! Form::label('organization_id', 'Organization' , ['class' => 'col-lg-2 control-label']) !!}
+                    <div class="col-lg-10">
+                        {!! Form::select('organization_id', $organizations, NULL, ['class' => 'form-control']) !!} 
+                    </div>
+                </div><!--form control-->
+
                 @if ($user->id != 1)
                     <div class="form-group">
                         <label class="col-lg-2 control-label">{{ trans('validation.attributes.active') }}</label>

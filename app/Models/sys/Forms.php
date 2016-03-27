@@ -22,6 +22,7 @@ class Forms
 		 'puncte-de-masurare' => '\App\Http\Controllers\Measuringpoints\MeasuringpointsRules',
 		 'facturi'            => '\App\Http\Controllers\Publiclighting\PubliclightingRules',
 		 'indicatori'         => '\App\Http\Controllers\Indicators\IndicatorsRules',
+
 	];
 
 	public function __construct($id)

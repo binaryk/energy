@@ -14,12 +14,15 @@ return [
     */
 
     'active_users' => 'Active Users',
+    'active_organizations' => 'Active Organizations',
     'banned_users' => 'Banned Users',
     'create_permission' => 'Create Permission',
     'create_permission_group' => 'Create Group',
     'create_role' => 'Create Role',
     'create_user' => 'Create User',
+    'create_organization' => 'Create Organization',
     'dashboard' => 'Principala',
+    'organization' => 'Organizatie',
     'deactivated_users' => 'Deactivated Users',
     'deleted_users' => 'Deleted Users',
     'edit_permission' => 'Edit Permission',
@@ -53,6 +56,7 @@ return [
     ],
     'permission_management' => 'Permission Management',
     'role_management' => 'Role Management',
+    'organization_management' => 'Organization Management',
     'user_management' => 'User Management',
     'access_management' => 'Acces Management',
     'language-picker' => [

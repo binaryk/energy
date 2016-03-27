@@ -95,7 +95,7 @@ class EloquentUserRepository implements UserContract
      * @return bool
      */
     public function create($input, $roles, $permissions)
-    {
+    {   
         $user = $this->createUserStub($input);
 
         if ($user->save()) {
@@ -337,6 +337,8 @@ class EloquentUserRepository implements UserContract
         $user->status            = isset($input['status']) ? 1 : 0;
         $user->confirmation_code = md5(uniqid(mt_rand(), true));
         $user->confirmed         = isset($input['confirmed']) ? 1 : 0;
+        $user->organization_id   = isset($input['organization_id']) ? $input['organization_id'] : 0;
+
         return $user;
     }
 }
