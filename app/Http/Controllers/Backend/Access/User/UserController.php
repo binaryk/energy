@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Access\User;
 
+use DB;
 use App\Http\Controllers\Controller;
 use App\Repositories\Backend\User\UserContract;
 use App\Repositories\Backend\Role\RoleRepositoryContract;
@@ -68,11 +69,12 @@ class UserController extends Controller
      */
     public function create(CreateUserRequest $request)
     {   
-        $organizations = array('' => '') + Organization::all()->lists('name','id')->toArray();
+        $organizations_user = Organization::get();
+        // dd($organization_user);
         return view('backend.access.create')
             ->withRoles($this->roles->getAllRoles('sort', 'asc', true))
             ->withPermissions($this->permissions->getAllPermissions())
-            ->with(compact('organizations'));
+            ->with(compact('organizations_user'));
     }
 
     /**
@@ -81,11 +83,14 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
+
         $this->users->create(
-            $request->except('assignees_roles', 'permission_user'),
+            $request->except('assignees_roles', 'permission_user', 'organizations_user'),
             $request->only('assignees_roles'),
-            $request->only('permission_user')
-        );
+            $request->only('permission_user'),
+            $request->only('organizations_user')
+        );  
+
         return redirect()->route('admin.access.users.index')->withFlashSuccess(trans('alerts.users.created'));
     }
 
@@ -96,7 +101,6 @@ class UserController extends Controller
      */
     public function edit($id, EditUserRequest $request)
     {   
-        $organizations = array('' => '') + Organization::all()->lists('name','id')->toArray();
         $user = $this->users->findOrThrowException($id, true);
         return view('backend.access.edit')
             ->withUser($user)
@@ -105,6 +109,7 @@ class UserController extends Controller
             ->withUserPermissions($user->permissions->lists('id')->all())
             ->withPermissions($this->permissions->getAllPermissions())
             ->with(compact('organizations'));
+
     }
 
     /**

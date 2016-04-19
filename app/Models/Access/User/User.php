@@ -23,7 +23,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     SoftDeletes,
     UserAccess,
     UserRelationship,
-        UserAttribute;
+    UserAttribute;
 
     /**
      * The database table used by the model.
@@ -83,10 +83,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function isDeactivated()
     {
         return $this->status == 0;
-    }
+    } 
 
-    public function organizations()
-    {
-        return $this->belongsTo("App\Models\Organization\Organization");
+    public function organizations(){
+        return $this->belongsToMany('App\Models\Organization\Organization', 'users_organizations', 'user_id', 'organization_id');
     }
-}
+} 

@@ -2,12 +2,17 @@
 
 @section ('title', trans('menus.user_management') . ' | ' . trans('menus.create_user'))
 
+@section ('before-styles-end')
+<link rel="stylesheet" href="{!! asset('css/plugins/bootstrap-multiselect.css')!!}">
+<link rel="stylesheet" href="{!! asset('js/plugins//select2/select2.css')!!}">
+@stop
+
 @section('page-header')
     <h1>
         {{ trans('menus.user_management') }}
         <small>{{ trans('menus.create_user') }}</small>
     </h1>
-@endsection
+@endsection 
 
 @section('content')
     {!! Form::open(['route' => 'admin.access.users.store', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post']) !!}
@@ -49,11 +54,16 @@
                         {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                     </div>
                 </div><!--form control-->
+                    
 
                 <div class="form-group">
-                    {!! Form::label('organization_id', 'Organization' , ['class' => 'col-lg-2 control-label']) !!}
-                    <div class="col-lg-10">
-                        {!! Form::select('organization_id', $organizations, NULL, ['class' => 'form-control']) !!} 
+                    {!! Form::label('organizations_user', 'Organization' , ['class' => 'col-lg-2 control-label']) !!}
+                    <div class="col-lg-10"> 
+                        <select id="organizations_user" name="organizations_user[]" multiple="multiple">
+                            @foreach($organizations_user as $organization)
+                                <option value="{{ $organization->id }}">{{ $organization->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div><!--form control-->
 
@@ -176,7 +186,17 @@
     {!! Form::close() !!}
 @stop
 
-@section('after-scripts-end')
-    {!! HTML::script('js/backend/access/permissions/script.js') !!}
-    {!! HTML::script('js/backend/access/users/script.js') !!}
+@section('before-scripts-end')
+@parent
+    <script src="{!! asset('js/backend/access/permissions/script.js') !!}"></script>
+    <script src="{!! asset('js/backend/access/users/script.js') !!}"></script>
+
+    <script src="{!! asset('js/plugins/bootstrap-multiselect.js') !!}"></script>
+    <script src="{!! asset('js/plugins/select2/select2.js') !!}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#organizations_user').multiselect();
+
+        });
+    </script>
 @stop

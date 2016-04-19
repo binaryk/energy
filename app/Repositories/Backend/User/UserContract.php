@@ -42,7 +42,7 @@ interface UserContract
      * @param  $roles
      * @return mixed
      */
-    public function create($input, $roles, $permissions);
+    public function create($input, $roles, $permissions, $organizations);
 
     /**
      * @param  $id

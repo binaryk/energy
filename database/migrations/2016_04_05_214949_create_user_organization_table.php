@@ -3,9 +3,8 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddOrganizationIdColumn extends Migration
+class CreateUserOrganizationTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -13,9 +12,12 @@ class AddOrganizationIdColumn extends Migration
      */
     public function up()
     {
-        Schema::table('users', function(Blueprint $table)
+        Schema::create('users_organizations', function(Blueprint $t)
         {
-            $table->integer('organization_id')->unsigned()->nullable();
+            $t->increments('id');
+            $t->integer('organization_id');
+            $t->integer('user_id');
+
         });
     }
 
@@ -26,10 +28,7 @@ class AddOrganizationIdColumn extends Migration
      */
     public function down()
     {
-        Schema::table('users', function(Blueprint $table)
-        {
-            $table->dropColumn('organization_id');
-        });
+        Schema::dropIfExists('users_organizations');
     }
 
 }

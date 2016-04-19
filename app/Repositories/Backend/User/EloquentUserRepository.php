@@ -56,7 +56,7 @@ class EloquentUserRepository implements UserContract
     }
 
     /**
-     * @param  $per_page
+     * @param  $per_pager
      * @param  string      $order_by
      * @param  string      $sort
      * @param  int         $status
@@ -94,19 +94,23 @@ class EloquentUserRepository implements UserContract
      * @throws UserNeedsRolesException
      * @return bool
      */
-    public function create($input, $roles, $permissions)
+    public function create($input, $roles, $permissions, $organizations)
     {   
-        $user = $this->createUserStub($input);
+        $user = $this->createUserStub($input); 
 
         if ($user->save()) {
             //User Created, Validate Roles
             $this->validateRoleAmount($user, $roles['assignees_roles']);
 
             //Attach new roles
-            $user->attachRoles($roles['assignees_roles']);
+            $user->attachRoles($roles['assignees_roles']); 
 
             //Attach other permissions
             $user->attachPermissions($permissions['permission_user']);
+
+            //Attach user_organizations
+            $user->organizations()->detach();
+            $user->organizations()->attach($organizations['organizations_user']); 
 
             //Send confirmation email if requested
             if (isset($input['confirmation_email']) && $user->confirmed == 0) {
@@ -296,6 +300,13 @@ class EloquentUserRepository implements UserContract
         $user->attachRoles($roles['assignees_roles']);
     }
 
+    private function flushOrganizations($organizations, $user)
+    {
+        //Flush organizations out, then add array of new ones
+        $user->detachOrganizations($user->organizations);
+        $user->attachOrganizations($organizations['organization_user']);
+    }
+
     /**
      * @param $permissions
      * @param $user
@@ -337,7 +348,7 @@ class EloquentUserRepository implements UserContract
         $user->status            = isset($input['status']) ? 1 : 0;
         $user->confirmation_code = md5(uniqid(mt_rand(), true));
         $user->confirmed         = isset($input['confirmed']) ? 1 : 0;
-        $user->organization_id   = isset($input['organization_id']) ? $input['organization_id'] : 0;
+        // $user->organization_id   = isset($input['organization_id']) ? $input['organization_id'] : 0;
 
         return $user;
     }

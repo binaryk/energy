@@ -38,9 +38,13 @@ class Organization extends Model
 		}
 		return $record->delete();
 	}
-	public function users()
+	/*public function users()
     {
         return $this->belongsTo("App\Models\Access\User\User");
+    }*/
+
+    public function users(){
+        return $this->belongsToMany('App\Models\Access\User\User', 'users_organizations', 'organization_id', 'user_id');
     }
 
 }
