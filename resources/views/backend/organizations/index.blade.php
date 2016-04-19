@@ -43,9 +43,7 @@
                                 
                             <a href="{{route('admin.organization.edit', $organization->id)}}" class="btn btn-xs btn-primary"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></i></a> 
 
-                            <a href="{{route('admin.organization.destroy', $organization->id)}}" data-method="post" class="btn btn-xs btn-danger"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a>
-                            
-                            <a href="{{route('admin.organization.show.user', $organization->id)}}"  class="btn btn-xs btn-default"><i class="fa fa-list text-blue" data-toggle="tooltip" data-placement="top" title="Users list"></i></a>
+                            <a href="{{route('admin.organization.destroy', $organization->id)}}" data-method="post" class="btn btn-xs btn-danger"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="Delete"></i></a> 
 
                             </td>
                            

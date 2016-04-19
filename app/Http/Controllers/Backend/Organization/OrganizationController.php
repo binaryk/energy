@@ -55,10 +55,5 @@ class OrganizationController extends Controller
     public function destroy($id){
         Organization::findOrFail($id)->delete();
         return redirect()->back()->withFlashSuccess('The organization was successfully deleted.'); 
-    }
-    public function users($id){
-        $users = User::where('organization_id' ,'=', $id)->get();
-        return view('backend.organizations.this_users')->with(compact('users'));
-
-    }
+    } 
 }
