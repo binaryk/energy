@@ -14,8 +14,9 @@ class Program_dmi extends Model
 		return self::find($id);
 	}
 
-	public static function createRecord($data )
-	{
+	public static function createRecord($data)
+	{	
+		$data['organization_id'] = \Session::get('user_organization');
 		return self::create($data);
 	}
 

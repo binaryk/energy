@@ -4,7 +4,7 @@
     <div class="row">  
     	
 		@foreach($organizations as $organization)
-        <div class="col-md-4">
+        <div  @if(count($organizations) == 2) class="col-md-6" @elseif(count($organizations) == 1) class="col-md-4 col-sm-offset-4" @elseif(count($organizations) == 4) class="col-md-6" @else class="col-md-4" @endif >
 	        <div class="card bg-white" style=" border-radius: 8px 8px 8px 8px;">
 	            <div class="card-header bg-success text-white" style="background-color: #4F646E; border-radius: 8px 8px 0 0;"></div>
 	            <div class="card-block text-center">

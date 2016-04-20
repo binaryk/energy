@@ -15,7 +15,9 @@ class UserOrganizationsController extends Controller
      */
     public function index(){ 
         $organizations = access()->user()->organizations()->get();
-        // dd($organizations);
+        if (count($organizations) == 0) {
+            return redirect()->to('/'); 
+        }
         $this_url = \Request::url();
         return view('frontend.user_organizations')->with('this_url', $this_url)->with('organizations', $organizations);
     } 

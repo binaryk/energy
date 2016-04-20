@@ -1,4 +1,5 @@
-<?php namespace App\Http\Controllers\Indicators;
+<?php 
+namespace App\Http\Controllers\Indicators;
 
 use Illuminate\Http\Request;
 
@@ -31,7 +32,11 @@ class IndicatorsController extends DatatableController
     }
 
     public function rows($id){
+        $organization_id = \Session::get('user_organization');
         $config = Grids::make($id)->toRowDatasetConfig($id);
+        $filters = $config['source']->custom_filters();
+        $type_client = $organization_id ? ['organization_id' => 'statistical_indicators.organization_id = '.$organization_id] : [];
+        $config['source']->custom_filters( $filters + $type_client);
         return $this->dataset( $config );
     }
 }
