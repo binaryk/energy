@@ -24,7 +24,7 @@ class ProgramdmiForm extends \Processing\Form\Form
 
     protected function addControls()
     {
-       $this
+        $this
             ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
                     ->name('address')

@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use App\Http\Requests\Frontend\Access\LoginRequest;
 use App\Http\Requests\Frontend\Access\RegisterRequest;
 use App\Repositories\Frontend\Auth\AuthenticationContract;
+use App\Models\Access\User\User;
 
 /**
  * Class AuthController
@@ -64,7 +65,9 @@ class AuthController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function postLogin(LoginRequest $request)
-    {
+    {    
+        \Session::pull('user_organization');
+
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
@@ -93,6 +96,7 @@ class AuthController extends Controller
 
             return redirect()->back()->withInput()->withFlashDanger($e->getMessage());
         }
+
     }
 
     /**
@@ -111,7 +115,6 @@ class AuthController extends Controller
     public function getLogout()
     {
         $this->auth->logout();
-
         /**
          * Remove the socialite session variable if exists
          */
@@ -119,7 +122,9 @@ class AuthController extends Controller
             app('session')->forget(config('access.socialite_session_name'));
         }
 
-        return redirect()->route('home');
+        // return redirect()->route('home');
+
+        return redirect()->route('user.oragnizations');
     }
 
     /**

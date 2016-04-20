@@ -15,6 +15,7 @@
   </a>
   <!-- /logo -->
 </div>
+@if(count(@$this_url) != 1)
 <ul class="nav navbar-nav hidden-xs">
   <li>
     <a href="javascript:;" class="small-sidebar-toggle ripple" data-toggle="layout-small-menu">
@@ -22,5 +23,6 @@
     </a>
   </li>
 </ul>
+@endif
 @include('~layouts.template.parts.body.~user')
 </div>

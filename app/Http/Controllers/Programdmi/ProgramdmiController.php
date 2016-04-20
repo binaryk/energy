@@ -1,4 +1,5 @@
-<?php namespace App\Http\Controllers\Programdmi;
+<?php 
+namespace App\Http\Controllers\Programdmi;
 
 use Illuminate\Http\Request;
 
@@ -13,6 +14,7 @@ class ProgramdmiController extends DatatableController
     protected $layout = '~layouts.template.layout';
 
     public function index($id){
+        // $organization_id = \Session::get('user_organization');
         $config = Grids::make($id)->toIndexConfig($id); 
         $config['breadcrumbs'] = [
             [
