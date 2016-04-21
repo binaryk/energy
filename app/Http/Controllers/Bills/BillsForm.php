@@ -101,33 +101,14 @@ class BillsForm extends \Processing\Form\Form
             )
              ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
-                    ->name('super_power')
-                    ->caption('Putere Cal Super')
+                    ->name('u_m')
+                    ->caption('Unitatea de Masura')
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
-                    ->controlsource('super_power')
+                    ->controlsource('u_m')
                     ->controltype('textbox')
                     ->maxlength(255)
-            )
-            ->addControl(
-                \Easy\Form\Textbox::make('~layouts.form.controls.editboxes.editbox')
-                    ->name('observations')
-                    ->caption('Observatii')
-                    ->class('form-control  data-source')
-                    //->placeholder('Nume')
-                    ->controlsource('observations')
-                    ->controltype('textbox')
-                    ->maxlength(255)
-            )
-            ->addControl(
-                \Easy\Form\Combobox::make('~layouts.form.controls.comboboxes.combobox')
-                    ->name('nr_contract')
-                    ->caption('Denumire Furnizor')
-                    ->class('form-control data-source input-group form-select init-on-update-delete')
-                    ->controlsource('nr_contract')
-                    ->controltype('combobox')
-                    ->enabled('false')
-            )
+            ) 
 
         ;      
 

@@ -11,8 +11,8 @@ class CreateContractsListTable extends Migration
         {
             $t->increments('id');
             $t->tinyinteger('counter_id')->comment('Id Contor');
-            $t->integer('nr_contract')->comment('Numar Contract');
-            $t->datetime('signature_date')->comment('Data Cursului Valutar');
+            $t->string('nr_contract')->comment('Numar Contract');
+            $t->string('signature_date')->comment('Data Cursului Valutar');
             $t->timestamps();
             $t->softDeletes();
         });

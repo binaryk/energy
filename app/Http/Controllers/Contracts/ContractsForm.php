@@ -38,7 +38,7 @@ class ContractsForm extends \Processing\Form\Form
             ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox-addon')
                     ->name('signature_date')
-                    ->caption('Data Cursului Valutar')
+                    ->caption('Data Semnarii')
                     ->class('form-control  data-source datepicker')
                     //->placeholder('Nume')
                     ->controlsource('signature_date')

@@ -11,7 +11,7 @@ class CreateCountersTable extends Migration
         {
             $table->increments('id');
             $table->integer('build_id')->comment('Id Cladire');
-            $table->integer('code')->comment('Cod Contor');
+            $table->string('code')->comment('Cod Contor');
             $table->integer('type_utility_id')->comment('Tip Utilizare:gaze naturale, electricitate, apa');
             $table->integer('provider_id')->comment('Denumire Furnizor');
             $table->integer('client_code')->comment('Cod Client');

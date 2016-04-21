@@ -19,6 +19,7 @@ class UserOrganizationsController extends Controller
             return redirect()->to('/'); 
         }
         $this_url = \Request::url();
+
         return view('frontend.user_organizations')->with('this_url', $this_url)->with('organizations', $organizations);
     } 
 

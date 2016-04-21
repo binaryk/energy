@@ -33,8 +33,7 @@ class BillsRules extends FormsRecord
             ->addRule('update', 'start_billing', 'required')
             ->addRule('insert', 'stop_billing', 'required')
             ->addRule('update', 'stop_billing', 'required')
-            ->addRule('insert', 'super_power', 'required')
-            ->addRule('update', 'super_power', 'required')
+            
 
             ->addMessage('insert', 'nr_bill.required', 'Acest cimp trebuie completat.')
             ->addMessage('update', 'nr_bill.required', 'Acest cimp trebuie completat.')
@@ -49,9 +48,7 @@ class BillsRules extends FormsRecord
             ->addMessage('insert', 'start_billing.required', 'Acest cimp trebuie completat.')
             ->addMessage('update', 'start_billing.required', 'Acest cimp trebuie completat.')
             ->addMessage('insert', 'stop_billing.required', 'Acest cimp trebuie completat.')
-            ->addMessage('update', 'stop_billing.required', 'Acest cimp trebuie completat.')
-            ->addMessage('insert', 'super_power.required', 'Acest cimp trebuie completat.')
-            ->addMessage('update', 'super_power.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'stop_billing.required', 'Acest cimp trebuie completat.') 
             
         ;
     }

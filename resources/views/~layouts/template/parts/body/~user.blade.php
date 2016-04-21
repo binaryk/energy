@@ -17,6 +17,11 @@
             <li>
                 <a href="{!! url('auth/logout') !!}">Logout</a>
             </li>
+            @if(count(\Session::get('user_organization')) == 1)
+            <li>
+                <a href="{!! route('user.oragnizations') !!}">Switch Organization</a>
+            </li>
+            @endif
         </ul>
     </li>
 </ul>

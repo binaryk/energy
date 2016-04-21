@@ -16,7 +16,7 @@ class Point extends Model
 
 	public static function createRecord($data )
 	{
-		$data['organization_id'] = \Session::get('user_organization');
+		// $data['organization_id'] = \Session::get('user_organization');
 		return self::create($data);
 	}
 

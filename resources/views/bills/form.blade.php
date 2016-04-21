@@ -2,7 +2,7 @@
     <div class="col-md-4">
         {!! $controls[0]->out() !!}
         {!! $controls[4]->out() !!}
-        {!! $controls[9]->options(['0' => '-- Selectati numarul contractului --'] + App\Models\Contract::byCounter($counter->id))->out() !!}
+        {!! $controls[3]->out() !!}
     </div>
     <div class="col-md-4">
         {!! $controls[1]->out() !!}
@@ -12,10 +12,8 @@
     <div class="col-md-4">
         {!! $controls[2]->out() !!}
         {!! $controls[6]->out() !!}
-        {!! $controls[3]->out() !!}
     </div>
     <div class="col-md-12">
-        {!! $controls[8]->out() !!}
     </div>
 </div>
 {!!

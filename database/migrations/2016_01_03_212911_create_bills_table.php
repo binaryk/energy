@@ -19,8 +19,7 @@ class CreateBillsTable extends Migration
             $table->datetime('date_bill')->comment('Inceput Facturare');
             $table->datetime('start_billing')->comment('Sfirsit Perioada Facturare');
             $table->datetime('stop_billing')->comment('Putere Cal Super');
-            $table->float('super_power')->comment('Observatii');
-            $table->string('observations')->comment('Denumire Furnizor');
+            $table->string('u_m')->comment('Unitate de Masura'); 
             $table->timestamps();
             $table->softDeletes();
             

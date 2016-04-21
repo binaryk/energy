@@ -32,10 +32,12 @@ class InstitutionsController extends DatatableController
     }
 
     public function rows($id, $type = NULL){
+        $organization_id = \Session::get('user_organization');
         $config = Grids::make($id)->toRowDatasetConfig($id);
         $filters = $config['source']->custom_filters();
+        $type_organization = $organization_id ? ['organization_id' => 'institutions.organization_id = '.$organization_id] : [];
         $type_client = $type ? ['tip_client' => 'institutions.category_id = '.$type] : [];
-        $config['source']->custom_filters( $filters + $type_client);
+        $config['source']->custom_filters( $filters + $type_client + $type_organization);
         return $this->dataset( $config );
     }
-}
+} 
