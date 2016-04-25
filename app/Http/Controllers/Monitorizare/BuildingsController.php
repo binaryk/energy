@@ -24,7 +24,11 @@ class BuildingsController extends DatatableController
     }
 
     public function rows($id){
+        $organization_id = \Session::get('user_organization');
         $config = Grids::make($id)->toRowDatasetConfig($id);
+        $filters = $config['source']->custom_filters();
+        $type_client = $organization_id ? ['organization_id' => 'buildings.organization_id = '.$organization_id] : [];
+        $config['source']->custom_filters( $filters + $type_client); 
         return $this->dataset( $config );
     }
 }

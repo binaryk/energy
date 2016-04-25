@@ -14,7 +14,7 @@ class CreateCountersTable extends Migration
             $table->string('code')->comment('Cod Contor');
             $table->integer('type_utility_id')->comment('Tip Utilizare:gaze naturale, electricitate, apa');
             $table->integer('provider_id')->comment('Denumire Furnizor');
-            $table->integer('client_code')->comment('Cod Client');
+            $table->string('client_code')->comment('Cod Client');
             $table->timestamps();
             $table->softDeletes();
             

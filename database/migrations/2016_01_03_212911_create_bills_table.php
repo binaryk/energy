@@ -11,14 +11,14 @@ class CreateBillsTable extends Migration
         {
             $table->increments('id');
             $table->tinyinteger('counter_id')->comment('Id Contor');
-            $table->string('nr_contract')->comment('Nr Factura');
-            $table->integer('nr_bill')->comment('Tip Factura');
-            $table->integer('type_bill')->comment('Consum Facturat');
-            $table->float('consumption_billed')->comment('Val Top cu T.V.A.');
-            $table->float('value_witch_tva')->comment('Data Facturii');
-            $table->datetime('date_bill')->comment('Inceput Facturare');
-            $table->datetime('start_billing')->comment('Sfirsit Perioada Facturare');
-            $table->datetime('stop_billing')->comment('Putere Cal Super');
+            $table->string('nr_contract')->comment('Nr Contract');
+            $table->string('nr_bill')->comment('Nr Factura');
+            $table->integer('type_bill')->comment('Tip Factura');
+            $table->float('consumption_billed')->comment('Consum Facturat');
+            $table->float('value_witch_tva')->comment('Val Top cu T.V.A.');
+            $table->date('date_bill')->comment('Data Facturii');
+            $table->date('start_billing')->comment('Inceput Facturare');
+            $table->date('stop_billing')->comment('Sfirsit Perioada Facturare');
             $table->string('u_m')->comment('Unitate de Masura'); 
             $table->timestamps();
             $table->softDeletes();
@@ -30,5 +30,4 @@ class CreateBillsTable extends Migration
     {
         Schema::dropIfExists('bills');
     }
-    
 }
