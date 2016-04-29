@@ -58,33 +58,6 @@ class InstitutionsGrid extends GridsRecord
                 'source'    => 'locality',//numele coloanei din tabelul din BD
             ],
             '4' => [
-                'id'        => 'owner',
-                'orderable' => 'yes',
-                'class'     => 'td-align-left',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Proprietar', 'style'   => 'width:20%',],
-                'type'      => 'field',
-                'source'    => 'owner',//numele coloanei din tabelul din BD
-            ],
-            '5' => [
-                'id'        => 'destination',
-                'orderable' => 'yes',
-                'class'     => 'td-align-left',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Destinatie principala', 'style'   => 'width:20%',],
-                'type'      => 'field',
-                'source'    => 'destination',//numele coloanei din tabelul din BD
-            ],
-            '6' => [
-                'id'        => 'type_building',
-                'orderable' => 'yes',
-                'class'     => 'td-align-left',
-                'visible'   => 'yes',
-                'header'    => ['caption' => 'Tipul institutiei', 'style'   => 'width:20%',],
-                'type'      => 'field',
-                'source'    => 'type_building',//numele coloanei din tabelul din BD
-            ],
-            '7' => [
                 'id'        => 'action',
                 'orderable' => 'no',
                 'class'     => 'td-align-center td-actions',

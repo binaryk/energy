@@ -62,7 +62,7 @@ class BillsForm extends \Processing\Form\Form
              ->addControl(
                 \Easy\Form\Textbox::make('~layouts.form.controls.textboxes.textbox')
                     ->name('value_witch_tva')
-                    ->caption('Val Top cu T.V.A.')
+                    ->caption('Valoare cu T.V.A.')
                     ->class('form-control  data-source')
                     //->placeholder('Nume')
                     ->controlsource('value_witch_tva')

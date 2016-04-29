@@ -20,26 +20,14 @@ class InstitutionsRules extends FormsRecord
             ->setFeedback('delete', 'error', 'Ștergerea institutiei <span class="badge">nu</span> a fost realizată.')
 
             ->addRule('insert', 'name', 'required')
-            ->addRule('update', 'name', 'required')
-            ->addRule('insert', 'address', 'required')
-            ->addRule('update', 'address', 'required')
+            ->addRule('update', 'name', 'required') 
             ->addRule('insert', 'locality', 'required')
-            ->addRule('update', 'locality', 'required')
-            ->addRule('insert', 'energy_responsable', 'required')
-            ->addRule('update', 'energy_responsable', 'required')
-            ->addRule('insert', 'year', 'required')
-            ->addRule('update', 'year', 'required')
+            ->addRule('update', 'locality', 'required') 
 
             ->addMessage('insert', 'name.required', 'Acest cimp trebuie completat.')
-            ->addMessage('update', 'name.required', 'Acest cimp trebuie completat.')
-            ->addMessage('insert', 'address.required', 'Acest cimp trebuie completat.')
-            ->addMessage('update', 'address.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'name.required', 'Acest cimp trebuie completat.') 
             ->addMessage('insert', 'locality.required', 'Acest cimp trebuie completat.')
-            ->addMessage('update', 'locality.required', 'Acest cimp trebuie completat.')
-            ->addMessage('insert', 'energy_responsable.required', 'Acest cimp trebuie completat.')
-            ->addMessage('update', 'energy_responsable.required', 'Acest cimp trebuie completat.')
-            ->addMessage('insert', 'year.required', 'Acest cimp trebuie completat.')
-            ->addMessage('update', 'year.required', 'Acest cimp trebuie completat.')
+            ->addMessage('update', 'locality.required', 'Acest cimp trebuie completat.') 
         ;
     }
 

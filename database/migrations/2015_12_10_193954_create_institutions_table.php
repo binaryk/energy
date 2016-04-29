@@ -13,19 +13,7 @@ class CreateInstitutionsTable extends Migration
             $t->increments('id');
             $t->tinyinteger('category_id')->comment('Id Categorie');
             $t->string('name')->comment('Denumirea Institutiei');
-            $t->string('address',100)->comment('Adresa');
-            $t->string('locality')->comment('Localitatea');
-            $t->string('county')->comment('Tara');
-            $t->string('energy_responsable')->comment('Responsabil Energetic');
-            $t->string('owner')->comment('Proprietar');
-            $t->string('destination')->comment('Destinatia Principala');
-            $t->string('type_building')->comment('Tipul Institutiei');
-            $t->string('year',10)->comment('Anul Constructiei');
-            $t->string('designer')->comment('Proiectant');
-            $t->string('builder')->comment('Constructor');
-            $t->integer('height')->comment('Regimul de Inaltime');
-            $t->string('structure_construct')->comment('Structura Constructiva');
-            $t->string('particularities')->comment('Particularitati');
+            $t->string('locality')->comment('Localitatea'); 
             $t->timestamps();
             $t->softDeletes();
             
