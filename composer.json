@@ -58,6 +58,23 @@
 		"post-create-project-cmd": [
 			"php -r \"copy('.env.example', '.env');\"",
 			"php artisan key:generate"
+		],
+        "rules": [
+          "chmod -R 777 storage/",
+          "chmod -R 777 vendor/",
+          "chmod -R 755 ../public_html",
+          "chown -R pactul:pactul ../public_html"
+        ],
+		"resolve": [
+			"git stash",
+			"git pull origin master",
+			"composer run rules",
+			"composer du -o"
+		],
+		"push" : [
+			"git add .",
+			"git commit -am 'Current'",
+			"git push origin master"
 		]
 	},
 	"config": {
