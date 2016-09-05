@@ -38,4 +38,10 @@ trait UserRelationship
     {
         return $this->hasMany(UserProvider::class);
     }
+
+
+
+    public function organizations(){
+        return $this->belongsToMany('App\Models\Organization\Organization', 'users_organizations', 'user_id', 'organization_id');
+    }
 }

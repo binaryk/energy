@@ -79,6 +79,7 @@ class Grids {
 	}
 
 	public function toRowDatasetConfig($id) {
+
 		$record = $this->grids[$id];
 		$result = [
 			'id' => $record->id,
